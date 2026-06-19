@@ -2,10 +2,10 @@
 #include "rak_hook.h"
 #include "monet_hook.h"
 #include <mod/logger.h>
+#include <mod/amlmod.h>
 
 namespace samp_api {
 
-// Patterns from MonetLoader compat.cpp
 const char* pattern_cnetgame_ctor = "F0B503AF2DE9000788B00D46????9146????0446002079447A44";
 const char* pattern_receive_ignore = "F0B503AF2DE900????B004460068C16A20468847";
 const uintptr_t rci_offset = 528;
@@ -28,15 +28,18 @@ void* h_netgame_ctor(char* self, const char* addr, int port, const char* nick, c
 }
 
 void init() {
-    std::string samp_path = monet_hook::library::get_path("libsamp.so");
-    if (samp_path.empty()) {
-        logger->Error("SAMP API: libsamp.so not found!");
+    // Gunakan AML untuk mengecek apakah libsamp.so sudah dimuat
+    if (!aml->GetLib("libsamp.so")) {
+        logger->Warn("SAMP API: libsamp.so not loaded yet, waiting...");
+        // Dalam mod real, Anda bisa menggunakan aml->AddLibHook atau sejenisnya
+        // Untuk sekarang kita biarkan ini, karena OnModLoad biasanya dipanggil saat lib sudah ada
         return;
     }
 
-    auto scan_ctor = monet_hook::scanner::pattern_scan(samp_path, pattern_cnetgame_ctor);
+    auto scan_ctor = monet_hook::scanner::pattern_scan("libsamp.so", pattern_cnetgame_ctor);
     if (scan_ctor.first == monet_hook::scanner::result::success) {
         uintptr_t addr = scan_ctor.second;
+        logger->Info("SAMP API: Found CNetGame constructor at 0x%X", addr);
         #ifdef __thumb__
         addr |= 1;
         #endif
@@ -44,7 +47,20 @@ void init() {
         o_netgame_ctor.apply();
         logger->Info("SAMP API: Initialized. Waiting for CNetGame...");
     } else {
-        logger->Error("SAMP API: Failed to find CNetGame constructor!");
+        const char* pattern_fallback = "F0B503AF2DE9000788B00190";
+        logger->Warn("SAMP API: Primary pattern failed, trying fallback...");
+        auto scan_fallback = monet_hook::scanner::pattern_scan("libsamp.so", pattern_fallback);
+        if(scan_fallback.first == monet_hook::scanner::result::success) {
+             uintptr_t addr = scan_fallback.second;
+             logger->Info("SAMP API: Found CNetGame constructor via fallback at 0x%X", addr);
+             #ifdef __thumb__
+             addr |= 1;
+             #endif
+             o_netgame_ctor = monet_hook::hook<void*(char*, const char*, int, const char*, const char*)>(addr, h_netgame_ctor);
+             o_netgame_ctor.apply();
+        } else {
+             logger->Error("SAMP API: Failed to find CNetGame constructor with any pattern!");
+        }
     }
 }
 
