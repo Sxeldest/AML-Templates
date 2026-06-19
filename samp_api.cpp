@@ -12,6 +12,7 @@ const uintptr_t rci_offset = 528;
 
 monet_hook::hook<void*(char*, const char*, int, const char*, const char*)> o_netgame_ctor;
 void* h_netgame_ctor(char* self, const char* addr, int port, const char* nick, const char* pass) {
+    logger->SetTag("mymodaml");
     void* res = o_netgame_ctor(self, addr, port, nick, pass);
 
     RakClientInterface* rci = *(RakClientInterface**)(self + rci_offset);
@@ -28,9 +29,10 @@ void* h_netgame_ctor(char* self, const char* addr, int port, const char* nick, c
 }
 
 void init() {
+    logger->SetTag("mymodaml");
     // Gunakan AML untuk mengecek apakah libsamp.so sudah dimuat
     if (!aml->GetLib("libsamp.so")) {
-        logger->Warn("SAMP API: libsamp.so not loaded yet, waiting...");
+        logger->Info("SAMP API: libsamp.so not loaded yet, waiting...");
         // Dalam mod real, Anda bisa menggunakan aml->AddLibHook atau sejenisnya
         // Untuk sekarang kita biarkan ini, karena OnModLoad biasanya dipanggil saat lib sudah ada
         return;
@@ -48,7 +50,7 @@ void init() {
         logger->Info("SAMP API: Initialized. Waiting for CNetGame...");
     } else {
         const char* pattern_fallback = "F0B503AF2DE9000788B00190";
-        logger->Warn("SAMP API: Primary pattern failed, trying fallback...");
+        logger->Info("SAMP API: Primary pattern failed, trying fallback...");
         auto scan_fallback = monet_hook::scanner::pattern_scan("libsamp.so", pattern_fallback);
         if(scan_fallback.first == monet_hook::scanner::result::success) {
              uintptr_t addr = scan_fallback.second;

@@ -22,6 +22,7 @@ namespace scanner {
     }
 
     std::pair<result, uintptr_t> pattern_scan(const std::string& lib_name, const std::string& pattern) {
+        logger->SetTag("mymodaml");
         uintptr_t base = aml->GetLib(lib_name.c_str());
         if (!base) return { result::match_not_found, 0 };
 
