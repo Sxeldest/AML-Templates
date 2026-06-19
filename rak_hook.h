@@ -2,9 +2,9 @@
 #include <cstdint>
 #include <functional>
 #include <string>
-#include "../MonetLoader/lib/raknet/RakNetTypes.h"
-#include "../MonetLoader/lib/raknet/BitStream.h"
-#include "../MonetLoader/lib/raknet/RakClientInterface.h"
+#include "raknet/RakNetTypes.h"
+#include "raknet/BitStream.h"
+#include "raknet/RakClientInterface.h"
 
 namespace rak_hook {
 

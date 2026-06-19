@@ -39,7 +39,7 @@ bool h_rpc(RakClientInterface* thiz, int* id, RakNet::BitStream* bs, RakNet::Pac
 }
 
 // Emulation for ReceiveIgnoreRPC
-typedef RakNet::Packet* (*ReceiveIgnoreRPC_t)(void*);
+typedef RakNet::Packet* (ReceiveIgnoreRPC_t)(void*);
 monet_hook::hook<ReceiveIgnoreRPC_t> o_recv_ignore;
 std::vector<RakNet::Packet*> emu_queue;
 
@@ -56,13 +56,13 @@ void init(RakClientInterface* client, uintptr_t receive_ignore_rpc) {
     rci = client;
     o_receive_ignore_rpc = receive_ignore_rpc;
 
-    o_send = { (uintptr_t)rci->vtbl->Send, h_send };
+    o_send = monet_hook::hook<bool(RakClientInterface*, RakNet::BitStream*, RakNet::PacketPriority, RakNet::PacketReliability, char)>((uintptr_t)rci->vtbl->Send, h_send);
     o_send.apply();
 
-    o_rpc = { (uintptr_t)rci->vtbl->RPC, h_rpc };
+    o_rpc = monet_hook::hook<bool(RakClientInterface*, int*, RakNet::BitStream*, RakNet::PacketPriority, RakNet::PacketReliability, char, bool, RakNet::NetworkID, RakNet::BitStream*)>((uintptr_t)rci->vtbl->RPC, h_rpc);
     o_rpc.apply();
 
-    o_recv_ignore = { receive_ignore_rpc, h_recv_ignore };
+    o_recv_ignore = monet_hook::hook<ReceiveIgnoreRPC_t>(receive_ignore_rpc, h_recv_ignore);
     o_recv_ignore.apply();
 }
 
@@ -90,18 +90,10 @@ namespace emu {
     void rpc(uint8_t id, RakNet::BitStream* bs) {
         // Create a fake RPC packet
         uint32_t bitlen = bs ? bs->GetNumberOfBitsUsed() : 0;
-        size_t total_size = sizeof(RakNet::Packet) + 1 + 4 + (bitlen + 7) / 8; // Simplified
-        RakNet::Packet* p = (RakNet::Packet*)malloc(total_size);
-        p->data = (unsigned char*)p + sizeof(RakNet::Packet);
-        p->data[0] = 20; // ID_RPC (usually 20 in RakNet)
-        p->data[1] = id;
-        // This is a bit simplified, RakNet uses compressed bitlen
-        // but for local emulation we just need it to work.
-        // Actually, let's use the real format if possible.
 
         // Use a temp bitstream to format it properly
         RakNet::BitStream target;
-        target.Write((uint8_t)20); // ID_RPC
+        target.Write((uint8_t)RakNet::ID_RPC); // ID_RPC
         target.Write(id);
         target.WriteCompressed(bitlen);
         if (bs) {
@@ -109,8 +101,7 @@ namespace emu {
             target.Write(bs);
         }
 
-        free(p);
-        p = (RakNet::Packet*)malloc(sizeof(RakNet::Packet) + target.GetNumberOfBytesUsed());
+        RakNet::Packet* p = (RakNet::Packet*)malloc(sizeof(RakNet::Packet) + target.GetNumberOfBytesUsed());
         p->data = (unsigned char*)p + sizeof(RakNet::Packet);
         memcpy(p->data, target.GetData(), target.GetNumberOfBytesUsed());
         p->length = target.GetNumberOfBytesUsed();
@@ -124,7 +115,7 @@ namespace emu {
 namespace send {
     void rpc(uint8_t id, RakNet::BitStream* bs) {
         int rpc_id = id;
-        o_rpc(rci, &rpc_id, bs, HIGH_PRIORITY, RELIABLE_ORDERED, 0, false, RakNet::UNASSIGNED_NETWORK_ID, nullptr);
+        o_rpc(rci, &rpc_id, bs, RakNet::HIGH_PRIORITY, RakNet::RELIABLE_ORDERED, 0, false, RakNet::UNASSIGNED_NETWORK_ID, nullptr);
     }
 }
 

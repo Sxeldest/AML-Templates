@@ -6,16 +6,7 @@
 
 namespace monet_hook {
 
-template <typename T>
-void hook<T>::apply() {
-    if (m_symbol) {
-        aml->Hook((void*)m_symbol, (void*)m_replace, (void**)&m_trampoline);
-    }
-}
-
-// Explicit instantiation for the hooks we'll use
-typedef void* (*netgame_ctor_t)(char*, const char*, int, const char*, const char*);
-template class hook<netgame_ctor_t>;
+// Removed hook::apply implementation as it's now in header
 
 namespace library {
     uintptr_t get_base(const std::string& name) {
@@ -23,14 +14,14 @@ namespace library {
     }
 
     std::string get_path(const std::string& name) {
-        // Simple heuristic for Android /proc/self/maps
         std::ifstream ifs("/proc/self/maps");
         std::string line;
         while (std::getline(ifs, line)) {
             if (line.find(name) != std::string::npos) {
                 size_t start = line.find_last_of(' ');
                 if (start != std::string::npos) {
-                    return line.substr(start + 1);
+                    std::string path = line.substr(start + 1);
+                    if (!path.empty() && path[0] == '/') return path;
                 }
             }
         }
@@ -50,7 +41,6 @@ namespace scanner {
         uintptr_t base = aml->GetLib(lib_path.substr(lib_path.find_last_of('/') + 1).c_str());
         if (!base) return { result::match_not_found, 0 };
 
-        // We need the size of the library to scan. For simplicity, let's scan a large enough chunk or find it in maps.
         uintptr_t end = 0;
         std::ifstream ifs("/proc/self/maps");
         std::string line;
@@ -60,14 +50,13 @@ namespace scanner {
                 char dash;
                 std::stringstream ss(line);
                 ss >> std::hex >> s >> dash >> e;
-                if (s == base) {
+                if (s >= base && (end == 0 || e > end)) {
                    end = e;
-                   break;
                 }
             }
         }
 
-        if (!end) end = base + 0x1000000; // Fallback to 16MB
+        if (!end) end = base + 0x1000000;
 
         struct byte_t { uint8_t val; bool any; };
         std::vector<byte_t> bytes;

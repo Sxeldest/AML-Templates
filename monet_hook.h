@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <mod/amlmod.h>
 
 namespace monet_hook {
 
@@ -22,7 +23,11 @@ public:
     hook() : m_symbol(0), m_replace(nullptr), m_trampoline(nullptr) {}
     hook(uintptr_t symbol, T* replace) : m_symbol(symbol), m_replace(replace), m_trampoline(nullptr) {}
 
-    void apply();
+    void apply() override {
+        if (m_symbol) {
+            aml->Hook((void*)m_symbol, (void*)m_replace, (void**)&m_trampoline);
+        }
+    }
 
     template <typename... Args>
     auto operator()(Args... args) {

@@ -40,7 +40,7 @@ void init() {
         #ifdef __thumb__
         addr |= 1;
         #endif
-        o_netgame_ctor = { addr, h_netgame_ctor };
+        o_netgame_ctor = monet_hook::hook<void*(char*, const char*, int, const char*, const char*)>(addr, h_netgame_ctor);
         o_netgame_ctor.apply();
         logger->Info("SAMP API: Initialized. Waiting for CNetGame...");
     } else {
