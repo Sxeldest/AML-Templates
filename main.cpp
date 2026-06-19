@@ -1,35 +1,35 @@
 #include <mod/amlmod.h>
 #include <mod/logger.h>
 #include <mod/config.h>
+#include "samp_api.h"
 
-MYMODCFG(net.dexsocy.mymod.guid, AML Mod Template, 1.0, Dexsociety)
+MYMODCFG(net.dexsocy.mymod.guid, My SAMP Mod, 1.0, Dexsociety)
 
-uintptr_t pGameLibrary = 0;
-ConfigEntry* pCfgMyBestEntry;
+void OnMyCommand(const std::string& params) {
+    samp_api::add_chat_message("You entered: " + params, 0x00FF00);
+    logger->Info("Command executed with params: %s", params.c_str());
+}
 
 extern "C" void OnModLoad()
 {
-    logger->SetTag("Mod Template");
+    logger->SetTag("mymodaml");
 
-    pGameLibrary = aml->GetLib("libGTASA.so");
-    if(pGameLibrary)
+    if(aml->GetLib("libGTASA.so"))
     {
-        logger->Info("MyGame mod is loaded!");
+        logger->Info("My SAMP Mod is loading...");
+
+        // Initialize SAMP API
+        samp_api::init();
+
+        // Register a test command /hello
+        samp_api::register_command("hello", [](const std::string& params) {
+            samp_api::add_chat_message("{FFFFFF}Hello from {FF0000}C++ {FFFFFF}Mod!", 0xFFFFFF);
+            if (!params.empty()) {
+                samp_api::add_chat_message("Params: " + params, 0xFFFF00);
+            }
+        });
+
+        // Another command to test
+        samp_api::register_command("testcmd", OnMyCommand);
     }
-    else
-    {
-        logger->Error("MyGame mod is not loaded :(");
-        return; // Do not load our mod?
-    }
-
-    pCfgMyBestEntry = cfg->Bind("mySetting", "DefaultValue is 0?", "MyUniqueSection");
-    pCfgMyBestEntry->SetString("DefaultValue is unchanged");
-    pCfgMyBestEntry->SetInt(1);
-    pCfgMyBestEntry->Reset();
-    delete pCfgMyBestEntry; // Clean-up memory
-
-    bool bEnabled = cfg->Bind("Enable", true)->GetBool();
-    delete Config::pLastEntry; // Clean-up of the latest ConfigEntry*
-
-    cfg->Save(); // Will only save if something was changed
 }
