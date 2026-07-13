@@ -1,0 +1,4324 @@
+; =========================================================================
+; Full Function Name : _Z10EnumStringj
+; Start Address       : 0x1BD660
+; End Address         : 0x1BFE0E
+; =========================================================================
+
+/* 0x1BD660 */    CMP.W           R0, #0x1000
+/* 0x1BD664 */    BGE.W           loc_1BE874
+/* 0x1BD668 */    CMP.W           R0, #0x500
+/* 0x1BD66C */    BLT.W           loc_1BE9E4
+/* 0x1BD670 */    SUB.W           R0, R0, #0x500; switch 2293 cases
+/* 0x1BD674 */    MOVW            R1, #0x8F4
+/* 0x1BD678 */    CMP             R0, R1
+/* 0x1BD67A */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BD67E */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BD682 */    DCW 0x8F5; jump table for switch statement
+/* 0x1BD684 */    DCW 0xC74
+/* 0x1BD686 */    DCW 0xC78
+/* 0x1BD688 */    DCW 0xC7C
+/* 0x1BD68A */    DCW 0xC80
+/* 0x1BD68C */    DCW 0xC84
+/* 0x1BD68E */    DCW 0x13C2
+/* 0x1BD690 */    DCW 0x13C2
+/* 0x1BD692 */    DCW 0x13C2
+/* 0x1BD694 */    DCW 0x13C2
+/* 0x1BD696 */    DCW 0x13C2
+/* 0x1BD698 */    DCW 0x13C2
+/* 0x1BD69A */    DCW 0x13C2
+/* 0x1BD69C */    DCW 0x13C2
+/* 0x1BD69E */    DCW 0x13C2
+/* 0x1BD6A0 */    DCW 0x13C2
+/* 0x1BD6A2 */    DCW 0x13C2
+/* 0x1BD6A4 */    DCW 0x13C2
+/* 0x1BD6A6 */    DCW 0x13C2
+/* 0x1BD6A8 */    DCW 0x13C2
+/* 0x1BD6AA */    DCW 0x13C2
+/* 0x1BD6AC */    DCW 0x13C2
+/* 0x1BD6AE */    DCW 0x13C2
+/* 0x1BD6B0 */    DCW 0x13C2
+/* 0x1BD6B2 */    DCW 0x13C2
+/* 0x1BD6B4 */    DCW 0x13C2
+/* 0x1BD6B6 */    DCW 0x13C2
+/* 0x1BD6B8 */    DCW 0x13C2
+/* 0x1BD6BA */    DCW 0x13C2
+/* 0x1BD6BC */    DCW 0x13C2
+/* 0x1BD6BE */    DCW 0x13C2
+/* 0x1BD6C0 */    DCW 0x13C2
+/* 0x1BD6C2 */    DCW 0x13C2
+/* 0x1BD6C4 */    DCW 0x13C2
+/* 0x1BD6C6 */    DCW 0x13C2
+/* 0x1BD6C8 */    DCW 0x13C2
+/* 0x1BD6CA */    DCW 0x13C2
+/* 0x1BD6CC */    DCW 0x13C2
+/* 0x1BD6CE */    DCW 0x13C2
+/* 0x1BD6D0 */    DCW 0x13C2
+/* 0x1BD6D2 */    DCW 0x13C2
+/* 0x1BD6D4 */    DCW 0x13C2
+/* 0x1BD6D6 */    DCW 0x13C2
+/* 0x1BD6D8 */    DCW 0x13C2
+/* 0x1BD6DA */    DCW 0x13C2
+/* 0x1BD6DC */    DCW 0x13C2
+/* 0x1BD6DE */    DCW 0x13C2
+/* 0x1BD6E0 */    DCW 0x13C2
+/* 0x1BD6E2 */    DCW 0x13C2
+/* 0x1BD6E4 */    DCW 0x13C2
+/* 0x1BD6E6 */    DCW 0x13C2
+/* 0x1BD6E8 */    DCW 0x13C2
+/* 0x1BD6EA */    DCW 0x13C2
+/* 0x1BD6EC */    DCW 0x13C2
+/* 0x1BD6EE */    DCW 0x13C2
+/* 0x1BD6F0 */    DCW 0x13C2
+/* 0x1BD6F2 */    DCW 0x13C2
+/* 0x1BD6F4 */    DCW 0x13C2
+/* 0x1BD6F6 */    DCW 0x13C2
+/* 0x1BD6F8 */    DCW 0x13C2
+/* 0x1BD6FA */    DCW 0x13C2
+/* 0x1BD6FC */    DCW 0x13C2
+/* 0x1BD6FE */    DCW 0x13C2
+/* 0x1BD700 */    DCW 0x13C2
+/* 0x1BD702 */    DCW 0x13C2
+/* 0x1BD704 */    DCW 0x13C2
+/* 0x1BD706 */    DCW 0x13C2
+/* 0x1BD708 */    DCW 0x13C2
+/* 0x1BD70A */    DCW 0x13C2
+/* 0x1BD70C */    DCW 0x13C2
+/* 0x1BD70E */    DCW 0x13C2
+/* 0x1BD710 */    DCW 0x13C2
+/* 0x1BD712 */    DCW 0x13C2
+/* 0x1BD714 */    DCW 0x13C2
+/* 0x1BD716 */    DCW 0x13C2
+/* 0x1BD718 */    DCW 0x13C2
+/* 0x1BD71A */    DCW 0x13C2
+/* 0x1BD71C */    DCW 0x13C2
+/* 0x1BD71E */    DCW 0x13C2
+/* 0x1BD720 */    DCW 0x13C2
+/* 0x1BD722 */    DCW 0x13C2
+/* 0x1BD724 */    DCW 0x13C2
+/* 0x1BD726 */    DCW 0x13C2
+/* 0x1BD728 */    DCW 0x13C2
+/* 0x1BD72A */    DCW 0x13C2
+/* 0x1BD72C */    DCW 0x13C2
+/* 0x1BD72E */    DCW 0x13C2
+/* 0x1BD730 */    DCW 0x13C2
+/* 0x1BD732 */    DCW 0x13C2
+/* 0x1BD734 */    DCW 0x13C2
+/* 0x1BD736 */    DCW 0x13C2
+/* 0x1BD738 */    DCW 0x13C2
+/* 0x1BD73A */    DCW 0x13C2
+/* 0x1BD73C */    DCW 0x13C2
+/* 0x1BD73E */    DCW 0x13C2
+/* 0x1BD740 */    DCW 0x13C2
+/* 0x1BD742 */    DCW 0x13C2
+/* 0x1BD744 */    DCW 0x13C2
+/* 0x1BD746 */    DCW 0x13C2
+/* 0x1BD748 */    DCW 0x13C2
+/* 0x1BD74A */    DCW 0x13C2
+/* 0x1BD74C */    DCW 0x13C2
+/* 0x1BD74E */    DCW 0x13C2
+/* 0x1BD750 */    DCW 0x13C2
+/* 0x1BD752 */    DCW 0x13C2
+/* 0x1BD754 */    DCW 0x13C2
+/* 0x1BD756 */    DCW 0x13C2
+/* 0x1BD758 */    DCW 0x13C2
+/* 0x1BD75A */    DCW 0x13C2
+/* 0x1BD75C */    DCW 0x13C2
+/* 0x1BD75E */    DCW 0x13C2
+/* 0x1BD760 */    DCW 0x13C2
+/* 0x1BD762 */    DCW 0x13C2
+/* 0x1BD764 */    DCW 0x13C2
+/* 0x1BD766 */    DCW 0x13C2
+/* 0x1BD768 */    DCW 0x13C2
+/* 0x1BD76A */    DCW 0x13C2
+/* 0x1BD76C */    DCW 0x13C2
+/* 0x1BD76E */    DCW 0x13C2
+/* 0x1BD770 */    DCW 0x13C2
+/* 0x1BD772 */    DCW 0x13C2
+/* 0x1BD774 */    DCW 0x13C2
+/* 0x1BD776 */    DCW 0x13C2
+/* 0x1BD778 */    DCW 0x13C2
+/* 0x1BD77A */    DCW 0x13C2
+/* 0x1BD77C */    DCW 0x13C2
+/* 0x1BD77E */    DCW 0x13C2
+/* 0x1BD780 */    DCW 0x13C2
+/* 0x1BD782 */    DCW 0x13C2
+/* 0x1BD784 */    DCW 0x13C2
+/* 0x1BD786 */    DCW 0x13C2
+/* 0x1BD788 */    DCW 0x13C2
+/* 0x1BD78A */    DCW 0x13C2
+/* 0x1BD78C */    DCW 0x13C2
+/* 0x1BD78E */    DCW 0x13C2
+/* 0x1BD790 */    DCW 0x13C2
+/* 0x1BD792 */    DCW 0x13C2
+/* 0x1BD794 */    DCW 0x13C2
+/* 0x1BD796 */    DCW 0x13C2
+/* 0x1BD798 */    DCW 0x13C2
+/* 0x1BD79A */    DCW 0x13C2
+/* 0x1BD79C */    DCW 0x13C2
+/* 0x1BD79E */    DCW 0x13C2
+/* 0x1BD7A0 */    DCW 0x13C2
+/* 0x1BD7A2 */    DCW 0x13C2
+/* 0x1BD7A4 */    DCW 0x13C2
+/* 0x1BD7A6 */    DCW 0x13C2
+/* 0x1BD7A8 */    DCW 0x13C2
+/* 0x1BD7AA */    DCW 0x13C2
+/* 0x1BD7AC */    DCW 0x13C2
+/* 0x1BD7AE */    DCW 0x13C2
+/* 0x1BD7B0 */    DCW 0x13C2
+/* 0x1BD7B2 */    DCW 0x13C2
+/* 0x1BD7B4 */    DCW 0x13C2
+/* 0x1BD7B6 */    DCW 0x13C2
+/* 0x1BD7B8 */    DCW 0x13C2
+/* 0x1BD7BA */    DCW 0x13C2
+/* 0x1BD7BC */    DCW 0x13C2
+/* 0x1BD7BE */    DCW 0x13C2
+/* 0x1BD7C0 */    DCW 0x13C2
+/* 0x1BD7C2 */    DCW 0x13C2
+/* 0x1BD7C4 */    DCW 0x13C2
+/* 0x1BD7C6 */    DCW 0x13C2
+/* 0x1BD7C8 */    DCW 0x13C2
+/* 0x1BD7CA */    DCW 0x13C2
+/* 0x1BD7CC */    DCW 0x13C2
+/* 0x1BD7CE */    DCW 0x13C2
+/* 0x1BD7D0 */    DCW 0x13C2
+/* 0x1BD7D2 */    DCW 0x13C2
+/* 0x1BD7D4 */    DCW 0x13C2
+/* 0x1BD7D6 */    DCW 0x13C2
+/* 0x1BD7D8 */    DCW 0x13C2
+/* 0x1BD7DA */    DCW 0x13C2
+/* 0x1BD7DC */    DCW 0x13C2
+/* 0x1BD7DE */    DCW 0x13C2
+/* 0x1BD7E0 */    DCW 0x13C2
+/* 0x1BD7E2 */    DCW 0x13C2
+/* 0x1BD7E4 */    DCW 0x13C2
+/* 0x1BD7E6 */    DCW 0x13C2
+/* 0x1BD7E8 */    DCW 0x13C2
+/* 0x1BD7EA */    DCW 0x13C2
+/* 0x1BD7EC */    DCW 0x13C2
+/* 0x1BD7EE */    DCW 0x13C2
+/* 0x1BD7F0 */    DCW 0x13C2
+/* 0x1BD7F2 */    DCW 0x13C2
+/* 0x1BD7F4 */    DCW 0x13C2
+/* 0x1BD7F6 */    DCW 0x13C2
+/* 0x1BD7F8 */    DCW 0x13C2
+/* 0x1BD7FA */    DCW 0x13C2
+/* 0x1BD7FC */    DCW 0x13C2
+/* 0x1BD7FE */    DCW 0x13C2
+/* 0x1BD800 */    DCW 0x13C2
+/* 0x1BD802 */    DCW 0x13C2
+/* 0x1BD804 */    DCW 0x13C2
+/* 0x1BD806 */    DCW 0x13C2
+/* 0x1BD808 */    DCW 0x13C2
+/* 0x1BD80A */    DCW 0x13C2
+/* 0x1BD80C */    DCW 0x13C2
+/* 0x1BD80E */    DCW 0x13C2
+/* 0x1BD810 */    DCW 0x13C2
+/* 0x1BD812 */    DCW 0x13C2
+/* 0x1BD814 */    DCW 0x13C2
+/* 0x1BD816 */    DCW 0x13C2
+/* 0x1BD818 */    DCW 0x13C2
+/* 0x1BD81A */    DCW 0x13C2
+/* 0x1BD81C */    DCW 0x13C2
+/* 0x1BD81E */    DCW 0x13C2
+/* 0x1BD820 */    DCW 0x13C2
+/* 0x1BD822 */    DCW 0x13C2
+/* 0x1BD824 */    DCW 0x13C2
+/* 0x1BD826 */    DCW 0x13C2
+/* 0x1BD828 */    DCW 0x13C2
+/* 0x1BD82A */    DCW 0x13C2
+/* 0x1BD82C */    DCW 0x13C2
+/* 0x1BD82E */    DCW 0x13C2
+/* 0x1BD830 */    DCW 0x13C2
+/* 0x1BD832 */    DCW 0x13C2
+/* 0x1BD834 */    DCW 0x13C2
+/* 0x1BD836 */    DCW 0x13C2
+/* 0x1BD838 */    DCW 0x13C2
+/* 0x1BD83A */    DCW 0x13C2
+/* 0x1BD83C */    DCW 0x13C2
+/* 0x1BD83E */    DCW 0x13C2
+/* 0x1BD840 */    DCW 0x13C2
+/* 0x1BD842 */    DCW 0x13C2
+/* 0x1BD844 */    DCW 0x13C2
+/* 0x1BD846 */    DCW 0x13C2
+/* 0x1BD848 */    DCW 0x13C2
+/* 0x1BD84A */    DCW 0x13C2
+/* 0x1BD84C */    DCW 0x13C2
+/* 0x1BD84E */    DCW 0x13C2
+/* 0x1BD850 */    DCW 0x13C2
+/* 0x1BD852 */    DCW 0x13C2
+/* 0x1BD854 */    DCW 0x13C2
+/* 0x1BD856 */    DCW 0x13C2
+/* 0x1BD858 */    DCW 0x13C2
+/* 0x1BD85A */    DCW 0x13C2
+/* 0x1BD85C */    DCW 0x13C2
+/* 0x1BD85E */    DCW 0x13C2
+/* 0x1BD860 */    DCW 0x13C2
+/* 0x1BD862 */    DCW 0x13C2
+/* 0x1BD864 */    DCW 0x13C2
+/* 0x1BD866 */    DCW 0x13C2
+/* 0x1BD868 */    DCW 0x13C2
+/* 0x1BD86A */    DCW 0x13C2
+/* 0x1BD86C */    DCW 0x13C2
+/* 0x1BD86E */    DCW 0x13C2
+/* 0x1BD870 */    DCW 0x13C2
+/* 0x1BD872 */    DCW 0x13C2
+/* 0x1BD874 */    DCW 0x13C2
+/* 0x1BD876 */    DCW 0x13C2
+/* 0x1BD878 */    DCW 0x13C2
+/* 0x1BD87A */    DCW 0x13C2
+/* 0x1BD87C */    DCW 0x13C2
+/* 0x1BD87E */    DCW 0x13C2
+/* 0x1BD880 */    DCW 0x13C2
+/* 0x1BD882 */    DCW 0xC88
+/* 0x1BD884 */    DCW 0xC8C
+/* 0x1BD886 */    DCW 0xC90
+/* 0x1BD888 */    DCW 0xC94
+/* 0x1BD88A */    DCW 0xC98
+/* 0x1BD88C */    DCW 0x13C2
+/* 0x1BD88E */    DCW 0x13C2
+/* 0x1BD890 */    DCW 0x13C2
+/* 0x1BD892 */    DCW 0x13C2
+/* 0x1BD894 */    DCW 0x13C2
+/* 0x1BD896 */    DCW 0x13C2
+/* 0x1BD898 */    DCW 0x13C2
+/* 0x1BD89A */    DCW 0x13C2
+/* 0x1BD89C */    DCW 0x13C2
+/* 0x1BD89E */    DCW 0x13C2
+/* 0x1BD8A0 */    DCW 0x13C2
+/* 0x1BD8A2 */    DCW 0x13C2
+/* 0x1BD8A4 */    DCW 0x13C2
+/* 0x1BD8A6 */    DCW 0x13C2
+/* 0x1BD8A8 */    DCW 0x13C2
+/* 0x1BD8AA */    DCW 0x13C2
+/* 0x1BD8AC */    DCW 0x13C2
+/* 0x1BD8AE */    DCW 0x13C2
+/* 0x1BD8B0 */    DCW 0x13C2
+/* 0x1BD8B2 */    DCW 0x13C2
+/* 0x1BD8B4 */    DCW 0x13C2
+/* 0x1BD8B6 */    DCW 0x13C2
+/* 0x1BD8B8 */    DCW 0x13C2
+/* 0x1BD8BA */    DCW 0x13C2
+/* 0x1BD8BC */    DCW 0x13C2
+/* 0x1BD8BE */    DCW 0x13C2
+/* 0x1BD8C0 */    DCW 0x13C2
+/* 0x1BD8C2 */    DCW 0x13C2
+/* 0x1BD8C4 */    DCW 0x13C2
+/* 0x1BD8C6 */    DCW 0x13C2
+/* 0x1BD8C8 */    DCW 0x13C2
+/* 0x1BD8CA */    DCW 0x13C2
+/* 0x1BD8CC */    DCW 0x13C2
+/* 0x1BD8CE */    DCW 0x13C2
+/* 0x1BD8D0 */    DCW 0x13C2
+/* 0x1BD8D2 */    DCW 0x13C2
+/* 0x1BD8D4 */    DCW 0x13C2
+/* 0x1BD8D6 */    DCW 0x13C2
+/* 0x1BD8D8 */    DCW 0x13C2
+/* 0x1BD8DA */    DCW 0x13C2
+/* 0x1BD8DC */    DCW 0x13C2
+/* 0x1BD8DE */    DCW 0x13C2
+/* 0x1BD8E0 */    DCW 0x13C2
+/* 0x1BD8E2 */    DCW 0x13C2
+/* 0x1BD8E4 */    DCW 0x13C2
+/* 0x1BD8E6 */    DCW 0x13C2
+/* 0x1BD8E8 */    DCW 0x13C2
+/* 0x1BD8EA */    DCW 0x13C2
+/* 0x1BD8EC */    DCW 0x13C2
+/* 0x1BD8EE */    DCW 0x13C2
+/* 0x1BD8F0 */    DCW 0x13C2
+/* 0x1BD8F2 */    DCW 0x13C2
+/* 0x1BD8F4 */    DCW 0x13C2
+/* 0x1BD8F6 */    DCW 0x13C2
+/* 0x1BD8F8 */    DCW 0x13C2
+/* 0x1BD8FA */    DCW 0x13C2
+/* 0x1BD8FC */    DCW 0x13C2
+/* 0x1BD8FE */    DCW 0x13C2
+/* 0x1BD900 */    DCW 0x13C2
+/* 0x1BD902 */    DCW 0x13C2
+/* 0x1BD904 */    DCW 0x13C2
+/* 0x1BD906 */    DCW 0x13C2
+/* 0x1BD908 */    DCW 0x13C2
+/* 0x1BD90A */    DCW 0x13C2
+/* 0x1BD90C */    DCW 0x13C2
+/* 0x1BD90E */    DCW 0x13C2
+/* 0x1BD910 */    DCW 0x13C2
+/* 0x1BD912 */    DCW 0x13C2
+/* 0x1BD914 */    DCW 0x13C2
+/* 0x1BD916 */    DCW 0x13C2
+/* 0x1BD918 */    DCW 0x13C2
+/* 0x1BD91A */    DCW 0x13C2
+/* 0x1BD91C */    DCW 0x13C2
+/* 0x1BD91E */    DCW 0x13C2
+/* 0x1BD920 */    DCW 0x13C2
+/* 0x1BD922 */    DCW 0x13C2
+/* 0x1BD924 */    DCW 0x13C2
+/* 0x1BD926 */    DCW 0x13C2
+/* 0x1BD928 */    DCW 0x13C2
+/* 0x1BD92A */    DCW 0x13C2
+/* 0x1BD92C */    DCW 0x13C2
+/* 0x1BD92E */    DCW 0x13C2
+/* 0x1BD930 */    DCW 0x13C2
+/* 0x1BD932 */    DCW 0x13C2
+/* 0x1BD934 */    DCW 0x13C2
+/* 0x1BD936 */    DCW 0x13C2
+/* 0x1BD938 */    DCW 0x13C2
+/* 0x1BD93A */    DCW 0x13C2
+/* 0x1BD93C */    DCW 0x13C2
+/* 0x1BD93E */    DCW 0x13C2
+/* 0x1BD940 */    DCW 0x13C2
+/* 0x1BD942 */    DCW 0x13C2
+/* 0x1BD944 */    DCW 0x13C2
+/* 0x1BD946 */    DCW 0x13C2
+/* 0x1BD948 */    DCW 0x13C2
+/* 0x1BD94A */    DCW 0x13C2
+/* 0x1BD94C */    DCW 0x13C2
+/* 0x1BD94E */    DCW 0x13C2
+/* 0x1BD950 */    DCW 0x13C2
+/* 0x1BD952 */    DCW 0x13C2
+/* 0x1BD954 */    DCW 0x13C2
+/* 0x1BD956 */    DCW 0x13C2
+/* 0x1BD958 */    DCW 0x13C2
+/* 0x1BD95A */    DCW 0x13C2
+/* 0x1BD95C */    DCW 0x13C2
+/* 0x1BD95E */    DCW 0x13C2
+/* 0x1BD960 */    DCW 0x13C2
+/* 0x1BD962 */    DCW 0x13C2
+/* 0x1BD964 */    DCW 0x13C2
+/* 0x1BD966 */    DCW 0x13C2
+/* 0x1BD968 */    DCW 0x13C2
+/* 0x1BD96A */    DCW 0x13C2
+/* 0x1BD96C */    DCW 0x13C2
+/* 0x1BD96E */    DCW 0x13C2
+/* 0x1BD970 */    DCW 0x13C2
+/* 0x1BD972 */    DCW 0x13C2
+/* 0x1BD974 */    DCW 0x13C2
+/* 0x1BD976 */    DCW 0x13C2
+/* 0x1BD978 */    DCW 0x13C2
+/* 0x1BD97A */    DCW 0x13C2
+/* 0x1BD97C */    DCW 0x13C2
+/* 0x1BD97E */    DCW 0x13C2
+/* 0x1BD980 */    DCW 0x13C2
+/* 0x1BD982 */    DCW 0x13C2
+/* 0x1BD984 */    DCW 0x13C2
+/* 0x1BD986 */    DCW 0x13C2
+/* 0x1BD988 */    DCW 0x13C2
+/* 0x1BD98A */    DCW 0x13C2
+/* 0x1BD98C */    DCW 0x13C2
+/* 0x1BD98E */    DCW 0x13C2
+/* 0x1BD990 */    DCW 0x13C2
+/* 0x1BD992 */    DCW 0x13C2
+/* 0x1BD994 */    DCW 0x13C2
+/* 0x1BD996 */    DCW 0x13C2
+/* 0x1BD998 */    DCW 0x13C2
+/* 0x1BD99A */    DCW 0x13C2
+/* 0x1BD99C */    DCW 0x13C2
+/* 0x1BD99E */    DCW 0x13C2
+/* 0x1BD9A0 */    DCW 0x13C2
+/* 0x1BD9A2 */    DCW 0x13C2
+/* 0x1BD9A4 */    DCW 0x13C2
+/* 0x1BD9A6 */    DCW 0x13C2
+/* 0x1BD9A8 */    DCW 0x13C2
+/* 0x1BD9AA */    DCW 0x13C2
+/* 0x1BD9AC */    DCW 0x13C2
+/* 0x1BD9AE */    DCW 0x13C2
+/* 0x1BD9B0 */    DCW 0x13C2
+/* 0x1BD9B2 */    DCW 0x13C2
+/* 0x1BD9B4 */    DCW 0x13C2
+/* 0x1BD9B6 */    DCW 0x13C2
+/* 0x1BD9B8 */    DCW 0x13C2
+/* 0x1BD9BA */    DCW 0x13C2
+/* 0x1BD9BC */    DCW 0x13C2
+/* 0x1BD9BE */    DCW 0x13C2
+/* 0x1BD9C0 */    DCW 0x13C2
+/* 0x1BD9C2 */    DCW 0x13C2
+/* 0x1BD9C4 */    DCW 0x13C2
+/* 0x1BD9C6 */    DCW 0x13C2
+/* 0x1BD9C8 */    DCW 0x13C2
+/* 0x1BD9CA */    DCW 0x13C2
+/* 0x1BD9CC */    DCW 0x13C2
+/* 0x1BD9CE */    DCW 0x13C2
+/* 0x1BD9D0 */    DCW 0x13C2
+/* 0x1BD9D2 */    DCW 0x13C2
+/* 0x1BD9D4 */    DCW 0x13C2
+/* 0x1BD9D6 */    DCW 0x13C2
+/* 0x1BD9D8 */    DCW 0x13C2
+/* 0x1BD9DA */    DCW 0x13C2
+/* 0x1BD9DC */    DCW 0x13C2
+/* 0x1BD9DE */    DCW 0x13C2
+/* 0x1BD9E0 */    DCW 0x13C2
+/* 0x1BD9E2 */    DCW 0x13C2
+/* 0x1BD9E4 */    DCW 0x13C2
+/* 0x1BD9E6 */    DCW 0x13C2
+/* 0x1BD9E8 */    DCW 0x13C2
+/* 0x1BD9EA */    DCW 0x13C2
+/* 0x1BD9EC */    DCW 0x13C2
+/* 0x1BD9EE */    DCW 0x13C2
+/* 0x1BD9F0 */    DCW 0x13C2
+/* 0x1BD9F2 */    DCW 0x13C2
+/* 0x1BD9F4 */    DCW 0x13C2
+/* 0x1BD9F6 */    DCW 0x13C2
+/* 0x1BD9F8 */    DCW 0x13C2
+/* 0x1BD9FA */    DCW 0x13C2
+/* 0x1BD9FC */    DCW 0x13C2
+/* 0x1BD9FE */    DCW 0x13C2
+/* 0x1BDA00 */    DCW 0x13C2
+/* 0x1BDA02 */    DCW 0x13C2
+/* 0x1BDA04 */    DCW 0x13C2
+/* 0x1BDA06 */    DCW 0x13C2
+/* 0x1BDA08 */    DCW 0x13C2
+/* 0x1BDA0A */    DCW 0x13C2
+/* 0x1BDA0C */    DCW 0x13C2
+/* 0x1BDA0E */    DCW 0x13C2
+/* 0x1BDA10 */    DCW 0x13C2
+/* 0x1BDA12 */    DCW 0x13C2
+/* 0x1BDA14 */    DCW 0x13C2
+/* 0x1BDA16 */    DCW 0x13C2
+/* 0x1BDA18 */    DCW 0x13C2
+/* 0x1BDA1A */    DCW 0x13C2
+/* 0x1BDA1C */    DCW 0x13C2
+/* 0x1BDA1E */    DCW 0x13C2
+/* 0x1BDA20 */    DCW 0x13C2
+/* 0x1BDA22 */    DCW 0x13C2
+/* 0x1BDA24 */    DCW 0x13C2
+/* 0x1BDA26 */    DCW 0x13C2
+/* 0x1BDA28 */    DCW 0x13C2
+/* 0x1BDA2A */    DCW 0x13C2
+/* 0x1BDA2C */    DCW 0x13C2
+/* 0x1BDA2E */    DCW 0x13C2
+/* 0x1BDA30 */    DCW 0x13C2
+/* 0x1BDA32 */    DCW 0x13C2
+/* 0x1BDA34 */    DCW 0x13C2
+/* 0x1BDA36 */    DCW 0x13C2
+/* 0x1BDA38 */    DCW 0x13C2
+/* 0x1BDA3A */    DCW 0x13C2
+/* 0x1BDA3C */    DCW 0x13C2
+/* 0x1BDA3E */    DCW 0x13C2
+/* 0x1BDA40 */    DCW 0x13C2
+/* 0x1BDA42 */    DCW 0x13C2
+/* 0x1BDA44 */    DCW 0x13C2
+/* 0x1BDA46 */    DCW 0x13C2
+/* 0x1BDA48 */    DCW 0x13C2
+/* 0x1BDA4A */    DCW 0x13C2
+/* 0x1BDA4C */    DCW 0x13C2
+/* 0x1BDA4E */    DCW 0x13C2
+/* 0x1BDA50 */    DCW 0x13C2
+/* 0x1BDA52 */    DCW 0x13C2
+/* 0x1BDA54 */    DCW 0x13C2
+/* 0x1BDA56 */    DCW 0x13C2
+/* 0x1BDA58 */    DCW 0x13C2
+/* 0x1BDA5A */    DCW 0x13C2
+/* 0x1BDA5C */    DCW 0x13C2
+/* 0x1BDA5E */    DCW 0x13C2
+/* 0x1BDA60 */    DCW 0x13C2
+/* 0x1BDA62 */    DCW 0x13C2
+/* 0x1BDA64 */    DCW 0x13C2
+/* 0x1BDA66 */    DCW 0x13C2
+/* 0x1BDA68 */    DCW 0x13C2
+/* 0x1BDA6A */    DCW 0x13C2
+/* 0x1BDA6C */    DCW 0x13C2
+/* 0x1BDA6E */    DCW 0x13C2
+/* 0x1BDA70 */    DCW 0x13C2
+/* 0x1BDA72 */    DCW 0x13C2
+/* 0x1BDA74 */    DCW 0x13C2
+/* 0x1BDA76 */    DCW 0x13C2
+/* 0x1BDA78 */    DCW 0x13C2
+/* 0x1BDA7A */    DCW 0x13C2
+/* 0x1BDA7C */    DCW 0x13C2
+/* 0x1BDA7E */    DCW 0x13C2
+/* 0x1BDA80 */    DCW 0x13C2
+/* 0x1BDA82 */    DCW 0xC9C
+/* 0x1BDA84 */    DCW 0xCA0
+/* 0x1BDA86 */    DCW 0xCA4
+/* 0x1BDA88 */    DCW 0xCA8
+/* 0x1BDA8A */    DCW 0xCAC
+/* 0x1BDA8C */    DCW 0xCB0
+/* 0x1BDA8E */    DCW 0xCB4
+/* 0x1BDA90 */    DCW 0xCB8
+/* 0x1BDA92 */    DCW 0x13C2
+/* 0x1BDA94 */    DCW 0x13C2
+/* 0x1BDA96 */    DCW 0x13C2
+/* 0x1BDA98 */    DCW 0x13C2
+/* 0x1BDA9A */    DCW 0x13C2
+/* 0x1BDA9C */    DCW 0x13C2
+/* 0x1BDA9E */    DCW 0x13C2
+/* 0x1BDAA0 */    DCW 0x13C2
+/* 0x1BDAA2 */    DCW 0x13C2
+/* 0x1BDAA4 */    DCW 0x13C2
+/* 0x1BDAA6 */    DCW 0x13C2
+/* 0x1BDAA8 */    DCW 0x13C2
+/* 0x1BDAAA */    DCW 0x13C2
+/* 0x1BDAAC */    DCW 0x13C2
+/* 0x1BDAAE */    DCW 0x13C2
+/* 0x1BDAB0 */    DCW 0x13C2
+/* 0x1BDAB2 */    DCW 0x13C2
+/* 0x1BDAB4 */    DCW 0x13C2
+/* 0x1BDAB6 */    DCW 0x13C2
+/* 0x1BDAB8 */    DCW 0x13C2
+/* 0x1BDABA */    DCW 0x13C2
+/* 0x1BDABC */    DCW 0x13C2
+/* 0x1BDABE */    DCW 0x13C2
+/* 0x1BDAC0 */    DCW 0x13C2
+/* 0x1BDAC2 */    DCW 0x13C2
+/* 0x1BDAC4 */    DCW 0x13C2
+/* 0x1BDAC6 */    DCW 0x13C2
+/* 0x1BDAC8 */    DCW 0x13C2
+/* 0x1BDACA */    DCW 0x13C2
+/* 0x1BDACC */    DCW 0x13C2
+/* 0x1BDACE */    DCW 0x13C2
+/* 0x1BDAD0 */    DCW 0x13C2
+/* 0x1BDAD2 */    DCW 0x13C2
+/* 0x1BDAD4 */    DCW 0x13C2
+/* 0x1BDAD6 */    DCW 0x13C2
+/* 0x1BDAD8 */    DCW 0x13C2
+/* 0x1BDADA */    DCW 0x13C2
+/* 0x1BDADC */    DCW 0x13C2
+/* 0x1BDADE */    DCW 0x13C2
+/* 0x1BDAE0 */    DCW 0x13C2
+/* 0x1BDAE2 */    DCW 0x13C2
+/* 0x1BDAE4 */    DCW 0x13C2
+/* 0x1BDAE6 */    DCW 0x13C2
+/* 0x1BDAE8 */    DCW 0x13C2
+/* 0x1BDAEA */    DCW 0x13C2
+/* 0x1BDAEC */    DCW 0x13C2
+/* 0x1BDAEE */    DCW 0x13C2
+/* 0x1BDAF0 */    DCW 0x13C2
+/* 0x1BDAF2 */    DCW 0x13C2
+/* 0x1BDAF4 */    DCW 0x13C2
+/* 0x1BDAF6 */    DCW 0x13C2
+/* 0x1BDAF8 */    DCW 0x13C2
+/* 0x1BDAFA */    DCW 0x13C2
+/* 0x1BDAFC */    DCW 0x13C2
+/* 0x1BDAFE */    DCW 0x13C2
+/* 0x1BDB00 */    DCW 0x13C2
+/* 0x1BDB02 */    DCW 0x13C2
+/* 0x1BDB04 */    DCW 0x13C2
+/* 0x1BDB06 */    DCW 0x13C2
+/* 0x1BDB08 */    DCW 0x13C2
+/* 0x1BDB0A */    DCW 0x13C2
+/* 0x1BDB0C */    DCW 0x13C2
+/* 0x1BDB0E */    DCW 0x13C2
+/* 0x1BDB10 */    DCW 0x13C2
+/* 0x1BDB12 */    DCW 0x13C2
+/* 0x1BDB14 */    DCW 0x13C2
+/* 0x1BDB16 */    DCW 0x13C2
+/* 0x1BDB18 */    DCW 0x13C2
+/* 0x1BDB1A */    DCW 0x13C2
+/* 0x1BDB1C */    DCW 0x13C2
+/* 0x1BDB1E */    DCW 0x13C2
+/* 0x1BDB20 */    DCW 0x13C2
+/* 0x1BDB22 */    DCW 0x13C2
+/* 0x1BDB24 */    DCW 0x13C2
+/* 0x1BDB26 */    DCW 0x13C2
+/* 0x1BDB28 */    DCW 0x13C2
+/* 0x1BDB2A */    DCW 0x13C2
+/* 0x1BDB2C */    DCW 0x13C2
+/* 0x1BDB2E */    DCW 0x13C2
+/* 0x1BDB30 */    DCW 0x13C2
+/* 0x1BDB32 */    DCW 0x13C2
+/* 0x1BDB34 */    DCW 0x13C2
+/* 0x1BDB36 */    DCW 0x13C2
+/* 0x1BDB38 */    DCW 0x13C2
+/* 0x1BDB3A */    DCW 0x13C2
+/* 0x1BDB3C */    DCW 0x13C2
+/* 0x1BDB3E */    DCW 0x13C2
+/* 0x1BDB40 */    DCW 0x13C2
+/* 0x1BDB42 */    DCW 0x13C2
+/* 0x1BDB44 */    DCW 0x13C2
+/* 0x1BDB46 */    DCW 0x13C2
+/* 0x1BDB48 */    DCW 0x13C2
+/* 0x1BDB4A */    DCW 0x13C2
+/* 0x1BDB4C */    DCW 0x13C2
+/* 0x1BDB4E */    DCW 0x13C2
+/* 0x1BDB50 */    DCW 0x13C2
+/* 0x1BDB52 */    DCW 0x13C2
+/* 0x1BDB54 */    DCW 0x13C2
+/* 0x1BDB56 */    DCW 0x13C2
+/* 0x1BDB58 */    DCW 0x13C2
+/* 0x1BDB5A */    DCW 0x13C2
+/* 0x1BDB5C */    DCW 0x13C2
+/* 0x1BDB5E */    DCW 0x13C2
+/* 0x1BDB60 */    DCW 0x13C2
+/* 0x1BDB62 */    DCW 0x13C2
+/* 0x1BDB64 */    DCW 0x13C2
+/* 0x1BDB66 */    DCW 0x13C2
+/* 0x1BDB68 */    DCW 0x13C2
+/* 0x1BDB6A */    DCW 0x13C2
+/* 0x1BDB6C */    DCW 0x13C2
+/* 0x1BDB6E */    DCW 0x13C2
+/* 0x1BDB70 */    DCW 0x13C2
+/* 0x1BDB72 */    DCW 0x13C2
+/* 0x1BDB74 */    DCW 0x13C2
+/* 0x1BDB76 */    DCW 0x13C2
+/* 0x1BDB78 */    DCW 0x13C2
+/* 0x1BDB7A */    DCW 0x13C2
+/* 0x1BDB7C */    DCW 0x13C2
+/* 0x1BDB7E */    DCW 0x13C2
+/* 0x1BDB80 */    DCW 0x13C2
+/* 0x1BDB82 */    DCW 0x13C2
+/* 0x1BDB84 */    DCW 0x13C2
+/* 0x1BDB86 */    DCW 0x13C2
+/* 0x1BDB88 */    DCW 0x13C2
+/* 0x1BDB8A */    DCW 0x13C2
+/* 0x1BDB8C */    DCW 0x13C2
+/* 0x1BDB8E */    DCW 0x13C2
+/* 0x1BDB90 */    DCW 0x13C2
+/* 0x1BDB92 */    DCW 0x13C2
+/* 0x1BDB94 */    DCW 0x13C2
+/* 0x1BDB96 */    DCW 0x13C2
+/* 0x1BDB98 */    DCW 0x13C2
+/* 0x1BDB9A */    DCW 0x13C2
+/* 0x1BDB9C */    DCW 0x13C2
+/* 0x1BDB9E */    DCW 0x13C2
+/* 0x1BDBA0 */    DCW 0x13C2
+/* 0x1BDBA2 */    DCW 0x13C2
+/* 0x1BDBA4 */    DCW 0x13C2
+/* 0x1BDBA6 */    DCW 0x13C2
+/* 0x1BDBA8 */    DCW 0x13C2
+/* 0x1BDBAA */    DCW 0x13C2
+/* 0x1BDBAC */    DCW 0x13C2
+/* 0x1BDBAE */    DCW 0x13C2
+/* 0x1BDBB0 */    DCW 0x13C2
+/* 0x1BDBB2 */    DCW 0x13C2
+/* 0x1BDBB4 */    DCW 0x13C2
+/* 0x1BDBB6 */    DCW 0x13C2
+/* 0x1BDBB8 */    DCW 0x13C2
+/* 0x1BDBBA */    DCW 0x13C2
+/* 0x1BDBBC */    DCW 0x13C2
+/* 0x1BDBBE */    DCW 0x13C2
+/* 0x1BDBC0 */    DCW 0x13C2
+/* 0x1BDBC2 */    DCW 0x13C2
+/* 0x1BDBC4 */    DCW 0x13C2
+/* 0x1BDBC6 */    DCW 0x13C2
+/* 0x1BDBC8 */    DCW 0x13C2
+/* 0x1BDBCA */    DCW 0x13C2
+/* 0x1BDBCC */    DCW 0x13C2
+/* 0x1BDBCE */    DCW 0x13C2
+/* 0x1BDBD0 */    DCW 0x13C2
+/* 0x1BDBD2 */    DCW 0x13C2
+/* 0x1BDBD4 */    DCW 0x13C2
+/* 0x1BDBD6 */    DCW 0x13C2
+/* 0x1BDBD8 */    DCW 0x13C2
+/* 0x1BDBDA */    DCW 0x13C2
+/* 0x1BDBDC */    DCW 0x13C2
+/* 0x1BDBDE */    DCW 0x13C2
+/* 0x1BDBE0 */    DCW 0x13C2
+/* 0x1BDBE2 */    DCW 0x13C2
+/* 0x1BDBE4 */    DCW 0x13C2
+/* 0x1BDBE6 */    DCW 0x13C2
+/* 0x1BDBE8 */    DCW 0x13C2
+/* 0x1BDBEA */    DCW 0x13C2
+/* 0x1BDBEC */    DCW 0x13C2
+/* 0x1BDBEE */    DCW 0x13C2
+/* 0x1BDBF0 */    DCW 0x13C2
+/* 0x1BDBF2 */    DCW 0x13C2
+/* 0x1BDBF4 */    DCW 0x13C2
+/* 0x1BDBF6 */    DCW 0x13C2
+/* 0x1BDBF8 */    DCW 0x13C2
+/* 0x1BDBFA */    DCW 0x13C2
+/* 0x1BDBFC */    DCW 0x13C2
+/* 0x1BDBFE */    DCW 0x13C2
+/* 0x1BDC00 */    DCW 0x13C2
+/* 0x1BDC02 */    DCW 0x13C2
+/* 0x1BDC04 */    DCW 0x13C2
+/* 0x1BDC06 */    DCW 0x13C2
+/* 0x1BDC08 */    DCW 0x13C2
+/* 0x1BDC0A */    DCW 0x13C2
+/* 0x1BDC0C */    DCW 0x13C2
+/* 0x1BDC0E */    DCW 0x13C2
+/* 0x1BDC10 */    DCW 0x13C2
+/* 0x1BDC12 */    DCW 0x13C2
+/* 0x1BDC14 */    DCW 0x13C2
+/* 0x1BDC16 */    DCW 0x13C2
+/* 0x1BDC18 */    DCW 0x13C2
+/* 0x1BDC1A */    DCW 0x13C2
+/* 0x1BDC1C */    DCW 0x13C2
+/* 0x1BDC1E */    DCW 0x13C2
+/* 0x1BDC20 */    DCW 0x13C2
+/* 0x1BDC22 */    DCW 0x13C2
+/* 0x1BDC24 */    DCW 0x13C2
+/* 0x1BDC26 */    DCW 0x13C2
+/* 0x1BDC28 */    DCW 0x13C2
+/* 0x1BDC2A */    DCW 0x13C2
+/* 0x1BDC2C */    DCW 0x13C2
+/* 0x1BDC2E */    DCW 0x13C2
+/* 0x1BDC30 */    DCW 0x13C2
+/* 0x1BDC32 */    DCW 0x13C2
+/* 0x1BDC34 */    DCW 0x13C2
+/* 0x1BDC36 */    DCW 0x13C2
+/* 0x1BDC38 */    DCW 0x13C2
+/* 0x1BDC3A */    DCW 0x13C2
+/* 0x1BDC3C */    DCW 0x13C2
+/* 0x1BDC3E */    DCW 0x13C2
+/* 0x1BDC40 */    DCW 0x13C2
+/* 0x1BDC42 */    DCW 0x13C2
+/* 0x1BDC44 */    DCW 0x13C2
+/* 0x1BDC46 */    DCW 0x13C2
+/* 0x1BDC48 */    DCW 0x13C2
+/* 0x1BDC4A */    DCW 0x13C2
+/* 0x1BDC4C */    DCW 0x13C2
+/* 0x1BDC4E */    DCW 0x13C2
+/* 0x1BDC50 */    DCW 0x13C2
+/* 0x1BDC52 */    DCW 0x13C2
+/* 0x1BDC54 */    DCW 0x13C2
+/* 0x1BDC56 */    DCW 0x13C2
+/* 0x1BDC58 */    DCW 0x13C2
+/* 0x1BDC5A */    DCW 0x13C2
+/* 0x1BDC5C */    DCW 0x13C2
+/* 0x1BDC5E */    DCW 0x13C2
+/* 0x1BDC60 */    DCW 0x13C2
+/* 0x1BDC62 */    DCW 0x13C2
+/* 0x1BDC64 */    DCW 0x13C2
+/* 0x1BDC66 */    DCW 0x13C2
+/* 0x1BDC68 */    DCW 0x13C2
+/* 0x1BDC6A */    DCW 0x13C2
+/* 0x1BDC6C */    DCW 0x13C2
+/* 0x1BDC6E */    DCW 0x13C2
+/* 0x1BDC70 */    DCW 0x13C2
+/* 0x1BDC72 */    DCW 0x13C2
+/* 0x1BDC74 */    DCW 0x13C2
+/* 0x1BDC76 */    DCW 0x13C2
+/* 0x1BDC78 */    DCW 0x13C2
+/* 0x1BDC7A */    DCW 0x13C2
+/* 0x1BDC7C */    DCW 0x13C2
+/* 0x1BDC7E */    DCW 0x13C2
+/* 0x1BDC80 */    DCW 0x13C2
+/* 0x1BDC82 */    DCW 0xCBC
+/* 0x1BDC84 */    DCW 0xCC0
+/* 0x1BDC86 */    DCW 0x13C2
+/* 0x1BDC88 */    DCW 0x13C2
+/* 0x1BDC8A */    DCW 0x13C2
+/* 0x1BDC8C */    DCW 0x13C2
+/* 0x1BDC8E */    DCW 0x13C2
+/* 0x1BDC90 */    DCW 0x13C2
+/* 0x1BDC92 */    DCW 0x13C2
+/* 0x1BDC94 */    DCW 0x13C2
+/* 0x1BDC96 */    DCW 0x13C2
+/* 0x1BDC98 */    DCW 0x13C2
+/* 0x1BDC9A */    DCW 0x13C2
+/* 0x1BDC9C */    DCW 0x13C2
+/* 0x1BDC9E */    DCW 0x13C2
+/* 0x1BDCA0 */    DCW 0x13C2
+/* 0x1BDCA2 */    DCW 0x13C2
+/* 0x1BDCA4 */    DCW 0x13C2
+/* 0x1BDCA6 */    DCW 0x13C2
+/* 0x1BDCA8 */    DCW 0x13C2
+/* 0x1BDCAA */    DCW 0x13C2
+/* 0x1BDCAC */    DCW 0x13C2
+/* 0x1BDCAE */    DCW 0x13C2
+/* 0x1BDCB0 */    DCW 0x13C2
+/* 0x1BDCB2 */    DCW 0x13C2
+/* 0x1BDCB4 */    DCW 0x13C2
+/* 0x1BDCB6 */    DCW 0x13C2
+/* 0x1BDCB8 */    DCW 0x13C2
+/* 0x1BDCBA */    DCW 0x13C2
+/* 0x1BDCBC */    DCW 0x13C2
+/* 0x1BDCBE */    DCW 0x13C2
+/* 0x1BDCC0 */    DCW 0x13C2
+/* 0x1BDCC2 */    DCW 0x13C2
+/* 0x1BDCC4 */    DCW 0x13C2
+/* 0x1BDCC6 */    DCW 0x13C2
+/* 0x1BDCC8 */    DCW 0x13C2
+/* 0x1BDCCA */    DCW 0x13C2
+/* 0x1BDCCC */    DCW 0x13C2
+/* 0x1BDCCE */    DCW 0x13C2
+/* 0x1BDCD0 */    DCW 0x13C2
+/* 0x1BDCD2 */    DCW 0x13C2
+/* 0x1BDCD4 */    DCW 0x13C2
+/* 0x1BDCD6 */    DCW 0x13C2
+/* 0x1BDCD8 */    DCW 0x13C2
+/* 0x1BDCDA */    DCW 0x13C2
+/* 0x1BDCDC */    DCW 0x13C2
+/* 0x1BDCDE */    DCW 0x13C2
+/* 0x1BDCE0 */    DCW 0x13C2
+/* 0x1BDCE2 */    DCW 0x13C2
+/* 0x1BDCE4 */    DCW 0x13C2
+/* 0x1BDCE6 */    DCW 0x13C2
+/* 0x1BDCE8 */    DCW 0x13C2
+/* 0x1BDCEA */    DCW 0x13C2
+/* 0x1BDCEC */    DCW 0x13C2
+/* 0x1BDCEE */    DCW 0x13C2
+/* 0x1BDCF0 */    DCW 0x13C2
+/* 0x1BDCF2 */    DCW 0x13C2
+/* 0x1BDCF4 */    DCW 0x13C2
+/* 0x1BDCF6 */    DCW 0x13C2
+/* 0x1BDCF8 */    DCW 0x13C2
+/* 0x1BDCFA */    DCW 0x13C2
+/* 0x1BDCFC */    DCW 0x13C2
+/* 0x1BDCFE */    DCW 0x13C2
+/* 0x1BDD00 */    DCW 0x13C2
+/* 0x1BDD02 */    DCW 0x13C2
+/* 0x1BDD04 */    DCW 0x13C2
+/* 0x1BDD06 */    DCW 0x13C2
+/* 0x1BDD08 */    DCW 0x13C2
+/* 0x1BDD0A */    DCW 0x13C2
+/* 0x1BDD0C */    DCW 0x13C2
+/* 0x1BDD0E */    DCW 0x13C2
+/* 0x1BDD10 */    DCW 0x13C2
+/* 0x1BDD12 */    DCW 0x13C2
+/* 0x1BDD14 */    DCW 0x13C2
+/* 0x1BDD16 */    DCW 0x13C2
+/* 0x1BDD18 */    DCW 0x13C2
+/* 0x1BDD1A */    DCW 0x13C2
+/* 0x1BDD1C */    DCW 0x13C2
+/* 0x1BDD1E */    DCW 0x13C2
+/* 0x1BDD20 */    DCW 0x13C2
+/* 0x1BDD22 */    DCW 0x13C2
+/* 0x1BDD24 */    DCW 0x13C2
+/* 0x1BDD26 */    DCW 0x13C2
+/* 0x1BDD28 */    DCW 0x13C2
+/* 0x1BDD2A */    DCW 0x13C2
+/* 0x1BDD2C */    DCW 0x13C2
+/* 0x1BDD2E */    DCW 0x13C2
+/* 0x1BDD30 */    DCW 0x13C2
+/* 0x1BDD32 */    DCW 0x13C2
+/* 0x1BDD34 */    DCW 0x13C2
+/* 0x1BDD36 */    DCW 0x13C2
+/* 0x1BDD38 */    DCW 0x13C2
+/* 0x1BDD3A */    DCW 0x13C2
+/* 0x1BDD3C */    DCW 0x13C2
+/* 0x1BDD3E */    DCW 0x13C2
+/* 0x1BDD40 */    DCW 0x13C2
+/* 0x1BDD42 */    DCW 0x13C2
+/* 0x1BDD44 */    DCW 0x13C2
+/* 0x1BDD46 */    DCW 0x13C2
+/* 0x1BDD48 */    DCW 0x13C2
+/* 0x1BDD4A */    DCW 0x13C2
+/* 0x1BDD4C */    DCW 0x13C2
+/* 0x1BDD4E */    DCW 0x13C2
+/* 0x1BDD50 */    DCW 0x13C2
+/* 0x1BDD52 */    DCW 0x13C2
+/* 0x1BDD54 */    DCW 0x13C2
+/* 0x1BDD56 */    DCW 0x13C2
+/* 0x1BDD58 */    DCW 0x13C2
+/* 0x1BDD5A */    DCW 0x13C2
+/* 0x1BDD5C */    DCW 0x13C2
+/* 0x1BDD5E */    DCW 0x13C2
+/* 0x1BDD60 */    DCW 0x13C2
+/* 0x1BDD62 */    DCW 0x13C2
+/* 0x1BDD64 */    DCW 0x13C2
+/* 0x1BDD66 */    DCW 0x13C2
+/* 0x1BDD68 */    DCW 0x13C2
+/* 0x1BDD6A */    DCW 0x13C2
+/* 0x1BDD6C */    DCW 0x13C2
+/* 0x1BDD6E */    DCW 0x13C2
+/* 0x1BDD70 */    DCW 0x13C2
+/* 0x1BDD72 */    DCW 0x13C2
+/* 0x1BDD74 */    DCW 0x13C2
+/* 0x1BDD76 */    DCW 0x13C2
+/* 0x1BDD78 */    DCW 0x13C2
+/* 0x1BDD7A */    DCW 0x13C2
+/* 0x1BDD7C */    DCW 0x13C2
+/* 0x1BDD7E */    DCW 0x13C2
+/* 0x1BDD80 */    DCW 0x13C2
+/* 0x1BDD82 */    DCW 0x13C2
+/* 0x1BDD84 */    DCW 0x13C2
+/* 0x1BDD86 */    DCW 0x13C2
+/* 0x1BDD88 */    DCW 0x13C2
+/* 0x1BDD8A */    DCW 0x13C2
+/* 0x1BDD8C */    DCW 0x13C2
+/* 0x1BDD8E */    DCW 0x13C2
+/* 0x1BDD90 */    DCW 0x13C2
+/* 0x1BDD92 */    DCW 0x13C2
+/* 0x1BDD94 */    DCW 0x13C2
+/* 0x1BDD96 */    DCW 0x13C2
+/* 0x1BDD98 */    DCW 0x13C2
+/* 0x1BDD9A */    DCW 0x13C2
+/* 0x1BDD9C */    DCW 0x13C2
+/* 0x1BDD9E */    DCW 0x13C2
+/* 0x1BDDA0 */    DCW 0x13C2
+/* 0x1BDDA2 */    DCW 0x13C2
+/* 0x1BDDA4 */    DCW 0x13C2
+/* 0x1BDDA6 */    DCW 0x13C2
+/* 0x1BDDA8 */    DCW 0x13C2
+/* 0x1BDDAA */    DCW 0x13C2
+/* 0x1BDDAC */    DCW 0x13C2
+/* 0x1BDDAE */    DCW 0x13C2
+/* 0x1BDDB0 */    DCW 0x13C2
+/* 0x1BDDB2 */    DCW 0x13C2
+/* 0x1BDDB4 */    DCW 0x13C2
+/* 0x1BDDB6 */    DCW 0x13C2
+/* 0x1BDDB8 */    DCW 0x13C2
+/* 0x1BDDBA */    DCW 0x13C2
+/* 0x1BDDBC */    DCW 0x13C2
+/* 0x1BDDBE */    DCW 0x13C2
+/* 0x1BDDC0 */    DCW 0x13C2
+/* 0x1BDDC2 */    DCW 0x13C2
+/* 0x1BDDC4 */    DCW 0x13C2
+/* 0x1BDDC6 */    DCW 0x13C2
+/* 0x1BDDC8 */    DCW 0x13C2
+/* 0x1BDDCA */    DCW 0x13C2
+/* 0x1BDDCC */    DCW 0x13C2
+/* 0x1BDDCE */    DCW 0x13C2
+/* 0x1BDDD0 */    DCW 0x13C2
+/* 0x1BDDD2 */    DCW 0x13C2
+/* 0x1BDDD4 */    DCW 0x13C2
+/* 0x1BDDD6 */    DCW 0x13C2
+/* 0x1BDDD8 */    DCW 0x13C2
+/* 0x1BDDDA */    DCW 0x13C2
+/* 0x1BDDDC */    DCW 0x13C2
+/* 0x1BDDDE */    DCW 0x13C2
+/* 0x1BDDE0 */    DCW 0x13C2
+/* 0x1BDDE2 */    DCW 0x13C2
+/* 0x1BDDE4 */    DCW 0x13C2
+/* 0x1BDDE6 */    DCW 0x13C2
+/* 0x1BDDE8 */    DCW 0x13C2
+/* 0x1BDDEA */    DCW 0x13C2
+/* 0x1BDDEC */    DCW 0x13C2
+/* 0x1BDDEE */    DCW 0x13C2
+/* 0x1BDDF0 */    DCW 0x13C2
+/* 0x1BDDF2 */    DCW 0x13C2
+/* 0x1BDDF4 */    DCW 0x13C2
+/* 0x1BDDF6 */    DCW 0x13C2
+/* 0x1BDDF8 */    DCW 0x13C2
+/* 0x1BDDFA */    DCW 0x13C2
+/* 0x1BDDFC */    DCW 0x13C2
+/* 0x1BDDFE */    DCW 0x13C2
+/* 0x1BDE00 */    DCW 0x13C2
+/* 0x1BDE02 */    DCW 0x13C2
+/* 0x1BDE04 */    DCW 0x13C2
+/* 0x1BDE06 */    DCW 0x13C2
+/* 0x1BDE08 */    DCW 0x13C2
+/* 0x1BDE0A */    DCW 0x13C2
+/* 0x1BDE0C */    DCW 0x13C2
+/* 0x1BDE0E */    DCW 0x13C2
+/* 0x1BDE10 */    DCW 0x13C2
+/* 0x1BDE12 */    DCW 0x13C2
+/* 0x1BDE14 */    DCW 0x13C2
+/* 0x1BDE16 */    DCW 0x13C2
+/* 0x1BDE18 */    DCW 0x13C2
+/* 0x1BDE1A */    DCW 0x13C2
+/* 0x1BDE1C */    DCW 0x13C2
+/* 0x1BDE1E */    DCW 0x13C2
+/* 0x1BDE20 */    DCW 0x13C2
+/* 0x1BDE22 */    DCW 0x13C2
+/* 0x1BDE24 */    DCW 0x13C2
+/* 0x1BDE26 */    DCW 0x13C2
+/* 0x1BDE28 */    DCW 0x13C2
+/* 0x1BDE2A */    DCW 0x13C2
+/* 0x1BDE2C */    DCW 0x13C2
+/* 0x1BDE2E */    DCW 0x13C2
+/* 0x1BDE30 */    DCW 0x13C2
+/* 0x1BDE32 */    DCW 0x13C2
+/* 0x1BDE34 */    DCW 0x13C2
+/* 0x1BDE36 */    DCW 0x13C2
+/* 0x1BDE38 */    DCW 0x13C2
+/* 0x1BDE3A */    DCW 0x13C2
+/* 0x1BDE3C */    DCW 0x13C2
+/* 0x1BDE3E */    DCW 0x13C2
+/* 0x1BDE40 */    DCW 0x13C2
+/* 0x1BDE42 */    DCW 0x13C2
+/* 0x1BDE44 */    DCW 0x13C2
+/* 0x1BDE46 */    DCW 0x13C2
+/* 0x1BDE48 */    DCW 0x13C2
+/* 0x1BDE4A */    DCW 0x13C2
+/* 0x1BDE4C */    DCW 0x13C2
+/* 0x1BDE4E */    DCW 0x13C2
+/* 0x1BDE50 */    DCW 0x13C2
+/* 0x1BDE52 */    DCW 0x13C2
+/* 0x1BDE54 */    DCW 0x13C2
+/* 0x1BDE56 */    DCW 0x13C2
+/* 0x1BDE58 */    DCW 0x13C2
+/* 0x1BDE5A */    DCW 0x13C2
+/* 0x1BDE5C */    DCW 0x13C2
+/* 0x1BDE5E */    DCW 0x13C2
+/* 0x1BDE60 */    DCW 0x13C2
+/* 0x1BDE62 */    DCW 0x13C2
+/* 0x1BDE64 */    DCW 0x13C2
+/* 0x1BDE66 */    DCW 0x13C2
+/* 0x1BDE68 */    DCW 0x13C2
+/* 0x1BDE6A */    DCW 0x13C2
+/* 0x1BDE6C */    DCW 0x13C2
+/* 0x1BDE6E */    DCW 0x13C2
+/* 0x1BDE70 */    DCW 0x13C2
+/* 0x1BDE72 */    DCW 0x13C2
+/* 0x1BDE74 */    DCW 0x13C2
+/* 0x1BDE76 */    DCW 0x13C2
+/* 0x1BDE78 */    DCW 0x13C2
+/* 0x1BDE7A */    DCW 0x13C2
+/* 0x1BDE7C */    DCW 0x13C2
+/* 0x1BDE7E */    DCW 0x13C2
+/* 0x1BDE80 */    DCW 0x13C2
+/* 0x1BDE82 */    DCW 0xCC4
+/* 0x1BDE84 */    DCW 0xCC8
+/* 0x1BDE86 */    DCW 0x13C2
+/* 0x1BDE88 */    DCW 0x13C2
+/* 0x1BDE8A */    DCW 0x13C2
+/* 0x1BDE8C */    DCW 0x13C2
+/* 0x1BDE8E */    DCW 0x13C2
+/* 0x1BDE90 */    DCW 0x13C2
+/* 0x1BDE92 */    DCW 0x13C2
+/* 0x1BDE94 */    DCW 0x13C2
+/* 0x1BDE96 */    DCW 0x13C2
+/* 0x1BDE98 */    DCW 0x13C2
+/* 0x1BDE9A */    DCW 0x13C2
+/* 0x1BDE9C */    DCW 0x13C2
+/* 0x1BDE9E */    DCW 0x13C2
+/* 0x1BDEA0 */    DCW 0x13C2
+/* 0x1BDEA2 */    DCW 0x13C2
+/* 0x1BDEA4 */    DCW 0x13C2
+/* 0x1BDEA6 */    DCW 0x13C2
+/* 0x1BDEA8 */    DCW 0x13C2
+/* 0x1BDEAA */    DCW 0x13C2
+/* 0x1BDEAC */    DCW 0x13C2
+/* 0x1BDEAE */    DCW 0x13C2
+/* 0x1BDEB0 */    DCW 0x13C2
+/* 0x1BDEB2 */    DCW 0x13C2
+/* 0x1BDEB4 */    DCW 0x13C2
+/* 0x1BDEB6 */    DCW 0x13C2
+/* 0x1BDEB8 */    DCW 0x13C2
+/* 0x1BDEBA */    DCW 0x13C2
+/* 0x1BDEBC */    DCW 0x13C2
+/* 0x1BDEBE */    DCW 0x13C2
+/* 0x1BDEC0 */    DCW 0x13C2
+/* 0x1BDEC2 */    DCW 0x13C2
+/* 0x1BDEC4 */    DCW 0x13C2
+/* 0x1BDEC6 */    DCW 0x13C2
+/* 0x1BDEC8 */    DCW 0x13C2
+/* 0x1BDECA */    DCW 0x13C2
+/* 0x1BDECC */    DCW 0x13C2
+/* 0x1BDECE */    DCW 0x13C2
+/* 0x1BDED0 */    DCW 0x13C2
+/* 0x1BDED2 */    DCW 0x13C2
+/* 0x1BDED4 */    DCW 0x13C2
+/* 0x1BDED6 */    DCW 0x13C2
+/* 0x1BDED8 */    DCW 0x13C2
+/* 0x1BDEDA */    DCW 0x13C2
+/* 0x1BDEDC */    DCW 0x13C2
+/* 0x1BDEDE */    DCW 0x13C2
+/* 0x1BDEE0 */    DCW 0x13C2
+/* 0x1BDEE2 */    DCW 0x13C2
+/* 0x1BDEE4 */    DCW 0x13C2
+/* 0x1BDEE6 */    DCW 0x13C2
+/* 0x1BDEE8 */    DCW 0x13C2
+/* 0x1BDEEA */    DCW 0x13C2
+/* 0x1BDEEC */    DCW 0x13C2
+/* 0x1BDEEE */    DCW 0x13C2
+/* 0x1BDEF0 */    DCW 0x13C2
+/* 0x1BDEF2 */    DCW 0x13C2
+/* 0x1BDEF4 */    DCW 0x13C2
+/* 0x1BDEF6 */    DCW 0x13C2
+/* 0x1BDEF8 */    DCW 0x13C2
+/* 0x1BDEFA */    DCW 0x13C2
+/* 0x1BDEFC */    DCW 0x13C2
+/* 0x1BDEFE */    DCW 0x13C2
+/* 0x1BDF00 */    DCW 0x13C2
+/* 0x1BDF02 */    DCW 0x13C2
+/* 0x1BDF04 */    DCW 0x13C2
+/* 0x1BDF06 */    DCW 0x13C2
+/* 0x1BDF08 */    DCW 0x13C2
+/* 0x1BDF0A */    DCW 0x13C2
+/* 0x1BDF0C */    DCW 0x13C2
+/* 0x1BDF0E */    DCW 0x13C2
+/* 0x1BDF10 */    DCW 0x13C2
+/* 0x1BDF12 */    DCW 0x13C2
+/* 0x1BDF14 */    DCW 0x13C2
+/* 0x1BDF16 */    DCW 0x13C2
+/* 0x1BDF18 */    DCW 0x13C2
+/* 0x1BDF1A */    DCW 0x13C2
+/* 0x1BDF1C */    DCW 0x13C2
+/* 0x1BDF1E */    DCW 0x13C2
+/* 0x1BDF20 */    DCW 0x13C2
+/* 0x1BDF22 */    DCW 0x13C2
+/* 0x1BDF24 */    DCW 0x13C2
+/* 0x1BDF26 */    DCW 0x13C2
+/* 0x1BDF28 */    DCW 0x13C2
+/* 0x1BDF2A */    DCW 0x13C2
+/* 0x1BDF2C */    DCW 0x13C2
+/* 0x1BDF2E */    DCW 0x13C2
+/* 0x1BDF30 */    DCW 0x13C2
+/* 0x1BDF32 */    DCW 0x13C2
+/* 0x1BDF34 */    DCW 0x13C2
+/* 0x1BDF36 */    DCW 0x13C2
+/* 0x1BDF38 */    DCW 0x13C2
+/* 0x1BDF3A */    DCW 0x13C2
+/* 0x1BDF3C */    DCW 0x13C2
+/* 0x1BDF3E */    DCW 0x13C2
+/* 0x1BDF40 */    DCW 0x13C2
+/* 0x1BDF42 */    DCW 0x13C2
+/* 0x1BDF44 */    DCW 0x13C2
+/* 0x1BDF46 */    DCW 0x13C2
+/* 0x1BDF48 */    DCW 0x13C2
+/* 0x1BDF4A */    DCW 0x13C2
+/* 0x1BDF4C */    DCW 0x13C2
+/* 0x1BDF4E */    DCW 0x13C2
+/* 0x1BDF50 */    DCW 0x13C2
+/* 0x1BDF52 */    DCW 0x13C2
+/* 0x1BDF54 */    DCW 0x13C2
+/* 0x1BDF56 */    DCW 0x13C2
+/* 0x1BDF58 */    DCW 0x13C2
+/* 0x1BDF5A */    DCW 0x13C2
+/* 0x1BDF5C */    DCW 0x13C2
+/* 0x1BDF5E */    DCW 0x13C2
+/* 0x1BDF60 */    DCW 0x13C2
+/* 0x1BDF62 */    DCW 0x13C2
+/* 0x1BDF64 */    DCW 0x13C2
+/* 0x1BDF66 */    DCW 0x13C2
+/* 0x1BDF68 */    DCW 0x13C2
+/* 0x1BDF6A */    DCW 0x13C2
+/* 0x1BDF6C */    DCW 0x13C2
+/* 0x1BDF6E */    DCW 0x13C2
+/* 0x1BDF70 */    DCW 0x13C2
+/* 0x1BDF72 */    DCW 0x13C2
+/* 0x1BDF74 */    DCW 0x13C2
+/* 0x1BDF76 */    DCW 0x13C2
+/* 0x1BDF78 */    DCW 0x13C2
+/* 0x1BDF7A */    DCW 0x13C2
+/* 0x1BDF7C */    DCW 0x13C2
+/* 0x1BDF7E */    DCW 0x13C2
+/* 0x1BDF80 */    DCW 0x13C2
+/* 0x1BDF82 */    DCW 0x13C2
+/* 0x1BDF84 */    DCW 0x13C2
+/* 0x1BDF86 */    DCW 0x13C2
+/* 0x1BDF88 */    DCW 0x13C2
+/* 0x1BDF8A */    DCW 0x13C2
+/* 0x1BDF8C */    DCW 0x13C2
+/* 0x1BDF8E */    DCW 0x13C2
+/* 0x1BDF90 */    DCW 0x13C2
+/* 0x1BDF92 */    DCW 0x13C2
+/* 0x1BDF94 */    DCW 0x13C2
+/* 0x1BDF96 */    DCW 0x13C2
+/* 0x1BDF98 */    DCW 0x13C2
+/* 0x1BDF9A */    DCW 0x13C2
+/* 0x1BDF9C */    DCW 0x13C2
+/* 0x1BDF9E */    DCW 0x13C2
+/* 0x1BDFA0 */    DCW 0x13C2
+/* 0x1BDFA2 */    DCW 0x13C2
+/* 0x1BDFA4 */    DCW 0x13C2
+/* 0x1BDFA6 */    DCW 0x13C2
+/* 0x1BDFA8 */    DCW 0x13C2
+/* 0x1BDFAA */    DCW 0x13C2
+/* 0x1BDFAC */    DCW 0x13C2
+/* 0x1BDFAE */    DCW 0x13C2
+/* 0x1BDFB0 */    DCW 0x13C2
+/* 0x1BDFB2 */    DCW 0x13C2
+/* 0x1BDFB4 */    DCW 0x13C2
+/* 0x1BDFB6 */    DCW 0x13C2
+/* 0x1BDFB8 */    DCW 0x13C2
+/* 0x1BDFBA */    DCW 0x13C2
+/* 0x1BDFBC */    DCW 0x13C2
+/* 0x1BDFBE */    DCW 0x13C2
+/* 0x1BDFC0 */    DCW 0x13C2
+/* 0x1BDFC2 */    DCW 0x13C2
+/* 0x1BDFC4 */    DCW 0x13C2
+/* 0x1BDFC6 */    DCW 0x13C2
+/* 0x1BDFC8 */    DCW 0x13C2
+/* 0x1BDFCA */    DCW 0x13C2
+/* 0x1BDFCC */    DCW 0x13C2
+/* 0x1BDFCE */    DCW 0x13C2
+/* 0x1BDFD0 */    DCW 0x13C2
+/* 0x1BDFD2 */    DCW 0x13C2
+/* 0x1BDFD4 */    DCW 0x13C2
+/* 0x1BDFD6 */    DCW 0x13C2
+/* 0x1BDFD8 */    DCW 0x13C2
+/* 0x1BDFDA */    DCW 0x13C2
+/* 0x1BDFDC */    DCW 0x13C2
+/* 0x1BDFDE */    DCW 0x13C2
+/* 0x1BDFE0 */    DCW 0x13C2
+/* 0x1BDFE2 */    DCW 0x13C2
+/* 0x1BDFE4 */    DCW 0x13C2
+/* 0x1BDFE6 */    DCW 0x13C2
+/* 0x1BDFE8 */    DCW 0x13C2
+/* 0x1BDFEA */    DCW 0x13C2
+/* 0x1BDFEC */    DCW 0x13C2
+/* 0x1BDFEE */    DCW 0x13C2
+/* 0x1BDFF0 */    DCW 0x13C2
+/* 0x1BDFF2 */    DCW 0x13C2
+/* 0x1BDFF4 */    DCW 0x13C2
+/* 0x1BDFF6 */    DCW 0x13C2
+/* 0x1BDFF8 */    DCW 0x13C2
+/* 0x1BDFFA */    DCW 0x13C2
+/* 0x1BDFFC */    DCW 0x13C2
+/* 0x1BDFFE */    DCW 0x13C2
+/* 0x1BE000 */    DCW 0x13C2
+/* 0x1BE002 */    DCW 0x13C2
+/* 0x1BE004 */    DCW 0x13C2
+/* 0x1BE006 */    DCW 0x13C2
+/* 0x1BE008 */    DCW 0x13C2
+/* 0x1BE00A */    DCW 0x13C2
+/* 0x1BE00C */    DCW 0x13C2
+/* 0x1BE00E */    DCW 0x13C2
+/* 0x1BE010 */    DCW 0x13C2
+/* 0x1BE012 */    DCW 0x13C2
+/* 0x1BE014 */    DCW 0x13C2
+/* 0x1BE016 */    DCW 0x13C2
+/* 0x1BE018 */    DCW 0x13C2
+/* 0x1BE01A */    DCW 0x13C2
+/* 0x1BE01C */    DCW 0x13C2
+/* 0x1BE01E */    DCW 0x13C2
+/* 0x1BE020 */    DCW 0x13C2
+/* 0x1BE022 */    DCW 0x13C2
+/* 0x1BE024 */    DCW 0x13C2
+/* 0x1BE026 */    DCW 0x13C2
+/* 0x1BE028 */    DCW 0x13C2
+/* 0x1BE02A */    DCW 0x13C2
+/* 0x1BE02C */    DCW 0x13C2
+/* 0x1BE02E */    DCW 0x13C2
+/* 0x1BE030 */    DCW 0x13C2
+/* 0x1BE032 */    DCW 0x13C2
+/* 0x1BE034 */    DCW 0x13C2
+/* 0x1BE036 */    DCW 0x13C2
+/* 0x1BE038 */    DCW 0x13C2
+/* 0x1BE03A */    DCW 0x13C2
+/* 0x1BE03C */    DCW 0x13C2
+/* 0x1BE03E */    DCW 0x13C2
+/* 0x1BE040 */    DCW 0x13C2
+/* 0x1BE042 */    DCW 0x13C2
+/* 0x1BE044 */    DCW 0x13C2
+/* 0x1BE046 */    DCW 0x13C2
+/* 0x1BE048 */    DCW 0x13C2
+/* 0x1BE04A */    DCW 0x13C2
+/* 0x1BE04C */    DCW 0x13C2
+/* 0x1BE04E */    DCW 0x13C2
+/* 0x1BE050 */    DCW 0x13C2
+/* 0x1BE052 */    DCW 0x13C2
+/* 0x1BE054 */    DCW 0x13C2
+/* 0x1BE056 */    DCW 0x13C2
+/* 0x1BE058 */    DCW 0x13C2
+/* 0x1BE05A */    DCW 0x13C2
+/* 0x1BE05C */    DCW 0x13C2
+/* 0x1BE05E */    DCW 0x13C2
+/* 0x1BE060 */    DCW 0x13C2
+/* 0x1BE062 */    DCW 0x13C2
+/* 0x1BE064 */    DCW 0x13C2
+/* 0x1BE066 */    DCW 0x13C2
+/* 0x1BE068 */    DCW 0x13C2
+/* 0x1BE06A */    DCW 0x13C2
+/* 0x1BE06C */    DCW 0x13C2
+/* 0x1BE06E */    DCW 0x13C2
+/* 0x1BE070 */    DCW 0x13C2
+/* 0x1BE072 */    DCW 0x13C2
+/* 0x1BE074 */    DCW 0x13C2
+/* 0x1BE076 */    DCW 0x13C2
+/* 0x1BE078 */    DCW 0x13C2
+/* 0x1BE07A */    DCW 0x13C2
+/* 0x1BE07C */    DCW 0x13C2
+/* 0x1BE07E */    DCW 0x13C2
+/* 0x1BE080 */    DCW 0x13C2
+/* 0x1BE082 */    DCW 0xCCC
+/* 0x1BE084 */    DCW 0xCD0
+/* 0x1BE086 */    DCW 0xCD4
+/* 0x1BE088 */    DCW 0x13C2
+/* 0x1BE08A */    DCW 0x13C2
+/* 0x1BE08C */    DCW 0x13C2
+/* 0x1BE08E */    DCW 0x13C2
+/* 0x1BE090 */    DCW 0x13C2
+/* 0x1BE092 */    DCW 0x13C2
+/* 0x1BE094 */    DCW 0x13C2
+/* 0x1BE096 */    DCW 0x13C2
+/* 0x1BE098 */    DCW 0x13C2
+/* 0x1BE09A */    DCW 0x13C2
+/* 0x1BE09C */    DCW 0x13C2
+/* 0x1BE09E */    DCW 0x13C2
+/* 0x1BE0A0 */    DCW 0x13C2
+/* 0x1BE0A2 */    DCW 0x13C2
+/* 0x1BE0A4 */    DCW 0x13C2
+/* 0x1BE0A6 */    DCW 0x13C2
+/* 0x1BE0A8 */    DCW 0x13C2
+/* 0x1BE0AA */    DCW 0x13C2
+/* 0x1BE0AC */    DCW 0x13C2
+/* 0x1BE0AE */    DCW 0x13C2
+/* 0x1BE0B0 */    DCW 0x13C2
+/* 0x1BE0B2 */    DCW 0x13C2
+/* 0x1BE0B4 */    DCW 0x13C2
+/* 0x1BE0B6 */    DCW 0x13C2
+/* 0x1BE0B8 */    DCW 0x13C2
+/* 0x1BE0BA */    DCW 0x13C2
+/* 0x1BE0BC */    DCW 0x13C2
+/* 0x1BE0BE */    DCW 0x13C2
+/* 0x1BE0C0 */    DCW 0x13C2
+/* 0x1BE0C2 */    DCW 0x13C2
+/* 0x1BE0C4 */    DCW 0x13C2
+/* 0x1BE0C6 */    DCW 0x13C2
+/* 0x1BE0C8 */    DCW 0x13C2
+/* 0x1BE0CA */    DCW 0x13C2
+/* 0x1BE0CC */    DCW 0x13C2
+/* 0x1BE0CE */    DCW 0x13C2
+/* 0x1BE0D0 */    DCW 0x13C2
+/* 0x1BE0D2 */    DCW 0x13C2
+/* 0x1BE0D4 */    DCW 0x13C2
+/* 0x1BE0D6 */    DCW 0x13C2
+/* 0x1BE0D8 */    DCW 0x13C2
+/* 0x1BE0DA */    DCW 0x13C2
+/* 0x1BE0DC */    DCW 0x13C2
+/* 0x1BE0DE */    DCW 0x13C2
+/* 0x1BE0E0 */    DCW 0x13C2
+/* 0x1BE0E2 */    DCW 0x13C2
+/* 0x1BE0E4 */    DCW 0x13C2
+/* 0x1BE0E6 */    DCW 0x13C2
+/* 0x1BE0E8 */    DCW 0x13C2
+/* 0x1BE0EA */    DCW 0x13C2
+/* 0x1BE0EC */    DCW 0x13C2
+/* 0x1BE0EE */    DCW 0x13C2
+/* 0x1BE0F0 */    DCW 0x13C2
+/* 0x1BE0F2 */    DCW 0x13C2
+/* 0x1BE0F4 */    DCW 0x13C2
+/* 0x1BE0F6 */    DCW 0x13C2
+/* 0x1BE0F8 */    DCW 0x13C2
+/* 0x1BE0FA */    DCW 0x13C2
+/* 0x1BE0FC */    DCW 0x13C2
+/* 0x1BE0FE */    DCW 0x13C2
+/* 0x1BE100 */    DCW 0x13C2
+/* 0x1BE102 */    DCW 0x13C2
+/* 0x1BE104 */    DCW 0x13C2
+/* 0x1BE106 */    DCW 0x13C2
+/* 0x1BE108 */    DCW 0x13C2
+/* 0x1BE10A */    DCW 0x13C2
+/* 0x1BE10C */    DCW 0x13C2
+/* 0x1BE10E */    DCW 0x13C2
+/* 0x1BE110 */    DCW 0x13C2
+/* 0x1BE112 */    DCW 0x13C2
+/* 0x1BE114 */    DCW 0x13C2
+/* 0x1BE116 */    DCW 0x13C2
+/* 0x1BE118 */    DCW 0x13C2
+/* 0x1BE11A */    DCW 0x13C2
+/* 0x1BE11C */    DCW 0x13C2
+/* 0x1BE11E */    DCW 0x13C2
+/* 0x1BE120 */    DCW 0x13C2
+/* 0x1BE122 */    DCW 0x13C2
+/* 0x1BE124 */    DCW 0x13C2
+/* 0x1BE126 */    DCW 0x13C2
+/* 0x1BE128 */    DCW 0x13C2
+/* 0x1BE12A */    DCW 0x13C2
+/* 0x1BE12C */    DCW 0x13C2
+/* 0x1BE12E */    DCW 0x13C2
+/* 0x1BE130 */    DCW 0x13C2
+/* 0x1BE132 */    DCW 0x13C2
+/* 0x1BE134 */    DCW 0x13C2
+/* 0x1BE136 */    DCW 0x13C2
+/* 0x1BE138 */    DCW 0x13C2
+/* 0x1BE13A */    DCW 0x13C2
+/* 0x1BE13C */    DCW 0x13C2
+/* 0x1BE13E */    DCW 0x13C2
+/* 0x1BE140 */    DCW 0x13C2
+/* 0x1BE142 */    DCW 0x13C2
+/* 0x1BE144 */    DCW 0x13C2
+/* 0x1BE146 */    DCW 0x13C2
+/* 0x1BE148 */    DCW 0x13C2
+/* 0x1BE14A */    DCW 0x13C2
+/* 0x1BE14C */    DCW 0x13C2
+/* 0x1BE14E */    DCW 0x13C2
+/* 0x1BE150 */    DCW 0x13C2
+/* 0x1BE152 */    DCW 0x13C2
+/* 0x1BE154 */    DCW 0x13C2
+/* 0x1BE156 */    DCW 0x13C2
+/* 0x1BE158 */    DCW 0x13C2
+/* 0x1BE15A */    DCW 0x13C2
+/* 0x1BE15C */    DCW 0x13C2
+/* 0x1BE15E */    DCW 0x13C2
+/* 0x1BE160 */    DCW 0x13C2
+/* 0x1BE162 */    DCW 0x13C2
+/* 0x1BE164 */    DCW 0x13C2
+/* 0x1BE166 */    DCW 0x13C2
+/* 0x1BE168 */    DCW 0x13C2
+/* 0x1BE16A */    DCW 0x13C2
+/* 0x1BE16C */    DCW 0x13C2
+/* 0x1BE16E */    DCW 0x13C2
+/* 0x1BE170 */    DCW 0x13C2
+/* 0x1BE172 */    DCW 0x13C2
+/* 0x1BE174 */    DCW 0x13C2
+/* 0x1BE176 */    DCW 0x13C2
+/* 0x1BE178 */    DCW 0x13C2
+/* 0x1BE17A */    DCW 0x13C2
+/* 0x1BE17C */    DCW 0x13C2
+/* 0x1BE17E */    DCW 0x13C2
+/* 0x1BE180 */    DCW 0x13C2
+/* 0x1BE182 */    DCW 0x13C2
+/* 0x1BE184 */    DCW 0x13C2
+/* 0x1BE186 */    DCW 0x13C2
+/* 0x1BE188 */    DCW 0x13C2
+/* 0x1BE18A */    DCW 0x13C2
+/* 0x1BE18C */    DCW 0x13C2
+/* 0x1BE18E */    DCW 0x13C2
+/* 0x1BE190 */    DCW 0x13C2
+/* 0x1BE192 */    DCW 0x13C2
+/* 0x1BE194 */    DCW 0x13C2
+/* 0x1BE196 */    DCW 0x13C2
+/* 0x1BE198 */    DCW 0x13C2
+/* 0x1BE19A */    DCW 0x13C2
+/* 0x1BE19C */    DCW 0x13C2
+/* 0x1BE19E */    DCW 0x13C2
+/* 0x1BE1A0 */    DCW 0x13C2
+/* 0x1BE1A2 */    DCW 0x13C2
+/* 0x1BE1A4 */    DCW 0x13C2
+/* 0x1BE1A6 */    DCW 0x13C2
+/* 0x1BE1A8 */    DCW 0x13C2
+/* 0x1BE1AA */    DCW 0x13C2
+/* 0x1BE1AC */    DCW 0x13C2
+/* 0x1BE1AE */    DCW 0x13C2
+/* 0x1BE1B0 */    DCW 0x13C2
+/* 0x1BE1B2 */    DCW 0x13C2
+/* 0x1BE1B4 */    DCW 0x13C2
+/* 0x1BE1B6 */    DCW 0x13C2
+/* 0x1BE1B8 */    DCW 0x13C2
+/* 0x1BE1BA */    DCW 0x13C2
+/* 0x1BE1BC */    DCW 0x13C2
+/* 0x1BE1BE */    DCW 0x13C2
+/* 0x1BE1C0 */    DCW 0x13C2
+/* 0x1BE1C2 */    DCW 0x13C2
+/* 0x1BE1C4 */    DCW 0x13C2
+/* 0x1BE1C6 */    DCW 0x13C2
+/* 0x1BE1C8 */    DCW 0x13C2
+/* 0x1BE1CA */    DCW 0x13C2
+/* 0x1BE1CC */    DCW 0x13C2
+/* 0x1BE1CE */    DCW 0x13C2
+/* 0x1BE1D0 */    DCW 0x13C2
+/* 0x1BE1D2 */    DCW 0x13C2
+/* 0x1BE1D4 */    DCW 0x13C2
+/* 0x1BE1D6 */    DCW 0x13C2
+/* 0x1BE1D8 */    DCW 0x13C2
+/* 0x1BE1DA */    DCW 0x13C2
+/* 0x1BE1DC */    DCW 0x13C2
+/* 0x1BE1DE */    DCW 0x13C2
+/* 0x1BE1E0 */    DCW 0x13C2
+/* 0x1BE1E2 */    DCW 0x13C2
+/* 0x1BE1E4 */    DCW 0x13C2
+/* 0x1BE1E6 */    DCW 0x13C2
+/* 0x1BE1E8 */    DCW 0x13C2
+/* 0x1BE1EA */    DCW 0x13C2
+/* 0x1BE1EC */    DCW 0x13C2
+/* 0x1BE1EE */    DCW 0x13C2
+/* 0x1BE1F0 */    DCW 0x13C2
+/* 0x1BE1F2 */    DCW 0x13C2
+/* 0x1BE1F4 */    DCW 0x13C2
+/* 0x1BE1F6 */    DCW 0x13C2
+/* 0x1BE1F8 */    DCW 0x13C2
+/* 0x1BE1FA */    DCW 0x13C2
+/* 0x1BE1FC */    DCW 0x13C2
+/* 0x1BE1FE */    DCW 0x13C2
+/* 0x1BE200 */    DCW 0x13C2
+/* 0x1BE202 */    DCW 0x13C2
+/* 0x1BE204 */    DCW 0x13C2
+/* 0x1BE206 */    DCW 0x13C2
+/* 0x1BE208 */    DCW 0x13C2
+/* 0x1BE20A */    DCW 0x13C2
+/* 0x1BE20C */    DCW 0x13C2
+/* 0x1BE20E */    DCW 0x13C2
+/* 0x1BE210 */    DCW 0x13C2
+/* 0x1BE212 */    DCW 0x13C2
+/* 0x1BE214 */    DCW 0x13C2
+/* 0x1BE216 */    DCW 0x13C2
+/* 0x1BE218 */    DCW 0x13C2
+/* 0x1BE21A */    DCW 0x13C2
+/* 0x1BE21C */    DCW 0x13C2
+/* 0x1BE21E */    DCW 0x13C2
+/* 0x1BE220 */    DCW 0x13C2
+/* 0x1BE222 */    DCW 0x13C2
+/* 0x1BE224 */    DCW 0x13C2
+/* 0x1BE226 */    DCW 0x13C2
+/* 0x1BE228 */    DCW 0x13C2
+/* 0x1BE22A */    DCW 0x13C2
+/* 0x1BE22C */    DCW 0x13C2
+/* 0x1BE22E */    DCW 0x13C2
+/* 0x1BE230 */    DCW 0x13C2
+/* 0x1BE232 */    DCW 0x13C2
+/* 0x1BE234 */    DCW 0x13C2
+/* 0x1BE236 */    DCW 0x13C2
+/* 0x1BE238 */    DCW 0x13C2
+/* 0x1BE23A */    DCW 0x13C2
+/* 0x1BE23C */    DCW 0x13C2
+/* 0x1BE23E */    DCW 0x13C2
+/* 0x1BE240 */    DCW 0x13C2
+/* 0x1BE242 */    DCW 0x13C2
+/* 0x1BE244 */    DCW 0x13C2
+/* 0x1BE246 */    DCW 0x13C2
+/* 0x1BE248 */    DCW 0x13C2
+/* 0x1BE24A */    DCW 0x13C2
+/* 0x1BE24C */    DCW 0x13C2
+/* 0x1BE24E */    DCW 0x13C2
+/* 0x1BE250 */    DCW 0x13C2
+/* 0x1BE252 */    DCW 0x13C2
+/* 0x1BE254 */    DCW 0x13C2
+/* 0x1BE256 */    DCW 0x13C2
+/* 0x1BE258 */    DCW 0x13C2
+/* 0x1BE25A */    DCW 0x13C2
+/* 0x1BE25C */    DCW 0x13C2
+/* 0x1BE25E */    DCW 0x13C2
+/* 0x1BE260 */    DCW 0x13C2
+/* 0x1BE262 */    DCW 0x13C2
+/* 0x1BE264 */    DCW 0x13C2
+/* 0x1BE266 */    DCW 0x13C2
+/* 0x1BE268 */    DCW 0x13C2
+/* 0x1BE26A */    DCW 0x13C2
+/* 0x1BE26C */    DCW 0x13C2
+/* 0x1BE26E */    DCW 0x13C2
+/* 0x1BE270 */    DCW 0x13C2
+/* 0x1BE272 */    DCW 0x13C2
+/* 0x1BE274 */    DCW 0x13C2
+/* 0x1BE276 */    DCW 0x13C2
+/* 0x1BE278 */    DCW 0x13C2
+/* 0x1BE27A */    DCW 0x13C2
+/* 0x1BE27C */    DCW 0x13C2
+/* 0x1BE27E */    DCW 0x13C2
+/* 0x1BE280 */    DCW 0x13C2
+/* 0x1BE282 */    DCW 0xCD8
+/* 0x1BE284 */    DCW 0xCDC
+/* 0x1BE286 */    DCW 0xCE0
+/* 0x1BE288 */    DCW 0xCE4
+/* 0x1BE28A */    DCW 0xCE8
+/* 0x1BE28C */    DCW 0xCEC
+/* 0x1BE28E */    DCW 0xCF0
+/* 0x1BE290 */    DCW 0xCF4
+/* 0x1BE292 */    DCW 0xCF8
+/* 0x1BE294 */    DCW 0xCFC
+/* 0x1BE296 */    DCW 0x13C2
+/* 0x1BE298 */    DCW 0x13C2
+/* 0x1BE29A */    DCW 0x13C2
+/* 0x1BE29C */    DCW 0x13C2
+/* 0x1BE29E */    DCW 0x13C2
+/* 0x1BE2A0 */    DCW 0x13C2
+/* 0x1BE2A2 */    DCW 0xD00
+/* 0x1BE2A4 */    DCW 0xD04
+/* 0x1BE2A6 */    DCW 0xD08
+/* 0x1BE2A8 */    DCW 0xD0C
+/* 0x1BE2AA */    DCW 0x13C2
+/* 0x1BE2AC */    DCW 0x13C2
+/* 0x1BE2AE */    DCW 0x13C2
+/* 0x1BE2B0 */    DCW 0x13C2
+/* 0x1BE2B2 */    DCW 0x13C2
+/* 0x1BE2B4 */    DCW 0x13C2
+/* 0x1BE2B6 */    DCW 0x13C2
+/* 0x1BE2B8 */    DCW 0x13C2
+/* 0x1BE2BA */    DCW 0x13C2
+/* 0x1BE2BC */    DCW 0x13C2
+/* 0x1BE2BE */    DCW 0x13C2
+/* 0x1BE2C0 */    DCW 0x13C2
+/* 0x1BE2C2 */    DCW 0xD10
+/* 0x1BE2C4 */    DCW 0xD14
+/* 0x1BE2C6 */    DCW 0xD18
+/* 0x1BE2C8 */    DCW 0xD1C
+/* 0x1BE2CA */    DCW 0xD20
+/* 0x1BE2CC */    DCW 0xD24
+/* 0x1BE2CE */    DCW 0xD28
+/* 0x1BE2D0 */    DCW 0x13C2
+/* 0x1BE2D2 */    DCW 0x13C2
+/* 0x1BE2D4 */    DCW 0x13C2
+/* 0x1BE2D6 */    DCW 0x13C2
+/* 0x1BE2D8 */    DCW 0x13C2
+/* 0x1BE2DA */    DCW 0x13C2
+/* 0x1BE2DC */    DCW 0x13C2
+/* 0x1BE2DE */    DCW 0x13C2
+/* 0x1BE2E0 */    DCW 0x13C2
+/* 0x1BE2E2 */    DCW 0xD2C
+/* 0x1BE2E4 */    DCW 0xD30
+/* 0x1BE2E6 */    DCW 0xD34
+/* 0x1BE2E8 */    DCW 0xD38
+/* 0x1BE2EA */    DCW 0x13C2
+/* 0x1BE2EC */    DCW 0x13C2
+/* 0x1BE2EE */    DCW 0x13C2
+/* 0x1BE2F0 */    DCW 0x13C2
+/* 0x1BE2F2 */    DCW 0x13C2
+/* 0x1BE2F4 */    DCW 0x13C2
+/* 0x1BE2F6 */    DCW 0x13C2
+/* 0x1BE2F8 */    DCW 0x13C2
+/* 0x1BE2FA */    DCW 0x13C2
+/* 0x1BE2FC */    DCW 0x13C2
+/* 0x1BE2FE */    DCW 0x13C2
+/* 0x1BE300 */    DCW 0x13C2
+/* 0x1BE302 */    DCW 0xD3C
+/* 0x1BE304 */    DCW 0xD40
+/* 0x1BE306 */    DCW 0xD44
+/* 0x1BE308 */    DCW 0xD48
+/* 0x1BE30A */    DCW 0x13C2
+/* 0x1BE30C */    DCW 0x13C2
+/* 0x1BE30E */    DCW 0xD4C
+/* 0x1BE310 */    DCW 0x13C2
+/* 0x1BE312 */    DCW 0x13C2
+/* 0x1BE314 */    DCW 0x13C2
+/* 0x1BE316 */    DCW 0x13C2
+/* 0x1BE318 */    DCW 0x13C2
+/* 0x1BE31A */    DCW 0x13C2
+/* 0x1BE31C */    DCW 0x13C2
+/* 0x1BE31E */    DCW 0x13C2
+/* 0x1BE320 */    DCW 0x13C2
+/* 0x1BE322 */    DCW 0xD50
+/* 0x1BE324 */    DCW 0xD54
+/* 0x1BE326 */    DCW 0xD58
+/* 0x1BE328 */    DCW 0xD5C
+/* 0x1BE32A */    DCW 0xD60
+/* 0x1BE32C */    DCW 0xD64
+/* 0x1BE32E */    DCW 0xD68
+/* 0x1BE330 */    DCW 0xD6C
+/* 0x1BE332 */    DCW 0x13C2
+/* 0x1BE334 */    DCW 0x13C2
+/* 0x1BE336 */    DCW 0x13C2
+/* 0x1BE338 */    DCW 0x13C2
+/* 0x1BE33A */    DCW 0x13C2
+/* 0x1BE33C */    DCW 0x13C2
+/* 0x1BE33E */    DCW 0x13C2
+/* 0x1BE340 */    DCW 0x13C2
+/* 0x1BE342 */    DCW 0xD70
+/* 0x1BE344 */    DCW 0xD74
+/* 0x1BE346 */    DCW 0xD78
+/* 0x1BE348 */    DCW 0xD7C
+/* 0x1BE34A */    DCW 0xD80
+/* 0x1BE34C */    DCW 0xD84
+/* 0x1BE34E */    DCW 0xD88
+/* 0x1BE350 */    DCW 0x13C2
+/* 0x1BE352 */    DCW 0x13C2
+/* 0x1BE354 */    DCW 0x13C2
+/* 0x1BE356 */    DCW 0x13C2
+/* 0x1BE358 */    DCW 0x13C2
+/* 0x1BE35A */    DCW 0x13C2
+/* 0x1BE35C */    DCW 0x13C2
+/* 0x1BE35E */    DCW 0x13C2
+/* 0x1BE360 */    DCW 0x13C2
+/* 0x1BE362 */    DCW 0xD8C
+/* 0x1BE364 */    DCW 0xD90
+/* 0x1BE366 */    DCW 0xD94
+/* 0x1BE368 */    DCW 0xD98
+/* 0x1BE36A */    DCW 0xD9C
+/* 0x1BE36C */    DCW 0x13C2
+/* 0x1BE36E */    DCW 0x13C2
+/* 0x1BE370 */    DCW 0x13C2
+/* 0x1BE372 */    DCW 0x13C2
+/* 0x1BE374 */    DCW 0x13C2
+/* 0x1BE376 */    DCW 0x13C2
+/* 0x1BE378 */    DCW 0x13C2
+/* 0x1BE37A */    DCW 0x13C2
+/* 0x1BE37C */    DCW 0x13C2
+/* 0x1BE37E */    DCW 0x13C2
+/* 0x1BE380 */    DCW 0x13C2
+/* 0x1BE382 */    DCW 0xDA0
+/* 0x1BE384 */    DCW 0x13C2
+/* 0x1BE386 */    DCW 0x13C2
+/* 0x1BE388 */    DCW 0x13C2
+/* 0x1BE38A */    DCW 0x13C2
+/* 0x1BE38C */    DCW 0x13C2
+/* 0x1BE38E */    DCW 0x13C2
+/* 0x1BE390 */    DCW 0x13C2
+/* 0x1BE392 */    DCW 0x13C2
+/* 0x1BE394 */    DCW 0x13C2
+/* 0x1BE396 */    DCW 0x13C2
+/* 0x1BE398 */    DCW 0x13C2
+/* 0x1BE39A */    DCW 0x13C2
+/* 0x1BE39C */    DCW 0x13C2
+/* 0x1BE39E */    DCW 0x13C2
+/* 0x1BE3A0 */    DCW 0x13C2
+/* 0x1BE3A2 */    DCW 0xDA4
+/* 0x1BE3A4 */    DCW 0xDA8
+/* 0x1BE3A6 */    DCW 0xDAC
+/* 0x1BE3A8 */    DCW 0xDB0
+/* 0x1BE3AA */    DCW 0xDB4
+/* 0x1BE3AC */    DCW 0xDB8
+/* 0x1BE3AE */    DCW 0xDBC
+/* 0x1BE3B0 */    DCW 0xDC0
+/* 0x1BE3B2 */    DCW 0xDC4
+/* 0x1BE3B4 */    DCW 0x13C2
+/* 0x1BE3B6 */    DCW 0x13C2
+/* 0x1BE3B8 */    DCW 0x13C2
+/* 0x1BE3BA */    DCW 0x13C2
+/* 0x1BE3BC */    DCW 0x13C2
+/* 0x1BE3BE */    DCW 0x13C2
+/* 0x1BE3C0 */    DCW 0x13C2
+/* 0x1BE3C2 */    DCW 0xDC8
+/* 0x1BE3C4 */    DCW 0xDCC
+/* 0x1BE3C6 */    DCW 0xDD0
+/* 0x1BE3C8 */    DCW 0xDD4
+/* 0x1BE3CA */    DCW 0xDD8
+/* 0x1BE3CC */    DCW 0xDDC
+/* 0x1BE3CE */    DCW 0xDE0
+/* 0x1BE3D0 */    DCW 0xDE4
+/* 0x1BE3D2 */    DCW 0xDE8
+/* 0x1BE3D4 */    DCW 0x13C2
+/* 0x1BE3D6 */    DCW 0x13C2
+/* 0x1BE3D8 */    DCW 0x13C2
+/* 0x1BE3DA */    DCW 0x13C2
+/* 0x1BE3DC */    DCW 0x13C2
+/* 0x1BE3DE */    DCW 0x13C2
+/* 0x1BE3E0 */    DCW 0x13C2
+/* 0x1BE3E2 */    DCW 0xDEC
+/* 0x1BE3E4 */    DCW 0xDF0
+/* 0x1BE3E6 */    DCW 0x13C2
+/* 0x1BE3E8 */    DCW 0x13C2
+/* 0x1BE3EA */    DCW 0x13C2
+/* 0x1BE3EC */    DCW 0x13C2
+/* 0x1BE3EE */    DCW 0x13C2
+/* 0x1BE3F0 */    DCW 0x13C2
+/* 0x1BE3F2 */    DCW 0x13C2
+/* 0x1BE3F4 */    DCW 0x13C2
+/* 0x1BE3F6 */    DCW 0x13C2
+/* 0x1BE3F8 */    DCW 0x13C2
+/* 0x1BE3FA */    DCW 0x13C2
+/* 0x1BE3FC */    DCW 0x13C2
+/* 0x1BE3FE */    DCW 0x13C2
+/* 0x1BE400 */    DCW 0x13C2
+/* 0x1BE402 */    DCW 0xDF4
+/* 0x1BE404 */    DCW 0xDF8
+/* 0x1BE406 */    DCW 0xDFC
+/* 0x1BE408 */    DCW 0x13C2
+/* 0x1BE40A */    DCW 0x13C2
+/* 0x1BE40C */    DCW 0x13C2
+/* 0x1BE40E */    DCW 0x13C2
+/* 0x1BE410 */    DCW 0x13C2
+/* 0x1BE412 */    DCW 0x13C2
+/* 0x1BE414 */    DCW 0x13C2
+/* 0x1BE416 */    DCW 0x13C2
+/* 0x1BE418 */    DCW 0x13C2
+/* 0x1BE41A */    DCW 0x13C2
+/* 0x1BE41C */    DCW 0x13C2
+/* 0x1BE41E */    DCW 0x13C2
+/* 0x1BE420 */    DCW 0x13C2
+/* 0x1BE422 */    DCW 0xE00
+/* 0x1BE424 */    DCW 0x13C2
+/* 0x1BE426 */    DCW 0x13C2
+/* 0x1BE428 */    DCW 0x13C2
+/* 0x1BE42A */    DCW 0x13C2
+/* 0x1BE42C */    DCW 0x13C2
+/* 0x1BE42E */    DCW 0x13C2
+/* 0x1BE430 */    DCW 0x13C2
+/* 0x1BE432 */    DCW 0x13C2
+/* 0x1BE434 */    DCW 0x13C2
+/* 0x1BE436 */    DCW 0x13C2
+/* 0x1BE438 */    DCW 0x13C2
+/* 0x1BE43A */    DCW 0x13C2
+/* 0x1BE43C */    DCW 0x13C2
+/* 0x1BE43E */    DCW 0x13C2
+/* 0x1BE440 */    DCW 0x13C2
+/* 0x1BE442 */    DCW 0xE04
+/* 0x1BE444 */    DCW 0xE08
+/* 0x1BE446 */    DCW 0xE0C
+/* 0x1BE448 */    DCW 0x13C2
+/* 0x1BE44A */    DCW 0x13C2
+/* 0x1BE44C */    DCW 0x13C2
+/* 0x1BE44E */    DCW 0x13C2
+/* 0x1BE450 */    DCW 0x13C2
+/* 0x1BE452 */    DCW 0x13C2
+/* 0x1BE454 */    DCW 0x13C2
+/* 0x1BE456 */    DCW 0x13C2
+/* 0x1BE458 */    DCW 0x13C2
+/* 0x1BE45A */    DCW 0x13C2
+/* 0x1BE45C */    DCW 0x13C2
+/* 0x1BE45E */    DCW 0x13C2
+/* 0x1BE460 */    DCW 0x13C2
+/* 0x1BE462 */    DCW 0xE10
+/* 0x1BE464 */    DCW 0xE14
+/* 0x1BE466 */    DCW 0xE18
+/* 0x1BE468 */    DCW 0x13C2
+/* 0x1BE46A */    DCW 0x13C2
+/* 0x1BE46C */    DCW 0x13C2
+/* 0x1BE46E */    DCW 0x13C2
+/* 0x1BE470 */    DCW 0x13C2
+/* 0x1BE472 */    DCW 0x13C2
+/* 0x1BE474 */    DCW 0x13C2
+/* 0x1BE476 */    DCW 0x13C2
+/* 0x1BE478 */    DCW 0x13C2
+/* 0x1BE47A */    DCW 0x13C2
+/* 0x1BE47C */    DCW 0x13C2
+/* 0x1BE47E */    DCW 0x13C2
+/* 0x1BE480 */    DCW 0x13C2
+/* 0x1BE482 */    DCW 0xE1C
+/* 0x1BE484 */    DCW 0xE20
+/* 0x1BE486 */    DCW 0xE24
+/* 0x1BE488 */    DCW 0x13C2
+/* 0x1BE48A */    DCW 0x13C2
+/* 0x1BE48C */    DCW 0x13C2
+/* 0x1BE48E */    DCW 0x13C2
+/* 0x1BE490 */    DCW 0x13C2
+/* 0x1BE492 */    DCW 0x13C2
+/* 0x1BE494 */    DCW 0x13C2
+/* 0x1BE496 */    DCW 0x13C2
+/* 0x1BE498 */    DCW 0x13C2
+/* 0x1BE49A */    DCW 0x13C2
+/* 0x1BE49C */    DCW 0x13C2
+/* 0x1BE49E */    DCW 0x13C2
+/* 0x1BE4A0 */    DCW 0x13C2
+/* 0x1BE4A2 */    DCW 0xE28
+/* 0x1BE4A4 */    DCW 0xE2C
+/* 0x1BE4A6 */    DCW 0x13C2
+/* 0x1BE4A8 */    DCW 0x13C2
+/* 0x1BE4AA */    DCW 0x13C2
+/* 0x1BE4AC */    DCW 0x13C2
+/* 0x1BE4AE */    DCW 0x13C2
+/* 0x1BE4B0 */    DCW 0x13C2
+/* 0x1BE4B2 */    DCW 0x13C2
+/* 0x1BE4B4 */    DCW 0x13C2
+/* 0x1BE4B6 */    DCW 0x13C2
+/* 0x1BE4B8 */    DCW 0x13C2
+/* 0x1BE4BA */    DCW 0x13C2
+/* 0x1BE4BC */    DCW 0x13C2
+/* 0x1BE4BE */    DCW 0x13C2
+/* 0x1BE4C0 */    DCW 0x13C2
+/* 0x1BE4C2 */    DCW 0xE30
+/* 0x1BE4C4 */    DCW 0xE34
+/* 0x1BE4C6 */    DCW 0xE38
+/* 0x1BE4C8 */    DCW 0xE3C
+/* 0x1BE4CA */    DCW 0x13C2
+/* 0x1BE4CC */    DCW 0x13C2
+/* 0x1BE4CE */    DCW 0x13C2
+/* 0x1BE4D0 */    DCW 0x13C2
+/* 0x1BE4D2 */    DCW 0x13C2
+/* 0x1BE4D4 */    DCW 0x13C2
+/* 0x1BE4D6 */    DCW 0x13C2
+/* 0x1BE4D8 */    DCW 0x13C2
+/* 0x1BE4DA */    DCW 0x13C2
+/* 0x1BE4DC */    DCW 0x13C2
+/* 0x1BE4DE */    DCW 0x13C2
+/* 0x1BE4E0 */    DCW 0x13C2
+/* 0x1BE4E2 */    DCW 0xE40
+/* 0x1BE4E4 */    DCW 0xE44
+/* 0x1BE4E6 */    DCW 0xE48
+/* 0x1BE4E8 */    DCW 0xE4C
+/* 0x1BE4EA */    DCW 0x13C2
+/* 0x1BE4EC */    DCW 0x13C2
+/* 0x1BE4EE */    DCW 0x13C2
+/* 0x1BE4F0 */    DCW 0x13C2
+/* 0x1BE4F2 */    DCW 0x13C2
+/* 0x1BE4F4 */    DCW 0x13C2
+/* 0x1BE4F6 */    DCW 0x13C2
+/* 0x1BE4F8 */    DCW 0x13C2
+/* 0x1BE4FA */    DCW 0x13C2
+/* 0x1BE4FC */    DCW 0x13C2
+/* 0x1BE4FE */    DCW 0x13C2
+/* 0x1BE500 */    DCW 0x13C2
+/* 0x1BE502 */    DCW 0xE50
+/* 0x1BE504 */    DCW 0x13C2
+/* 0x1BE506 */    DCW 0x13C2
+/* 0x1BE508 */    DCW 0x13C2
+/* 0x1BE50A */    DCW 0x13C2
+/* 0x1BE50C */    DCW 0x13C2
+/* 0x1BE50E */    DCW 0x13C2
+/* 0x1BE510 */    DCW 0x13C2
+/* 0x1BE512 */    DCW 0x13C2
+/* 0x1BE514 */    DCW 0x13C2
+/* 0x1BE516 */    DCW 0x13C2
+/* 0x1BE518 */    DCW 0x13C2
+/* 0x1BE51A */    DCW 0x13C2
+/* 0x1BE51C */    DCW 0x13C2
+/* 0x1BE51E */    DCW 0x13C2
+/* 0x1BE520 */    DCW 0x13C2
+/* 0x1BE522 */    DCW 0xE54
+/* 0x1BE524 */    DCW 0xE58
+/* 0x1BE526 */    DCW 0xE5C
+/* 0x1BE528 */    DCW 0xE60
+/* 0x1BE52A */    DCW 0xE64
+/* 0x1BE52C */    DCW 0x13C2
+/* 0x1BE52E */    DCW 0x13C2
+/* 0x1BE530 */    DCW 0x13C2
+/* 0x1BE532 */    DCW 0x13C2
+/* 0x1BE534 */    DCW 0x13C2
+/* 0x1BE536 */    DCW 0x13C2
+/* 0x1BE538 */    DCW 0x13C2
+/* 0x1BE53A */    DCW 0x13C2
+/* 0x1BE53C */    DCW 0x13C2
+/* 0x1BE53E */    DCW 0x13C2
+/* 0x1BE540 */    DCW 0x13C2
+/* 0x1BE542 */    DCW 0xE68
+/* 0x1BE544 */    DCW 0xE6C
+/* 0x1BE546 */    DCW 0xE70
+/* 0x1BE548 */    DCW 0xE74
+/* 0x1BE54A */    DCW 0x13C2
+/* 0x1BE54C */    DCW 0x13C2
+/* 0x1BE54E */    DCW 0x13C2
+/* 0x1BE550 */    DCW 0x13C2
+/* 0x1BE552 */    DCW 0x13C2
+/* 0x1BE554 */    DCW 0x13C2
+/* 0x1BE556 */    DCW 0x13C2
+/* 0x1BE558 */    DCW 0x13C2
+/* 0x1BE55A */    DCW 0x13C2
+/* 0x1BE55C */    DCW 0x13C2
+/* 0x1BE55E */    DCW 0x13C2
+/* 0x1BE560 */    DCW 0x13C2
+/* 0x1BE562 */    DCW 0xE78
+/* 0x1BE564 */    DCW 0xE7C
+/* 0x1BE566 */    DCW 0xE80
+/* 0x1BE568 */    DCW 0xE84
+/* 0x1BE56A */    DCW 0xE88
+/* 0x1BE56C */    DCW 0xE8C
+/* 0x1BE56E */    DCW 0xE90
+/* 0x1BE570 */    DCW 0xE94
+/* 0x1BE572 */    DCW 0xE98
+/* 0x1BE574 */    DCW 0xE9C
+/* 0x1BE576 */    DCW 0x13C2
+/* 0x1BE578 */    DCW 0x13C2
+/* 0x1BE57A */    DCW 0x13C2
+/* 0x1BE57C */    DCW 0x13C2
+/* 0x1BE57E */    DCW 0x13C2
+/* 0x1BE580 */    DCW 0x13C2
+/* 0x1BE582 */    DCW 0x13C2
+/* 0x1BE584 */    DCW 0x13C2
+/* 0x1BE586 */    DCW 0x13C2
+/* 0x1BE588 */    DCW 0x13C2
+/* 0x1BE58A */    DCW 0x13C2
+/* 0x1BE58C */    DCW 0x13C2
+/* 0x1BE58E */    DCW 0x13C2
+/* 0x1BE590 */    DCW 0x13C2
+/* 0x1BE592 */    DCW 0x13C2
+/* 0x1BE594 */    DCW 0x13C2
+/* 0x1BE596 */    DCW 0x13C2
+/* 0x1BE598 */    DCW 0x13C2
+/* 0x1BE59A */    DCW 0x13C2
+/* 0x1BE59C */    DCW 0x13C2
+/* 0x1BE59E */    DCW 0x13C2
+/* 0x1BE5A0 */    DCW 0x13C2
+/* 0x1BE5A2 */    DCW 0x13C2
+/* 0x1BE5A4 */    DCW 0x13C2
+/* 0x1BE5A6 */    DCW 0x13C2
+/* 0x1BE5A8 */    DCW 0x13C2
+/* 0x1BE5AA */    DCW 0x13C2
+/* 0x1BE5AC */    DCW 0x13C2
+/* 0x1BE5AE */    DCW 0x13C2
+/* 0x1BE5B0 */    DCW 0x13C2
+/* 0x1BE5B2 */    DCW 0x13C2
+/* 0x1BE5B4 */    DCW 0x13C2
+/* 0x1BE5B6 */    DCW 0x13C2
+/* 0x1BE5B8 */    DCW 0x13C2
+/* 0x1BE5BA */    DCW 0x13C2
+/* 0x1BE5BC */    DCW 0x13C2
+/* 0x1BE5BE */    DCW 0x13C2
+/* 0x1BE5C0 */    DCW 0x13C2
+/* 0x1BE5C2 */    DCW 0x13C2
+/* 0x1BE5C4 */    DCW 0x13C2
+/* 0x1BE5C6 */    DCW 0x13C2
+/* 0x1BE5C8 */    DCW 0x13C2
+/* 0x1BE5CA */    DCW 0x13C2
+/* 0x1BE5CC */    DCW 0x13C2
+/* 0x1BE5CE */    DCW 0x13C2
+/* 0x1BE5D0 */    DCW 0x13C2
+/* 0x1BE5D2 */    DCW 0x13C2
+/* 0x1BE5D4 */    DCW 0x13C2
+/* 0x1BE5D6 */    DCW 0x13C2
+/* 0x1BE5D8 */    DCW 0x13C2
+/* 0x1BE5DA */    DCW 0x13C2
+/* 0x1BE5DC */    DCW 0x13C2
+/* 0x1BE5DE */    DCW 0x13C2
+/* 0x1BE5E0 */    DCW 0x13C2
+/* 0x1BE5E2 */    DCW 0xEA0
+/* 0x1BE5E4 */    DCW 0xEA4
+/* 0x1BE5E6 */    DCW 0xEA8
+/* 0x1BE5E8 */    DCW 0xEAC
+/* 0x1BE5EA */    DCW 0xEB0
+/* 0x1BE5EC */    DCW 0xEB4
+/* 0x1BE5EE */    DCW 0xEB8
+/* 0x1BE5F0 */    DCW 0xEBC
+/* 0x1BE5F2 */    DCW 0xEC0
+/* 0x1BE5F4 */    DCW 0xEC4
+/* 0x1BE5F6 */    DCW 0x13C2
+/* 0x1BE5F8 */    DCW 0x13C2
+/* 0x1BE5FA */    DCW 0x13C2
+/* 0x1BE5FC */    DCW 0x13C2
+/* 0x1BE5FE */    DCW 0x13C2
+/* 0x1BE600 */    DCW 0x13C2
+/* 0x1BE602 */    DCW 0x13C2
+/* 0x1BE604 */    DCW 0x13C2
+/* 0x1BE606 */    DCW 0x13C2
+/* 0x1BE608 */    DCW 0x13C2
+/* 0x1BE60A */    DCW 0x13C2
+/* 0x1BE60C */    DCW 0x13C2
+/* 0x1BE60E */    DCW 0x13C2
+/* 0x1BE610 */    DCW 0x13C2
+/* 0x1BE612 */    DCW 0x13C2
+/* 0x1BE614 */    DCW 0x13C2
+/* 0x1BE616 */    DCW 0x13C2
+/* 0x1BE618 */    DCW 0x13C2
+/* 0x1BE61A */    DCW 0x13C2
+/* 0x1BE61C */    DCW 0x13C2
+/* 0x1BE61E */    DCW 0x13C2
+/* 0x1BE620 */    DCW 0x13C2
+/* 0x1BE622 */    DCW 0x13C2
+/* 0x1BE624 */    DCW 0x13C2
+/* 0x1BE626 */    DCW 0x13C2
+/* 0x1BE628 */    DCW 0x13C2
+/* 0x1BE62A */    DCW 0x13C2
+/* 0x1BE62C */    DCW 0x13C2
+/* 0x1BE62E */    DCW 0x13C2
+/* 0x1BE630 */    DCW 0x13C2
+/* 0x1BE632 */    DCW 0x13C2
+/* 0x1BE634 */    DCW 0x13C2
+/* 0x1BE636 */    DCW 0x13C2
+/* 0x1BE638 */    DCW 0x13C2
+/* 0x1BE63A */    DCW 0x13C2
+/* 0x1BE63C */    DCW 0x13C2
+/* 0x1BE63E */    DCW 0x13C2
+/* 0x1BE640 */    DCW 0x13C2
+/* 0x1BE642 */    DCW 0x13C2
+/* 0x1BE644 */    DCW 0x13C2
+/* 0x1BE646 */    DCW 0x13C2
+/* 0x1BE648 */    DCW 0x13C2
+/* 0x1BE64A */    DCW 0x13C2
+/* 0x1BE64C */    DCW 0x13C2
+/* 0x1BE64E */    DCW 0x13C2
+/* 0x1BE650 */    DCW 0x13C2
+/* 0x1BE652 */    DCW 0x13C2
+/* 0x1BE654 */    DCW 0x13C2
+/* 0x1BE656 */    DCW 0x13C2
+/* 0x1BE658 */    DCW 0x13C2
+/* 0x1BE65A */    DCW 0x13C2
+/* 0x1BE65C */    DCW 0x13C2
+/* 0x1BE65E */    DCW 0x13C2
+/* 0x1BE660 */    DCW 0x13C2
+/* 0x1BE662 */    DCW 0xEC8
+/* 0x1BE664 */    DCW 0xECC
+/* 0x1BE666 */    DCW 0xED0
+/* 0x1BE668 */    DCW 0xED4
+/* 0x1BE66A */    DCW 0xED8
+/* 0x1BE66C */    DCW 0xEDC
+/* 0x1BE66E */    DCW 0x13C2
+/* 0x1BE670 */    DCW 0x13C2
+/* 0x1BE672 */    DCW 0x13C2
+/* 0x1BE674 */    DCW 0x13C2
+/* 0x1BE676 */    DCW 0x13C2
+/* 0x1BE678 */    DCW 0x13C2
+/* 0x1BE67A */    DCW 0x13C2
+/* 0x1BE67C */    DCW 0x13C2
+/* 0x1BE67E */    DCW 0x13C2
+/* 0x1BE680 */    DCW 0x13C2
+/* 0x1BE682 */    DCW 0xEE0
+/* 0x1BE684 */    DCW 0xEE4
+/* 0x1BE686 */    DCW 0xEE8
+/* 0x1BE688 */    DCW 0xEEC
+/* 0x1BE68A */    DCW 0xEF0
+/* 0x1BE68C */    DCW 0xEF4
+/* 0x1BE68E */    DCW 0x13C2
+/* 0x1BE690 */    DCW 0x13C2
+/* 0x1BE692 */    DCW 0x13C2
+/* 0x1BE694 */    DCW 0x13C2
+/* 0x1BE696 */    DCW 0x13C2
+/* 0x1BE698 */    DCW 0x13C2
+/* 0x1BE69A */    DCW 0x13C2
+/* 0x1BE69C */    DCW 0x13C2
+/* 0x1BE69E */    DCW 0x13C2
+/* 0x1BE6A0 */    DCW 0x13C2
+/* 0x1BE6A2 */    DCW 0xEF8
+/* 0x1BE6A4 */    DCW 0xEFC
+/* 0x1BE6A6 */    DCW 0xF00
+/* 0x1BE6A8 */    DCW 0xF04
+/* 0x1BE6AA */    DCW 0xF08
+/* 0x1BE6AC */    DCW 0xF0C
+/* 0x1BE6AE */    DCW 0xF10
+/* 0x1BE6B0 */    DCW 0xF14
+/* 0x1BE6B2 */    DCW 0xF18
+/* 0x1BE6B4 */    DCW 0xF1C
+/* 0x1BE6B6 */    DCW 0xF20
+/* 0x1BE6B8 */    DCW 0xF24
+/* 0x1BE6BA */    DCW 0xF28
+/* 0x1BE6BC */    DCW 0xF2C
+/* 0x1BE6BE */    DCW 0xF30
+/* 0x1BE6C0 */    DCW 0xF34
+/* 0x1BE6C2 */    DCW 0x13C2
+/* 0x1BE6C4 */    DCW 0x13C2
+/* 0x1BE6C6 */    DCW 0x13C2
+/* 0x1BE6C8 */    DCW 0x13C2
+/* 0x1BE6CA */    DCW 0x13C2
+/* 0x1BE6CC */    DCW 0x13C2
+/* 0x1BE6CE */    DCW 0x13C2
+/* 0x1BE6D0 */    DCW 0x13C2
+/* 0x1BE6D2 */    DCW 0x13C2
+/* 0x1BE6D4 */    DCW 0x13C2
+/* 0x1BE6D6 */    DCW 0x13C2
+/* 0x1BE6D8 */    DCW 0x13C2
+/* 0x1BE6DA */    DCW 0x13C2
+/* 0x1BE6DC */    DCW 0x13C2
+/* 0x1BE6DE */    DCW 0x13C2
+/* 0x1BE6E0 */    DCW 0x13C2
+/* 0x1BE6E2 */    DCW 0xF38
+/* 0x1BE6E4 */    DCW 0xF3C
+/* 0x1BE6E6 */    DCW 0xF40
+/* 0x1BE6E8 */    DCW 0xF44
+/* 0x1BE6EA */    DCW 0xF48
+/* 0x1BE6EC */    DCW 0xF4C
+/* 0x1BE6EE */    DCW 0xF50
+/* 0x1BE6F0 */    DCW 0xF54
+/* 0x1BE6F2 */    DCW 0xF58
+/* 0x1BE6F4 */    DCW 0xF5C
+/* 0x1BE6F6 */    DCW 0xF60
+/* 0x1BE6F8 */    DCW 0xF64
+/* 0x1BE6FA */    DCW 0x13C2
+/* 0x1BE6FC */    DCW 0x13C2
+/* 0x1BE6FE */    DCW 0x13C2
+/* 0x1BE700 */    DCW 0x13C2
+/* 0x1BE702 */    DCW 0x13C2
+/* 0x1BE704 */    DCW 0x13C2
+/* 0x1BE706 */    DCW 0x13C2
+/* 0x1BE708 */    DCW 0x13C2
+/* 0x1BE70A */    DCW 0x13C2
+/* 0x1BE70C */    DCW 0x13C2
+/* 0x1BE70E */    DCW 0x13C2
+/* 0x1BE710 */    DCW 0x13C2
+/* 0x1BE712 */    DCW 0x13C2
+/* 0x1BE714 */    DCW 0x13C2
+/* 0x1BE716 */    DCW 0x13C2
+/* 0x1BE718 */    DCW 0x13C2
+/* 0x1BE71A */    DCW 0x13C2
+/* 0x1BE71C */    DCW 0x13C2
+/* 0x1BE71E */    DCW 0x13C2
+/* 0x1BE720 */    DCW 0x13C2
+/* 0x1BE722 */    DCW 0xF68
+/* 0x1BE724 */    DCW 0xF6C
+/* 0x1BE726 */    DCW 0xF70
+/* 0x1BE728 */    DCW 0xF74
+/* 0x1BE72A */    DCW 0xF78
+/* 0x1BE72C */    DCW 0xF7C
+/* 0x1BE72E */    DCW 0xF80
+/* 0x1BE730 */    DCW 0x101D
+/* 0x1BE732 */    DCW 0x1021
+/* 0x1BE734 */    DCW 0x1025
+/* 0x1BE736 */    DCW 0x1029
+/* 0x1BE738 */    DCW 0x102D
+/* 0x1BE73A */    DCW 0x13C2
+/* 0x1BE73C */    DCW 0x13C2
+/* 0x1BE73E */    DCW 0x13C2
+/* 0x1BE740 */    DCW 0x13C2
+/* 0x1BE742 */    DCW 0x13C2
+/* 0x1BE744 */    DCW 0x13C2
+/* 0x1BE746 */    DCW 0x13C2
+/* 0x1BE748 */    DCW 0x13C2
+/* 0x1BE74A */    DCW 0x13C2
+/* 0x1BE74C */    DCW 0x13C2
+/* 0x1BE74E */    DCW 0x13C2
+/* 0x1BE750 */    DCW 0x13C2
+/* 0x1BE752 */    DCW 0x13C2
+/* 0x1BE754 */    DCW 0x13C2
+/* 0x1BE756 */    DCW 0x13C2
+/* 0x1BE758 */    DCW 0x13C2
+/* 0x1BE75A */    DCW 0x13C2
+/* 0x1BE75C */    DCW 0x13C2
+/* 0x1BE75E */    DCW 0x13C2
+/* 0x1BE760 */    DCW 0x13C2
+/* 0x1BE762 */    DCW 0x1031
+/* 0x1BE764 */    DCW 0x13C2
+/* 0x1BE766 */    DCW 0x13C2
+/* 0x1BE768 */    DCW 0x13C2
+/* 0x1BE76A */    DCW 0x13C2
+/* 0x1BE76C */    DCW 0x13C2
+/* 0x1BE76E */    DCW 0x13C2
+/* 0x1BE770 */    DCW 0x13C2
+/* 0x1BE772 */    DCW 0x13C2
+/* 0x1BE774 */    DCW 0x13C2
+/* 0x1BE776 */    DCW 0x13C2
+/* 0x1BE778 */    DCW 0x13C2
+/* 0x1BE77A */    DCW 0x13C2
+/* 0x1BE77C */    DCW 0x13C2
+/* 0x1BE77E */    DCW 0x13C2
+/* 0x1BE780 */    DCW 0x13C2
+/* 0x1BE782 */    DCW 0x1035
+/* 0x1BE784 */    DCW 0x13C2
+/* 0x1BE786 */    DCW 0x13C2
+/* 0x1BE788 */    DCW 0x13C2
+/* 0x1BE78A */    DCW 0x13C2
+/* 0x1BE78C */    DCW 0x13C2
+/* 0x1BE78E */    DCW 0x13C2
+/* 0x1BE790 */    DCW 0x13C2
+/* 0x1BE792 */    DCW 0x13C2
+/* 0x1BE794 */    DCW 0x13C2
+/* 0x1BE796 */    DCW 0x13C2
+/* 0x1BE798 */    DCW 0x13C2
+/* 0x1BE79A */    DCW 0x13C2
+/* 0x1BE79C */    DCW 0x13C2
+/* 0x1BE79E */    DCW 0x13C2
+/* 0x1BE7A0 */    DCW 0x13C2
+/* 0x1BE7A2 */    DCW 0x1039
+/* 0x1BE7A4 */    DCW 0x103D
+/* 0x1BE7A6 */    DCW 0x1041
+/* 0x1BE7A8 */    DCW 0x1045
+/* 0x1BE7AA */    DCW 0x1049
+/* 0x1BE7AC */    DCW 0x104D
+/* 0x1BE7AE */    DCW 0x1051
+/* 0x1BE7B0 */    DCW 0x1055
+/* 0x1BE7B2 */    DCW 0x1059
+/* 0x1BE7B4 */    DCW 0x13C2
+/* 0x1BE7B6 */    DCW 0x13C2
+/* 0x1BE7B8 */    DCW 0x13C2
+/* 0x1BE7BA */    DCW 0x13C2
+/* 0x1BE7BC */    DCW 0x13C2
+/* 0x1BE7BE */    DCW 0x13C2
+/* 0x1BE7C0 */    DCW 0x13C2
+/* 0x1BE7C2 */    DCW 0x13C2
+/* 0x1BE7C4 */    DCW 0x13C2
+/* 0x1BE7C6 */    DCW 0x13C2
+/* 0x1BE7C8 */    DCW 0x13C2
+/* 0x1BE7CA */    DCW 0x13C2
+/* 0x1BE7CC */    DCW 0x13C2
+/* 0x1BE7CE */    DCW 0x13C2
+/* 0x1BE7D0 */    DCW 0x13C2
+/* 0x1BE7D2 */    DCW 0x13C2
+/* 0x1BE7D4 */    DCW 0x13C2
+/* 0x1BE7D6 */    DCW 0x13C2
+/* 0x1BE7D8 */    DCW 0x13C2
+/* 0x1BE7DA */    DCW 0x13C2
+/* 0x1BE7DC */    DCW 0x13C2
+/* 0x1BE7DE */    DCW 0x13C2
+/* 0x1BE7E0 */    DCW 0x13C2
+/* 0x1BE7E2 */    DCW 0x105D
+/* 0x1BE7E4 */    DCW 0x1061
+/* 0x1BE7E6 */    DCW 0x1065
+/* 0x1BE7E8 */    DCW 0x1069
+/* 0x1BE7EA */    DCW 0x106D
+/* 0x1BE7EC */    DCW 0x1071
+/* 0x1BE7EE */    DCW 0x1075
+/* 0x1BE7F0 */    DCW 0x1079
+/* 0x1BE7F2 */    DCW 0x107D
+/* 0x1BE7F4 */    DCW 0x13C2
+/* 0x1BE7F6 */    DCW 0x13C2
+/* 0x1BE7F8 */    DCW 0x13C2
+/* 0x1BE7FA */    DCW 0x13C2
+/* 0x1BE7FC */    DCW 0x13C2
+/* 0x1BE7FE */    DCW 0x13C2
+/* 0x1BE800 */    DCW 0x13C2
+/* 0x1BE802 */    DCW 0x13C2
+/* 0x1BE804 */    DCW 0x13C2
+/* 0x1BE806 */    DCW 0x13C2
+/* 0x1BE808 */    DCW 0x13C2
+/* 0x1BE80A */    DCW 0x13C2
+/* 0x1BE80C */    DCW 0x13C2
+/* 0x1BE80E */    DCW 0x13C2
+/* 0x1BE810 */    DCW 0x13C2
+/* 0x1BE812 */    DCW 0x13C2
+/* 0x1BE814 */    DCW 0x13C2
+/* 0x1BE816 */    DCW 0x13C2
+/* 0x1BE818 */    DCW 0x13C2
+/* 0x1BE81A */    DCW 0x13C2
+/* 0x1BE81C */    DCW 0x13C2
+/* 0x1BE81E */    DCW 0x13C2
+/* 0x1BE820 */    DCW 0x13C2
+/* 0x1BE822 */    DCW 0x1081
+/* 0x1BE824 */    DCW 0x1085
+/* 0x1BE826 */    DCW 0x1089
+/* 0x1BE828 */    DCW 0x108D
+/* 0x1BE82A */    DCW 0x13C2
+/* 0x1BE82C */    DCW 0x13C2
+/* 0x1BE82E */    DCW 0x13C2
+/* 0x1BE830 */    DCW 0x13C2
+/* 0x1BE832 */    DCW 0x13C2
+/* 0x1BE834 */    DCW 0x13C2
+/* 0x1BE836 */    DCW 0x13C2
+/* 0x1BE838 */    DCW 0x13C2
+/* 0x1BE83A */    DCW 0x13C2
+/* 0x1BE83C */    DCW 0x13C2
+/* 0x1BE83E */    DCW 0x13C2
+/* 0x1BE840 */    DCW 0x13C2
+/* 0x1BE842 */    DCW 0x1091
+/* 0x1BE844 */    DCW 0x1095
+/* 0x1BE846 */    DCW 0x13C2
+/* 0x1BE848 */    DCW 0x13C2
+/* 0x1BE84A */    DCW 0x13C2
+/* 0x1BE84C */    DCW 0x13C2
+/* 0x1BE84E */    DCW 0x13C2
+/* 0x1BE850 */    DCW 0x13C2
+/* 0x1BE852 */    DCW 0x13C2
+/* 0x1BE854 */    DCW 0x13C2
+/* 0x1BE856 */    DCW 0x13C2
+/* 0x1BE858 */    DCW 0x13C2
+/* 0x1BE85A */    DCW 0x13C2
+/* 0x1BE85C */    DCW 0x13C2
+/* 0x1BE85E */    DCW 0x13C2
+/* 0x1BE860 */    DCW 0x13C2
+/* 0x1BE862 */    DCW 0x1099
+/* 0x1BE864 */    DCW 0x109D
+/* 0x1BE866 */    DCW 0x10A1
+/* 0x1BE868 */    DCW 0x10A5
+/* 0x1BE86A */    DCW 0x10A9
+/* 0x1BE86C */    LDR.W           R0, =(aGlInvalidEnum_0 - 0x1BE874); jumptable 001BD67E case 1280
+/* 0x1BE870 */    ADD             R0, PC; "GL_INVALID_ENUM"
+/* 0x1BE872 */    BX              LR
+/* 0x1BE874 */    CMP.W           R0, #0x2800
+/* 0x1BE878 */    BLT.W           loc_1BE956
+/* 0x1BE87C */    CMP.W           R0, #0x4000
+/* 0x1BE880 */    BLT.W           loc_1BEA18
+/* 0x1BE884 */    MOVW            R1, #0x8037
+/* 0x1BE888 */    SUBS            R1, R0, R1
+/* 0x1BE88A */    CMP             R1, #0x5C ; '\'; switch 93 cases
+/* 0x1BE88C */    BHI.W           def_1BE890; jumptable 001BE890 default case
+/* 0x1BE890 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BE894 */    DCW 0x5D; jump table for switch statement
+/* 0x1BE896 */    DCW 0x7A4
+/* 0x1BE898 */    DCW 0xAB9
+/* 0x1BE89A */    DCW 0xAB9
+/* 0x1BE89C */    DCW 0x7A8
+/* 0x1BE89E */    DCW 0x7AC
+/* 0x1BE8A0 */    DCW 0x7B0
+/* 0x1BE8A2 */    DCW 0x7B4
+/* 0x1BE8A4 */    DCW 0x7B8
+/* 0x1BE8A6 */    DCW 0x7BC
+/* 0x1BE8A8 */    DCW 0x7C0
+/* 0x1BE8AA */    DCW 0x7C4
+/* 0x1BE8AC */    DCW 0x7C8
+/* 0x1BE8AE */    DCW 0x7CC
+/* 0x1BE8B0 */    DCW 0x7D0
+/* 0x1BE8B2 */    DCW 0x7D4
+/* 0x1BE8B4 */    DCW 0x7D8
+/* 0x1BE8B6 */    DCW 0x7DC
+/* 0x1BE8B8 */    DCW 0x7E0
+/* 0x1BE8BA */    DCW 0x7E4
+/* 0x1BE8BC */    DCW 0x7E8
+/* 0x1BE8BE */    DCW 0x7EC
+/* 0x1BE8C0 */    DCW 0x7F0
+/* 0x1BE8C2 */    DCW 0xAB9
+/* 0x1BE8C4 */    DCW 0x7F4
+/* 0x1BE8C6 */    DCW 0x7F8
+/* 0x1BE8C8 */    DCW 0x7FC
+/* 0x1BE8CA */    DCW 0x800
+/* 0x1BE8CC */    DCW 0x804
+/* 0x1BE8CE */    DCW 0x808
+/* 0x1BE8D0 */    DCW 0x80C
+/* 0x1BE8D2 */    DCW 0x810
+/* 0x1BE8D4 */    DCW 0x814
+/* 0x1BE8D6 */    DCW 0x818
+/* 0x1BE8D8 */    DCW 0x81C
+/* 0x1BE8DA */    DCW 0x820
+/* 0x1BE8DC */    DCW 0x824
+/* 0x1BE8DE */    DCW 0x828
+/* 0x1BE8E0 */    DCW 0x82C
+/* 0x1BE8E2 */    DCW 0x830
+/* 0x1BE8E4 */    DCW 0x834
+/* 0x1BE8E6 */    DCW 0x838
+/* 0x1BE8E8 */    DCW 0x83C
+/* 0x1BE8EA */    DCW 0xAB9
+/* 0x1BE8EC */    DCW 0x840
+/* 0x1BE8EE */    DCW 0x844
+/* 0x1BE8F0 */    DCW 0xAB9
+/* 0x1BE8F2 */    DCW 0x848
+/* 0x1BE8F4 */    DCW 0x84C
+/* 0x1BE8F6 */    DCW 0x850
+/* 0x1BE8F8 */    DCW 0x854
+/* 0x1BE8FA */    DCW 0xAB9
+/* 0x1BE8FC */    DCW 0xAB9
+/* 0x1BE8FE */    DCW 0xAB9
+/* 0x1BE900 */    DCW 0xAB9
+/* 0x1BE902 */    DCW 0xAB9
+/* 0x1BE904 */    DCW 0xAB9
+/* 0x1BE906 */    DCW 0xAB9
+/* 0x1BE908 */    DCW 0xAB9
+/* 0x1BE90A */    DCW 0xAB9
+/* 0x1BE90C */    DCW 0xAB9
+/* 0x1BE90E */    DCW 0x858
+/* 0x1BE910 */    DCW 0x85C
+/* 0x1BE912 */    DCW 0x860
+/* 0x1BE914 */    DCW 0x864
+/* 0x1BE916 */    DCW 0x868
+/* 0x1BE918 */    DCW 0x86C
+/* 0x1BE91A */    DCW 0x870
+/* 0x1BE91C */    DCW 0x874
+/* 0x1BE91E */    DCW 0x878
+/* 0x1BE920 */    DCW 0xAB9
+/* 0x1BE922 */    DCW 0x87C
+/* 0x1BE924 */    DCW 0x880
+/* 0x1BE926 */    DCW 0xAB9
+/* 0x1BE928 */    DCW 0x884
+/* 0x1BE92A */    DCW 0x888
+/* 0x1BE92C */    DCW 0x88C
+/* 0x1BE92E */    DCW 0xAB9
+/* 0x1BE930 */    DCW 0x890
+/* 0x1BE932 */    DCW 0x894
+/* 0x1BE934 */    DCW 0xAB9
+/* 0x1BE936 */    DCW 0x898
+/* 0x1BE938 */    DCW 0x89C
+/* 0x1BE93A */    DCW 0x8A0
+/* 0x1BE93C */    DCW 0xAB9
+/* 0x1BE93E */    DCW 0x8A4
+/* 0x1BE940 */    DCW 0xAB9
+/* 0x1BE942 */    DCW 0x8A8
+/* 0x1BE944 */    DCW 0x8AC
+/* 0x1BE946 */    DCW 0x8B0
+/* 0x1BE948 */    DCW 0x8B4
+/* 0x1BE94A */    DCW 0x8B8
+/* 0x1BE94C */    DCW 0x8BC
+/* 0x1BE94E */    LDR.W           R0, =(aGlPolygonOffse - 0x1BE956); jumptable 001BE890 case 0
+/* 0x1BE952 */    ADD             R0, PC; "GL_POLYGON_OFFSET_FILL"
+/* 0x1BE954 */    BX              LR
+/* 0x1BE956 */    CMP.W           R0, #0x1800
+/* 0x1BE95A */    BGE             loc_1BE9A0
+/* 0x1BE95C */    CMP.W           R0, #0x1500
+/* 0x1BE960 */    BGE.W           loc_1BEACA
+/* 0x1BE964 */    CMP.W           R0, #0x1300
+/* 0x1BE968 */    BGE.W           loc_1BEB30
+/* 0x1BE96C */    MOVW            R1, #0x1101
+/* 0x1BE970 */    CMP             R0, R1
+/* 0x1BE972 */    BLE.W           loc_1BEC34
+/* 0x1BE976 */    SUB.W           R1, R0, #0x1200; switch 10 cases
+/* 0x1BE97A */    CMP             R1, #9
+/* 0x1BE97C */    BHI.W           def_1BE980; jumptable 001BE980 default case
+/* 0x1BE980 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BE984 */    DCW 0xA; jump table for switch statement
+/* 0x1BE986 */    DCW 0x851
+/* 0x1BE988 */    DCW 0x855
+/* 0x1BE98A */    DCW 0x859
+/* 0x1BE98C */    DCW 0x85D
+/* 0x1BE98E */    DCW 0x861
+/* 0x1BE990 */    DCW 0x865
+/* 0x1BE992 */    DCW 0x869
+/* 0x1BE994 */    DCW 0x86D
+/* 0x1BE996 */    DCW 0x871
+/* 0x1BE998 */    LDR.W           R0, =(aGlAmbient - 0x1BE9A0); jumptable 001BE980 case 4608
+/* 0x1BE99C */    ADD             R0, PC; "GL_AMBIENT"
+/* 0x1BE99E */    BX              LR
+/* 0x1BE9A0 */    CMP.W           R0, #0x1F00
+/* 0x1BE9A4 */    BGE.W           loc_1BEA92
+/* 0x1BE9A8 */    CMP.W           R0, #0x1A00
+/* 0x1BE9AC */    BGE.W           loc_1BEB5C
+/* 0x1BE9B0 */    CMP.W           R0, #0x1900
+/* 0x1BE9B4 */    BLT.W           loc_1BED6A
+/* 0x1BE9B8 */    SUB.W           R0, R0, #0x1900; switch 11 cases
+/* 0x1BE9BC */    CMP             R0, #0xA
+/* 0x1BE9BE */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BE9C2 */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BE9C6 */    DCW 0xB; jump table for switch statement
+/* 0x1BE9C8 */    DCW 0x854
+/* 0x1BE9CA */    DCW 0x858
+/* 0x1BE9CC */    DCW 0x85C
+/* 0x1BE9CE */    DCW 0x860
+/* 0x1BE9D0 */    DCW 0x864
+/* 0x1BE9D2 */    DCW 0x868
+/* 0x1BE9D4 */    DCW 0x86C
+/* 0x1BE9D6 */    DCW 0x870
+/* 0x1BE9D8 */    DCW 0x874
+/* 0x1BE9DA */    DCW 0x878
+/* 0x1BE9DC */    LDR.W           R0, =(aGlColorIndex - 0x1BE9E4); jumptable 001BE9C2 case 6400
+/* 0x1BE9E0 */    ADD             R0, PC; "GL_COLOR_INDEX"
+/* 0x1BE9E2 */    BX              LR
+/* 0x1BE9E4 */    CMP.W           R0, #0x300
+/* 0x1BE9E8 */    BGE.W           loc_1BEB00
+/* 0x1BE9EC */    CMP             R0, #9; switch 10 cases
+/* 0x1BE9EE */    BLS.W           loc_1BEBC4
+/* 0x1BE9F2 */    SUB.W           R1, R0, #0x200; jumptable 001BEBC4 default case
+/* 0x1BE9F6 */    CMP             R1, #7
+/* 0x1BE9F8 */    BHI.W           def_1BE9FC; jumptable 001BE9FC default case
+/* 0x1BE9FC */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEA00 */    DCW 8; jump table for switch statement
+/* 0x1BEA02 */    DCW 0x85F
+/* 0x1BEA04 */    DCW 0x863
+/* 0x1BEA06 */    DCW 0x867
+/* 0x1BEA08 */    DCW 0x86B
+/* 0x1BEA0A */    DCW 0x86F
+/* 0x1BEA0C */    DCW 0x873
+/* 0x1BEA0E */    DCW 0x877
+/* 0x1BEA10 */    LDR.W           R0, =(aGlNever - 0x1BEA18); jumptable 001BE9FC case 512
+/* 0x1BEA14 */    ADD             R0, PC; "GL_NEVER"
+/* 0x1BEA16 */    BX              LR
+/* 0x1BEA18 */    CMP.W           R0, #0x2A00
+/* 0x1BEA1C */    BLT.W           loc_1BEC56
+/* 0x1BEA20 */    SUB.W           R1, R0, #0x2A00; switch 46 cases
+/* 0x1BEA24 */    CMP             R1, #0x2D ; '-'
+/* 0x1BEA26 */    BHI.W           def_1BEA2A; jumptable 001BEA2A default case
+/* 0x1BEA2A */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEA2E */    DCW 0x2E; jump table for switch statement
+/* 0x1BEA30 */    DCW 0x22D
+/* 0x1BEA32 */    DCW 0x231
+/* 0x1BEA34 */    DCW 0x9EC
+/* 0x1BEA36 */    DCW 0x9EC
+/* 0x1BEA38 */    DCW 0x9EC
+/* 0x1BEA3A */    DCW 0x9EC
+/* 0x1BEA3C */    DCW 0x9EC
+/* 0x1BEA3E */    DCW 0x9EC
+/* 0x1BEA40 */    DCW 0x9EC
+/* 0x1BEA42 */    DCW 0x9EC
+/* 0x1BEA44 */    DCW 0x9EC
+/* 0x1BEA46 */    DCW 0x9EC
+/* 0x1BEA48 */    DCW 0x9EC
+/* 0x1BEA4A */    DCW 0x9EC
+/* 0x1BEA4C */    DCW 0x9EC
+/* 0x1BEA4E */    DCW 0x235
+/* 0x1BEA50 */    DCW 0x9EC
+/* 0x1BEA52 */    DCW 0x9EC
+/* 0x1BEA54 */    DCW 0x9EC
+/* 0x1BEA56 */    DCW 0x9EC
+/* 0x1BEA58 */    DCW 0x9EC
+/* 0x1BEA5A */    DCW 0x9EC
+/* 0x1BEA5C */    DCW 0x9EC
+/* 0x1BEA5E */    DCW 0x9EC
+/* 0x1BEA60 */    DCW 0x9EC
+/* 0x1BEA62 */    DCW 0x9EC
+/* 0x1BEA64 */    DCW 0x9EC
+/* 0x1BEA66 */    DCW 0x9EC
+/* 0x1BEA68 */    DCW 0x9EC
+/* 0x1BEA6A */    DCW 0x9EC
+/* 0x1BEA6C */    DCW 0x9EC
+/* 0x1BEA6E */    DCW 0x239
+/* 0x1BEA70 */    DCW 0x23D
+/* 0x1BEA72 */    DCW 0x240
+/* 0x1BEA74 */    DCW 0x244
+/* 0x1BEA76 */    DCW 0x248
+/* 0x1BEA78 */    DCW 0x24B
+/* 0x1BEA7A */    DCW 0x24E
+/* 0x1BEA7C */    DCW 0x251
+/* 0x1BEA7E */    DCW 0x254
+/* 0x1BEA80 */    DCW 0x257
+/* 0x1BEA82 */    DCW 0x25A
+/* 0x1BEA84 */    DCW 0x25D
+/* 0x1BEA86 */    DCW 0x260
+/* 0x1BEA88 */    DCW 0x263
+/* 0x1BEA8A */    LDR.W           R0, =(aGlPolygonOffse_0 - 0x1BEA92); jumptable 001BEA2A case 10752
+/* 0x1BEA8E */    ADD             R0, PC; "GL_POLYGON_OFFSET_UNITS"
+/* 0x1BEA90 */    BX              LR
+/* 0x1BEA92 */    CMP.W           R0, #0x2400
+/* 0x1BEA96 */    BGE.W           loc_1BEB90
+/* 0x1BEA9A */    CMP.W           R0, #0x2100
+/* 0x1BEA9E */    BGE.W           loc_1BED1C
+/* 0x1BEAA2 */    SUB.W           R1, R0, #0x1F00; switch 4 cases
+/* 0x1BEAA6 */    CMP             R1, #3
+/* 0x1BEAA8 */    BLS.W           loc_1BED42
+/* 0x1BEAAC */    SUB.W           R0, R0, #0x2000; jumptable 001BED42 default case
+/* 0x1BEAB0 */    CMP             R0, #3
+/* 0x1BEAB2 */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEAB6 */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BEABA */    DCW 4; jump table for switch statement
+/* 0x1BEABC */    DCW 0x81E
+/* 0x1BEABE */    DCW 0x822
+/* 0x1BEAC0 */    DCW 0x826
+/* 0x1BEAC2 */    LDR.W           R0, =(aGlS - 0x1BEACA); jumptable 001BEAB6 case 8192
+/* 0x1BEAC6 */    ADD             R0, PC; "GL_S"
+/* 0x1BEAC8 */    BX              LR
+/* 0x1BEACA */    SUB.W           R1, R0, #0x1500; switch 16 cases
+/* 0x1BEACE */    CMP             R1, #0xF
+/* 0x1BEAD0 */    BHI.W           def_1BEAD4; jumptable 001BEAD4 default case
+/* 0x1BEAD4 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEAD8 */    DCW 0x10; jump table for switch statement
+/* 0x1BEADA */    DCW 0x81B
+/* 0x1BEADC */    DCW 0x81F
+/* 0x1BEADE */    DCW 0x823
+/* 0x1BEAE0 */    DCW 0x827
+/* 0x1BEAE2 */    DCW 0x82B
+/* 0x1BEAE4 */    DCW 0x82F
+/* 0x1BEAE6 */    DCW 0x833
+/* 0x1BEAE8 */    DCW 0x837
+/* 0x1BEAEA */    DCW 0x83B
+/* 0x1BEAEC */    DCW 0x83F
+/* 0x1BEAEE */    DCW 0x843
+/* 0x1BEAF0 */    DCW 0x847
+/* 0x1BEAF2 */    DCW 0x84B
+/* 0x1BEAF4 */    DCW 0x84F
+/* 0x1BEAF6 */    DCW 0x853
+/* 0x1BEAF8 */    LDR.W           R0, =(aGlClear - 0x1BEB00); jumptable 001BEAD4 case 5376
+/* 0x1BEAFC */    ADD             R0, PC; "GL_CLEAR"
+/* 0x1BEAFE */    BX              LR
+/* 0x1BEB00 */    SUB.W           R1, R0, #0x400; switch 13 cases
+/* 0x1BEB04 */    CMP             R1, #0xC
+/* 0x1BEB06 */    BHI.W           def_1BEB0A; jumptable 001BEB0A default case
+/* 0x1BEB0A */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEB0E */    DCW 0xD; jump table for switch statement
+/* 0x1BEB10 */    DCW 0x83C
+/* 0x1BEB12 */    DCW 0x840
+/* 0x1BEB14 */    DCW 0x844
+/* 0x1BEB16 */    DCW 0x848
+/* 0x1BEB18 */    DCW 0x84C
+/* 0x1BEB1A */    DCW 0x850
+/* 0x1BEB1C */    DCW 0x854
+/* 0x1BEB1E */    DCW 0x858
+/* 0x1BEB20 */    DCW 0x85C
+/* 0x1BEB22 */    DCW 0x860
+/* 0x1BEB24 */    DCW 0x864
+/* 0x1BEB26 */    DCW 0x868
+/* 0x1BEB28 */    LDR.W           R0, =(aGlFrontLeft - 0x1BEB30); jumptable 001BEB0A case 1024
+/* 0x1BEB2C */    ADD             R0, PC; "GL_FRONT_LEFT"
+/* 0x1BEB2E */    BX              LR
+/* 0x1BEB30 */    SUB.W           R1, R0, #0x1400; switch 11 cases
+/* 0x1BEB34 */    CMP             R1, #0xA
+/* 0x1BEB36 */    BHI.W           def_1BEB3A; jumptable 001BEB3A default case
+/* 0x1BEB3A */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEB3E */    DCW 0xB; jump table for switch statement
+/* 0x1BEB40 */    DCW 0x854
+/* 0x1BEB42 */    DCW 0x858
+/* 0x1BEB44 */    DCW 0x85C
+/* 0x1BEB46 */    DCW 0x860
+/* 0x1BEB48 */    DCW 0x864
+/* 0x1BEB4A */    DCW 0x868
+/* 0x1BEB4C */    DCW 0x86C
+/* 0x1BEB4E */    DCW 0x870
+/* 0x1BEB50 */    DCW 0x874
+/* 0x1BEB52 */    DCW 0x878
+/* 0x1BEB54 */    LDR.W           R0, =(aGlByte - 0x1BEB5C); jumptable 001BEB3A case 5120
+/* 0x1BEB58 */    ADD             R0, PC; "GL_BYTE"
+/* 0x1BEB5A */    BX              LR
+/* 0x1BEB5C */    CMP.W           R0, #0x1D00
+/* 0x1BEB60 */    BGE.W           loc_1BECBC
+/* 0x1BEB64 */    MOVW            R1, #0x1B01
+/* 0x1BEB68 */    CMP             R0, R1
+/* 0x1BEB6A */    BLE.W           loc_1BED8E
+/* 0x1BEB6E */    CMP.W           R0, #0x1C00
+/* 0x1BEB72 */    BGT.W           loc_1BEE52
+/* 0x1BEB76 */    MOVW            R1, #0x1B02
+/* 0x1BEB7A */    CMP             R0, R1
+/* 0x1BEB7C */    BEQ.W           loc_1BFC36
+/* 0x1BEB80 */    CMP.W           R0, #0x1C00
+/* 0x1BEB84 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEB88 */    LDR.W           R0, =(aGlRender - 0x1BEB90); "GL_RENDER"
+/* 0x1BEB8C */    ADD             R0, PC; "GL_RENDER"
+/* 0x1BEB8E */    BX              LR
+/* 0x1BEB90 */    CMP.W           R0, #0x2600
+/* 0x1BEB94 */    BGE.W           loc_1BECDA
+/* 0x1BEB98 */    CMP.W           R0, #0x2500
+/* 0x1BEB9C */    BGE.W           loc_1BEDB0
+/* 0x1BEBA0 */    CMP.W           R0, #0x2400
+/* 0x1BEBA4 */    BEQ.W           loc_1BFC3E
+/* 0x1BEBA8 */    MOVW            R1, #0x2401
+/* 0x1BEBAC */    CMP             R0, R1
+/* 0x1BEBAE */    BEQ.W           loc_1BFC46
+/* 0x1BEBB2 */    MOVW            R1, #0x2402
+/* 0x1BEBB6 */    CMP             R0, R1
+/* 0x1BEBB8 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEBBC */    LDR.W           R0, =(aGlSphereMap - 0x1BEBC4); "GL_SPHERE_MAP"
+/* 0x1BEBC0 */    ADD             R0, PC; "GL_SPHERE_MAP"
+/* 0x1BEBC2 */    BX              LR
+/* 0x1BEBC4 */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BEBC8 */    DCW 0xA; jump table for switch statement
+/* 0x1BEBCA */    DCW 0x843
+/* 0x1BEBCC */    DCW 0x847
+/* 0x1BEBCE */    DCW 0x84B
+/* 0x1BEBD0 */    DCW 0x84F
+/* 0x1BEBD2 */    DCW 0x853
+/* 0x1BEBD4 */    DCW 0x857
+/* 0x1BEBD6 */    DCW 0x85B
+/* 0x1BEBD8 */    DCW 0x85F
+/* 0x1BEBDA */    DCW 0x863
+/* 0x1BEBDC */    LDR.W           R0, =(aGlPoints - 0x1BEBE4); jumptable 001BEBC4 case 0
+/* 0x1BEBE0 */    ADD             R0, PC; "GL_POINTS"
+/* 0x1BEBE2 */    BX              LR
+/* 0x1BEBE4 */    SUB.W           R0, R0, #0x300; jumptable 001BEB0A default case
+/* 0x1BEBE8 */    CMP             R0, #8
+/* 0x1BEBEA */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEBEE */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BEBF2 */    DCW 9; jump table for switch statement
+/* 0x1BEBF4 */    DCW 0x852
+/* 0x1BEBF6 */    DCW 0x856
+/* 0x1BEBF8 */    DCW 0x85A
+/* 0x1BEBFA */    DCW 0x85E
+/* 0x1BEBFC */    DCW 0x862
+/* 0x1BEBFE */    DCW 0x866
+/* 0x1BEC00 */    DCW 0x86A
+/* 0x1BEC02 */    DCW 0x86E
+/* 0x1BEC04 */    LDR.W           R0, =(aGlSrcColor - 0x1BEC0C); jumptable 001BEBEE case 768
+/* 0x1BEC08 */    ADD             R0, PC; "GL_SRC_COLOR"
+/* 0x1BEC0A */    BX              LR
+/* 0x1BEC0C */    SUB.W           R1, R0, #0x1600; jumptable 001BEAD4 default case
+/* 0x1BEC10 */    CMP             R1, #3
+/* 0x1BEC12 */    BLS.W           loc_1BED56
+/* 0x1BEC16 */    SUB.W           R0, R0, #0x1700; jumptable 001BED56 default case
+/* 0x1BEC1A */    CMP             R0, #3
+/* 0x1BEC1C */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEC20 */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BEC24 */    DCW 4; jump table for switch statement
+/* 0x1BEC26 */    DCW 0x859
+/* 0x1BEC28 */    DCW 0x85D
+/* 0x1BEC2A */    DCW 0x861
+/* 0x1BEC2C */    LDR.W           R0, =(aGlModelview - 0x1BEC34); jumptable 001BEC20 case 5888
+/* 0x1BEC30 */    ADD             R0, PC; "GL_MODELVIEW"
+/* 0x1BEC32 */    BX              LR
+/* 0x1BEC34 */    SUB.W           R1, R0, #0x1000; switch 6 cases
+/* 0x1BEC38 */    CMP             R1, #5
+/* 0x1BEC3A */    BHI.W           def_1BEC3E; jumptable 001BEC3E default case
+/* 0x1BEC3E */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEC42 */    DCW 6; jump table for switch statement
+/* 0x1BEC44 */    DCW 0x180
+/* 0x1BEC46 */    DCW 0x8E2
+/* 0x1BEC48 */    DCW 0x184
+/* 0x1BEC4A */    DCW 0x188
+/* 0x1BEC4C */    DCW 0x18C
+/* 0x1BEC4E */    LDR.W           R0, =(aGlTextureWidth - 0x1BEC56); jumptable 001BEC3E case 4096
+/* 0x1BEC52 */    ADD             R0, PC; "GL_TEXTURE_WIDTH"
+/* 0x1BEC54 */    BX              LR
+/* 0x1BEC56 */    SUB.W           R1, R0, #0x2800; switch 4 cases
+/* 0x1BEC5A */    CMP             R1, #3
+/* 0x1BEC5C */    BHI.W           def_1BEC60; jumptable 001BEC60 default case
+/* 0x1BEC60 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BEC64 */    DCW 4; jump table for switch statement
+/* 0x1BEC66 */    DCW 0x14B
+/* 0x1BEC68 */    DCW 0x14F
+/* 0x1BEC6A */    DCW 0x153
+/* 0x1BEC6C */    LDR.W           R0, =(aGlTextureMagFi - 0x1BEC74); jumptable 001BEC60 case 10240
+/* 0x1BEC70 */    ADD             R0, PC; "GL_TEXTURE_MAG_FILTER"
+/* 0x1BEC72 */    BX              LR
+/* 0x1BEC74 */    SUB.W           R0, R0, #0x3000; jumptable 001BEA2A default case
+/* 0x1BEC78 */    CMP             R0, #5
+/* 0x1BEC7A */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEC7E */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BEC82 */    DCW 6; jump table for switch statement
+/* 0x1BEC84 */    DCW 0x148
+/* 0x1BEC86 */    DCW 0x14C
+/* 0x1BEC88 */    DCW 0x150
+/* 0x1BEC8A */    DCW 0x154
+/* 0x1BEC8C */    DCW 0x158
+/* 0x1BEC8E */    LDR.W           R0, =(aGlClipPlane0 - 0x1BEC96); jumptable 001BEC7E case 12288
+/* 0x1BEC92 */    ADD             R0, PC; "GL_CLIP_PLANE0"
+/* 0x1BEC94 */    BX              LR
+/* 0x1BEC96 */    SUB.W           R0, R0, #0x4000; jumptable 001BE890 default case
+/* 0x1BEC9A */    CMP             R0, #7
+/* 0x1BEC9C */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BECA0 */    TBH.W           [PC,R0,LSL#1]; switch jump
+/* 0x1BECA4 */    DCW 8; jump table for switch statement
+/* 0x1BECA6 */    DCW 0x825
+/* 0x1BECA8 */    DCW 0x829
+/* 0x1BECAA */    DCW 0x82D
+/* 0x1BECAC */    DCW 0x831
+/* 0x1BECAE */    DCW 0x835
+/* 0x1BECB0 */    DCW 0x839
+/* 0x1BECB2 */    DCW 0x83D
+/* 0x1BECB4 */    LDR.W           R0, =(aGlLight0 - 0x1BECBC); jumptable 001BECA0 case 16384
+/* 0x1BECB8 */    ADD             R0, PC; "GL_LIGHT0"
+/* 0x1BECBA */    BX              LR
+/* 0x1BECBC */    SUB.W           R1, R0, #0x1E00; switch 4 cases
+/* 0x1BECC0 */    CMP             R1, #3
+/* 0x1BECC2 */    BHI.W           def_1BECC6; jumptable 001BECC6 default case
+/* 0x1BECC6 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BECCA */    DCW 4; jump table for switch statement
+/* 0x1BECCC */    DCW 0x82E
+/* 0x1BECCE */    DCW 0x832
+/* 0x1BECD0 */    DCW 0x836
+/* 0x1BECD2 */    LDR.W           R0, =(aGlKeep - 0x1BECDA); jumptable 001BECC6 case 7680
+/* 0x1BECD6 */    ADD             R0, PC; "GL_KEEP"
+/* 0x1BECD8 */    BX              LR
+/* 0x1BECDA */    SUB.W           R1, R0, #0x2700; switch 4 cases
+/* 0x1BECDE */    CMP             R1, #3
+/* 0x1BECE0 */    BHI.W           def_1BECE4; jumptable 001BECE4 default case
+/* 0x1BECE4 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BECE8 */    DCW 4; jump table for switch statement
+/* 0x1BECEA */    DCW 0x82B
+/* 0x1BECEC */    DCW 0x82F
+/* 0x1BECEE */    DCW 0x833
+/* 0x1BECF0 */    LDR.W           R0, =(aGlNearestMipma - 0x1BECF8); jumptable 001BECE4 case 9984
+/* 0x1BECF4 */    ADD             R0, PC; "GL_NEAREST_MIPMAP_NEAREST"
+/* 0x1BECF6 */    BX              LR
+/* 0x1BECF8 */    SUB.W           R1, R0, #0x100; jumptable 001BE9FC default case
+/* 0x1BECFC */    CMP             R1, #4
+/* 0x1BECFE */    BHI.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BED02 */    ADR.W           R0, aGlAccum; "GL_ACCUM"
+/* 0x1BED06 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BED0A */    DCW 0x881; jump table for switch statement
+/* 0x1BED0C */    DCW 5
+/* 0x1BED0E */    DCW 0x826
+/* 0x1BED10 */    DCW 0x82A
+/* 0x1BED12 */    DCW 0x82E
+/* 0x1BED14 */    LDR.W           R0, =(aGlLoad - 0x1BED1C); jumptable 001BED06 case 257
+/* 0x1BED18 */    ADD             R0, PC; "GL_LOAD"
+/* 0x1BED1A */    BX              LR
+/* 0x1BED1C */    CMP.W           R0, #0x2200
+/* 0x1BED20 */    BLT.W           loc_1BEE6E
+/* 0x1BED24 */    BEQ.W           loc_1BFD6E
+/* 0x1BED28 */    MOVW            R1, #0x2201
+/* 0x1BED2C */    CMP             R0, R1
+/* 0x1BED2E */    BEQ.W           loc_1BFD76
+/* 0x1BED32 */    CMP.W           R0, #0x2300
+/* 0x1BED36 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BED3A */    LDR.W           R0, =(aGlTextureEnv - 0x1BED42); "GL_TEXTURE_ENV"
+/* 0x1BED3E */    ADD             R0, PC; "GL_TEXTURE_ENV"
+/* 0x1BED40 */    BX              LR
+/* 0x1BED42 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BED46 */    DCW 4; jump table for switch statement
+/* 0x1BED48 */    DCW 0x81C
+/* 0x1BED4A */    DCW 0x820
+/* 0x1BED4C */    DCW 0x824
+/* 0x1BED4E */    LDR.W           R0, =(aGlVendor - 0x1BED56); jumptable 001BED42 case 7936
+/* 0x1BED52 */    ADD             R0, PC; "GL_VENDOR"
+/* 0x1BED54 */    BX              LR
+/* 0x1BED56 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x1BED5A */    DCW 4; jump table for switch statement
+/* 0x1BED5C */    DCW 0x81E
+/* 0x1BED5E */    DCW 0x822
+/* 0x1BED60 */    DCW 0x826
+/* 0x1BED62 */    LDR.W           R0, =(aGlEmission - 0x1BED6A); jumptable 001BED56 case 5632
+/* 0x1BED66 */    ADD             R0, PC; "GL_EMISSION"
+/* 0x1BED68 */    BX              LR
+/* 0x1BED6A */    CMP.W           R0, #0x1800
+/* 0x1BED6E */    BEQ.W           loc_1BFDAE
+/* 0x1BED72 */    MOVW            R1, #0x1801
+/* 0x1BED76 */    CMP             R0, R1
+/* 0x1BED78 */    BEQ.W           loc_1BFDB6
+/* 0x1BED7C */    MOVW            R1, #0x1802
+/* 0x1BED80 */    CMP             R0, R1
+/* 0x1BED82 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BED86 */    LDR.W           R0, =(aGlStencil - 0x1BED8E); "GL_STENCIL"
+/* 0x1BED8A */    ADD             R0, PC; "GL_STENCIL"
+/* 0x1BED8C */    BX              LR
+/* 0x1BED8E */    CMP.W           R0, #0x1A00
+/* 0x1BED92 */    BEQ.W           loc_1BFDBE
+/* 0x1BED96 */    CMP.W           R0, #0x1B00
+/* 0x1BED9A */    BEQ.W           loc_1BFDC6
+/* 0x1BED9E */    MOVW            R1, #0x1B01
+/* 0x1BEDA2 */    CMP             R0, R1
+/* 0x1BEDA4 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEDA8 */    LDR.W           R0, =(aGlLine - 0x1BEDB0); "GL_LINE"
+/* 0x1BEDAC */    ADD             R0, PC; "GL_LINE"
+/* 0x1BEDAE */    BX              LR
+/* 0x1BEDB0 */    BEQ.W           loc_1BFDCE
+/* 0x1BEDB4 */    MOVW            R1, #0x2501
+/* 0x1BEDB8 */    CMP             R0, R1
+/* 0x1BEDBA */    BEQ.W           loc_1BFDD6
+/* 0x1BEDBE */    MOVW            R1, #0x2502
+/* 0x1BEDC2 */    CMP             R0, R1
+/* 0x1BEDC4 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEDC8 */    LDR.W           R0, =(aGlEyePlane - 0x1BEDD0); "GL_EYE_PLANE"
+/* 0x1BEDCC */    ADD             R0, PC; "GL_EYE_PLANE"
+/* 0x1BEDCE */    BX              LR
+/* 0x1BEDD0 */    CMP.W           R0, #0x2900; jumptable 001BEC60 default case
+/* 0x1BEDD4 */    BEQ.W           loc_1BEF3A
+/* 0x1BEDD8 */    MOVW            R1, #0x2901
+/* 0x1BEDDC */    CMP             R0, R1
+/* 0x1BEDDE */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEDE2 */    LDR.W           R0, =(aGlRepeat - 0x1BEDEA); "GL_REPEAT"
+/* 0x1BEDE6 */    ADD             R0, PC; "GL_REPEAT"
+/* 0x1BEDE8 */    BX              LR
+/* 0x1BEDEA */    CMP.W           R0, #0x1100; jumptable 001BEC3E default case
+/* 0x1BEDEE */    BEQ.W           loc_1BEF62
+/* 0x1BEDF2 */    MOVW            R1, #0x1101
+/* 0x1BEDF6 */    CMP             R0, R1
+/* 0x1BEDF8 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEDFC */    LDR.W           R0, =(aGlFastest - 0x1BEE04); "GL_FASTEST"
+/* 0x1BEE00 */    ADD             R0, PC; "GL_FASTEST"
+/* 0x1BEE02 */    BX              LR
+/* 0x1BEE04 */    CMP.W           R0, #0x1300; jumptable 001BEB3A default case
+/* 0x1BEE08 */    BEQ.W           loc_1BFDDE
+/* 0x1BEE0C */    MOVW            R1, #0x1301
+/* 0x1BEE10 */    CMP             R0, R1
+/* 0x1BEE12 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEE16 */    LDR.W           R0, =(aGlCompileAndEx - 0x1BEE1E); "GL_COMPILE_AND_EXECUTE"
+/* 0x1BEE1A */    ADD             R0, PC; "GL_COMPILE_AND_EXECUTE"
+/* 0x1BEE1C */    BX              LR
+/* 0x1BEE1E */    CMP.W           R0, #0x1D00; jumptable 001BECC6 default case
+/* 0x1BEE22 */    BEQ.W           loc_1BFDE6
+/* 0x1BEE26 */    MOVW            R1, #0x1D01
+/* 0x1BEE2A */    CMP             R0, R1
+/* 0x1BEE2C */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEE30 */    LDR.W           R0, =(aGlSmooth - 0x1BEE38); "GL_SMOOTH"
+/* 0x1BEE34 */    ADD             R0, PC; "GL_SMOOTH"
+/* 0x1BEE36 */    BX              LR
+/* 0x1BEE38 */    CMP.W           R0, #0x2600; jumptable 001BECE4 default case
+/* 0x1BEE3C */    BEQ.W           loc_1BFDEE
+/* 0x1BEE40 */    MOVW            R1, #0x2601
+/* 0x1BEE44 */    CMP             R0, R1
+/* 0x1BEE46 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEE4A */    LDR.W           R0, =(aGlLinear - 0x1BEE52); "GL_LINEAR"
+/* 0x1BEE4E */    ADD             R0, PC; "GL_LINEAR"
+/* 0x1BEE50 */    BX              LR
+/* 0x1BEE52 */    MOVW            R1, #0x1C01
+/* 0x1BEE56 */    CMP             R0, R1
+/* 0x1BEE58 */    BEQ.W           loc_1BFDF6
+/* 0x1BEE5C */    MOVW            R1, #0x1C02
+/* 0x1BEE60 */    CMP             R0, R1
+/* 0x1BEE62 */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEE66 */    LDR.W           R0, =(aGlSelect - 0x1BEE6E); "GL_SELECT"
+/* 0x1BEE6A */    ADD             R0, PC; "GL_SELECT"
+/* 0x1BEE6C */    BX              LR
+/* 0x1BEE6E */    CMP.W           R0, #0x2100
+/* 0x1BEE72 */    BEQ.W           loc_1BFDFE
+/* 0x1BEE76 */    MOVW            R1, #0x2101
+/* 0x1BEE7A */    CMP             R0, R1
+/* 0x1BEE7C */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BEE80 */    LDR.W           R0, =(aGlDecal - 0x1BEE88); "GL_DECAL"
+/* 0x1BEE84 */    ADD             R0, PC; "GL_DECAL"
+/* 0x1BEE86 */    BX              LR
+/* 0x1BEE88 */    LDR.W           R0, =(aGlPolygonOffse_1 - 0x1BEE90); jumptable 001BEA2A case 10753
+/* 0x1BEE8C */    ADD             R0, PC; "GL_POLYGON_OFFSET_POINT"
+/* 0x1BEE8E */    BX              LR
+/* 0x1BEE90 */    LDR.W           R0, =(aGlPolygonOffse_2 - 0x1BEE98); jumptable 001BEA2A case 10754
+/* 0x1BEE94 */    ADD             R0, PC; "GL_POLYGON_OFFSET_LINE"
+/* 0x1BEE96 */    BX              LR
+/* 0x1BEE98 */    LDR.W           R0, =(aGlR3G3B2 - 0x1BEEA0); jumptable 001BEA2A case 10768
+/* 0x1BEE9C */    ADD             R0, PC; "GL_R3_G3_B2"
+/* 0x1BEE9E */    BX              LR
+/* 0x1BEEA0 */    LDR.W           R0, =(aGlV2f - 0x1BEEA8); jumptable 001BEA2A case 10784
+/* 0x1BEEA4 */    ADD             R0, PC; "GL_V2F"
+/* 0x1BEEA6 */    BX              LR
+/* 0x1BEEA8 */    ADR.W           R0, aGlV3f; jumptable 001BEA2A case 10785
+/* 0x1BEEAC */    BX              LR
+/* 0x1BEEAE */    LDR.W           R0, =(aGlC4ubV2f - 0x1BEEB6); jumptable 001BEA2A case 10786
+/* 0x1BEEB2 */    ADD             R0, PC; "GL_C4UB_V2F"
+/* 0x1BEEB4 */    BX              LR
+/* 0x1BEEB6 */    LDR.W           R0, =(aGlC4ubV3f - 0x1BEEBE); jumptable 001BEA2A case 10787
+/* 0x1BEEBA */    ADD             R0, PC; "GL_C4UB_V3F"
+/* 0x1BEEBC */    BX              LR
+/* 0x1BEEBE */    ADR.W           R0, aGlC3fV3f; jumptable 001BEA2A case 10788
+/* 0x1BEEC2 */    BX              LR
+/* 0x1BEEC4 */    ADR.W           R0, aGlN3fV3f; jumptable 001BEA2A case 10789
+/* 0x1BEEC8 */    BX              LR
+/* 0x1BEECA */    ADR.W           R0, aGlC4fN3fV3f; jumptable 001BEA2A case 10790
+/* 0x1BEECE */    BX              LR
+/* 0x1BEED0 */    ADR.W           R0, aGlT2fV3f; jumptable 001BEA2A case 10791
+/* 0x1BEED4 */    BX              LR
+/* 0x1BEED6 */    ADR.W           R0, aGlT4fV4f; jumptable 001BEA2A case 10792
+/* 0x1BEEDA */    BX              LR
+/* 0x1BEEDC */    ADR.W           R0, aGlT2fC4ubV3f; jumptable 001BEA2A case 10793
+/* 0x1BEEE0 */    BX              LR
+/* 0x1BEEE2 */    ADR.W           R0, aGlT2fC3fV3f; jumptable 001BEA2A case 10794
+/* 0x1BEEE6 */    BX              LR
+/* 0x1BEEE8 */    ADR.W           R0, aGlT2fN3fV3f; jumptable 001BEA2A case 10795
+/* 0x1BEEEC */    BX              LR
+/* 0x1BEEEE */    ADR.W           R0, aGlT2fC4fN3fV3f; jumptable 001BEA2A case 10796
+/* 0x1BEEF2 */    BX              LR
+/* 0x1BEEF4 */    ADR.W           R0, aGlT4fC4fN3fV4f; jumptable 001BEA2A case 10797
+/* 0x1BEEF8 */    BX              LR
+/* 0x1BEEFA */    LDR.W           R0, =(aGlTextureMinFi - 0x1BEF02); jumptable 001BEC60 case 10241
+/* 0x1BEEFE */    ADD             R0, PC; "GL_TEXTURE_MIN_FILTER"
+/* 0x1BEF00 */    BX              LR
+/* 0x1BEF02 */    LDR.W           R0, =(aGlTextureWrapS - 0x1BEF0A); jumptable 001BEC60 case 10242
+/* 0x1BEF06 */    ADD             R0, PC; "GL_TEXTURE_WRAP_S"
+/* 0x1BEF08 */    BX              LR
+/* 0x1BEF0A */    LDR.W           R0, =(aGlTextureWrapT - 0x1BEF12); jumptable 001BEC60 case 10243
+/* 0x1BEF0E */    ADD             R0, PC; "GL_TEXTURE_WRAP_T"
+/* 0x1BEF10 */    BX              LR
+/* 0x1BEF12 */    LDR.W           R0, =(aGlClipPlane1 - 0x1BEF1A); jumptable 001BEC7E case 12289
+/* 0x1BEF16 */    ADD             R0, PC; "GL_CLIP_PLANE1"
+/* 0x1BEF18 */    BX              LR
+/* 0x1BEF1A */    LDR.W           R0, =(aGlClipPlane2 - 0x1BEF22); jumptable 001BEC7E case 12290
+/* 0x1BEF1E */    ADD             R0, PC; "GL_CLIP_PLANE2"
+/* 0x1BEF20 */    BX              LR
+/* 0x1BEF22 */    LDR.W           R0, =(aGlClipPlane3 - 0x1BEF2A); jumptable 001BEC7E case 12291
+/* 0x1BEF26 */    ADD             R0, PC; "GL_CLIP_PLANE3"
+/* 0x1BEF28 */    BX              LR
+/* 0x1BEF2A */    LDR.W           R0, =(aGlClipPlane4 - 0x1BEF32); jumptable 001BEC7E case 12292
+/* 0x1BEF2E */    ADD             R0, PC; "GL_CLIP_PLANE4"
+/* 0x1BEF30 */    BX              LR
+/* 0x1BEF32 */    LDR.W           R0, =(aGlClipPlane5 - 0x1BEF3A); jumptable 001BEC7E case 12293
+/* 0x1BEF36 */    ADD             R0, PC; "GL_CLIP_PLANE5"
+/* 0x1BEF38 */    BX              LR
+/* 0x1BEF3A */    LDR.W           R0, =(aGlClamp - 0x1BEF42); "GL_CLAMP"
+/* 0x1BEF3E */    ADD             R0, PC; "GL_CLAMP"
+/* 0x1BEF40 */    BX              LR
+/* 0x1BEF42 */    LDR.W           R0, =(aGlTextureHeigh - 0x1BEF4A); jumptable 001BEC3E case 4097
+/* 0x1BEF46 */    ADD             R0, PC; "GL_TEXTURE_HEIGHT"
+/* 0x1BEF48 */    BX              LR
+/* 0x1BEF4A */    LDR.W           R0, =(aGlTextureInter - 0x1BEF52); jumptable 001BEC3E case 4099
+/* 0x1BEF4E */    ADD             R0, PC; "GL_TEXTURE_INTERNAL_FORMAT"
+/* 0x1BEF50 */    BX              LR
+/* 0x1BEF52 */    LDR.W           R0, =(aGlTextureBorde - 0x1BEF5A); jumptable 001BEC3E case 4100
+/* 0x1BEF56 */    ADD             R0, PC; "GL_TEXTURE_BORDER_COLOR"
+/* 0x1BEF58 */    BX              LR
+/* 0x1BEF5A */    LDR.W           R0, =(aGlTextureBorde_0 - 0x1BEF62); jumptable 001BEC3E case 4101
+/* 0x1BEF5E */    ADD             R0, PC; "GL_TEXTURE_BORDER"
+/* 0x1BEF60 */    BX              LR
+/* 0x1BEF62 */    LDR.W           R0, =(aGlDontCare - 0x1BEF6A); "GL_DONT_CARE"
+/* 0x1BEF66 */    ADD             R0, PC; "GL_DONT_CARE"
+/* 0x1BEF68 */    BX              LR
+/* 0x1BEF6A */    LDR.W           R0, =(aGlInvalidValue_0 - 0x1BEF72); jumptable 001BD67E case 1281
+/* 0x1BEF6E */    ADD             R0, PC; "GL_INVALID_VALUE"
+/* 0x1BEF70 */    BX              LR
+/* 0x1BEF72 */    LDR.W           R0, =(aGlInvalidOpera_0 - 0x1BEF7A); jumptable 001BD67E case 1282
+/* 0x1BEF76 */    ADD             R0, PC; "GL_INVALID_OPERATION"
+/* 0x1BEF78 */    BX              LR
+/* 0x1BEF7A */    LDR.W           R0, =(aGlStackOverflo - 0x1BEF82); jumptable 001BD67E case 1283
+/* 0x1BEF7E */    ADD             R0, PC; "GL_STACK_OVERFLOW"
+/* 0x1BEF80 */    BX              LR
+/* 0x1BEF82 */    LDR.W           R0, =(aGlStackUnderfl - 0x1BEF8A); jumptable 001BD67E case 1284
+/* 0x1BEF86 */    ADD             R0, PC; "GL_STACK_UNDERFLOW"
+/* 0x1BEF88 */    BX              LR
+/* 0x1BEF8A */    LDR.W           R0, =(aGlOutOfMemory_0 - 0x1BEF92); jumptable 001BD67E case 1285
+/* 0x1BEF8E */    ADD             R0, PC; "GL_OUT_OF_MEMORY"
+/* 0x1BEF90 */    BX              LR
+/* 0x1BEF92 */    LDR.W           R0, =(aGl2d - 0x1BEF9A); jumptable 001BD67E case 1536
+/* 0x1BEF96 */    ADD             R0, PC; "GL_2D"
+/* 0x1BEF98 */    BX              LR
+/* 0x1BEF9A */    LDR.W           R0, =(aGl3d - 0x1BEFA2); jumptable 001BD67E case 1537
+/* 0x1BEF9E */    ADD             R0, PC; "GL_3D"
+/* 0x1BEFA0 */    BX              LR
+/* 0x1BEFA2 */    LDR.W           R0, =(aGl3dColor - 0x1BEFAA); jumptable 001BD67E case 1538
+/* 0x1BEFA6 */    ADD             R0, PC; "GL_3D_COLOR"
+/* 0x1BEFA8 */    BX              LR
+/* 0x1BEFAA */    LDR.W           R0, =(aGl3dColorTextu - 0x1BEFB2); jumptable 001BD67E case 1539
+/* 0x1BEFAE */    ADD             R0, PC; "GL_3D_COLOR_TEXTURE"
+/* 0x1BEFB0 */    BX              LR
+/* 0x1BEFB2 */    LDR.W           R0, =(aGl4dColorTextu - 0x1BEFBA); jumptable 001BD67E case 1540
+/* 0x1BEFB6 */    ADD             R0, PC; "GL_4D_COLOR_TEXTURE"
+/* 0x1BEFB8 */    BX              LR
+/* 0x1BEFBA */    LDR.W           R0, =(aGlPassThroughT - 0x1BEFC2); jumptable 001BD67E case 1792
+/* 0x1BEFBE */    ADD             R0, PC; "GL_PASS_THROUGH_TOKEN"
+/* 0x1BEFC0 */    BX              LR
+/* 0x1BEFC2 */    LDR.W           R0, =(aGlPointToken - 0x1BEFCA); jumptable 001BD67E case 1793
+/* 0x1BEFC6 */    ADD             R0, PC; "GL_POINT_TOKEN"
+/* 0x1BEFC8 */    BX              LR
+/* 0x1BEFCA */    LDR.W           R0, =(aGlLineToken - 0x1BEFD2); jumptable 001BD67E case 1794
+/* 0x1BEFCE */    ADD             R0, PC; "GL_LINE_TOKEN"
+/* 0x1BEFD0 */    BX              LR
+/* 0x1BEFD2 */    LDR.W           R0, =(aGlPolygonToken - 0x1BEFDA); jumptable 001BD67E case 1795
+/* 0x1BEFD6 */    ADD             R0, PC; "GL_POLYGON_TOKEN"
+/* 0x1BEFD8 */    BX              LR
+/* 0x1BEFDA */    LDR.W           R0, =(aGlBitmapToken - 0x1BEFE2); jumptable 001BD67E case 1796
+/* 0x1BEFDE */    ADD             R0, PC; "GL_BITMAP_TOKEN"
+/* 0x1BEFE0 */    BX              LR
+/* 0x1BEFE2 */    LDR.W           R0, =(aGlDrawPixelTok - 0x1BEFEA); jumptable 001BD67E case 1797
+/* 0x1BEFE6 */    ADD             R0, PC; "GL_DRAW_PIXEL_TOKEN"
+/* 0x1BEFE8 */    BX              LR
+/* 0x1BEFEA */    LDR.W           R0, =(aGlCopyPixelTok - 0x1BEFF2); jumptable 001BD67E case 1798
+/* 0x1BEFEE */    ADD             R0, PC; "GL_COPY_PIXEL_TOKEN"
+/* 0x1BEFF0 */    BX              LR
+/* 0x1BEFF2 */    LDR.W           R0, =(aGlLineResetTok - 0x1BEFFA); jumptable 001BD67E case 1799
+/* 0x1BEFF6 */    ADD             R0, PC; "GL_LINE_RESET_TOKEN"
+/* 0x1BEFF8 */    BX              LR
+/* 0x1BEFFA */    LDR.W           R0, =(aGlExp - 0x1BF002); jumptable 001BD67E case 2048
+/* 0x1BEFFE */    ADD             R0, PC; "GL_EXP"
+/* 0x1BF000 */    BX              LR
+/* 0x1BF002 */    LDR.W           R0, =(aGlExp2 - 0x1BF00A); jumptable 001BD67E case 2049
+/* 0x1BF006 */    ADD             R0, PC; "GL_EXP2"
+/* 0x1BF008 */    BX              LR
+/* 0x1BF00A */    LDR.W           R0, =(aGlCw - 0x1BF012); jumptable 001BD67E case 2304
+/* 0x1BF00E */    ADD             R0, PC; "GL_CW"
+/* 0x1BF010 */    BX              LR
+/* 0x1BF012 */    LDR.W           R0, =(aGlCcw - 0x1BF01A); jumptable 001BD67E case 2305
+/* 0x1BF016 */    ADD             R0, PC; "GL_CCW"
+/* 0x1BF018 */    BX              LR
+/* 0x1BF01A */    LDR.W           R0, =(aGlCoeff - 0x1BF022); jumptable 001BD67E case 2560
+/* 0x1BF01E */    ADD             R0, PC; "GL_COEFF"
+/* 0x1BF020 */    BX              LR
+/* 0x1BF022 */    LDR.W           R0, =(aGlOrder - 0x1BF02A); jumptable 001BD67E case 2561
+/* 0x1BF026 */    ADD             R0, PC; "GL_ORDER"
+/* 0x1BF028 */    BX              LR
+/* 0x1BF02A */    LDR.W           R0, =(aGlDomain - 0x1BF032); jumptable 001BD67E case 2562
+/* 0x1BF02E */    ADD             R0, PC; "GL_DOMAIN"
+/* 0x1BF030 */    BX              LR
+/* 0x1BF032 */    LDR.W           R0, =(aGlCurrentColor - 0x1BF03A); jumptable 001BD67E case 2816
+/* 0x1BF036 */    ADD             R0, PC; "GL_CURRENT_COLOR"
+/* 0x1BF038 */    BX              LR
+/* 0x1BF03A */    LDR.W           R0, =(aGlCurrentIndex - 0x1BF042); jumptable 001BD67E case 2817
+/* 0x1BF03E */    ADD             R0, PC; "GL_CURRENT_INDEX"
+/* 0x1BF040 */    BX              LR
+/* 0x1BF042 */    LDR.W           R0, =(aGlCurrentNorma - 0x1BF04A); jumptable 001BD67E case 2818
+/* 0x1BF046 */    ADD             R0, PC; "GL_CURRENT_NORMAL"
+/* 0x1BF048 */    BX              LR
+/* 0x1BF04A */    LDR.W           R0, =(aGlCurrentTextu - 0x1BF052); jumptable 001BD67E case 2819
+/* 0x1BF04E */    ADD             R0, PC; "GL_CURRENT_TEXTURE_COORDS"
+/* 0x1BF050 */    BX              LR
+/* 0x1BF052 */    LDR.W           R0, =(aGlCurrentRaste - 0x1BF05A); jumptable 001BD67E case 2820
+/* 0x1BF056 */    ADD             R0, PC; "GL_CURRENT_RASTER_COLOR"
+/* 0x1BF058 */    BX              LR
+/* 0x1BF05A */    LDR.W           R0, =(aGlCurrentRaste_0 - 0x1BF062); jumptable 001BD67E case 2821
+/* 0x1BF05E */    ADD             R0, PC; "GL_CURRENT_RASTER_INDEX"
+/* 0x1BF060 */    BX              LR
+/* 0x1BF062 */    LDR.W           R0, =(aGlCurrentRaste_1 - 0x1BF06A); jumptable 001BD67E case 2822
+/* 0x1BF066 */    ADD             R0, PC; "GL_CURRENT_RASTER_TEXTURE_COORDS"
+/* 0x1BF068 */    BX              LR
+/* 0x1BF06A */    LDR.W           R0, =(aGlCurrentRaste_2 - 0x1BF072); jumptable 001BD67E case 2823
+/* 0x1BF06E */    ADD             R0, PC; "GL_CURRENT_RASTER_POSITION"
+/* 0x1BF070 */    BX              LR
+/* 0x1BF072 */    LDR.W           R0, =(aGlCurrentRaste_3 - 0x1BF07A); jumptable 001BD67E case 2824
+/* 0x1BF076 */    ADD             R0, PC; "GL_CURRENT_RASTER_POSITION_VALID"
+/* 0x1BF078 */    BX              LR
+/* 0x1BF07A */    LDR.W           R0, =(aGlCurrentRaste_4 - 0x1BF082); jumptable 001BD67E case 2825
+/* 0x1BF07E */    ADD             R0, PC; "GL_CURRENT_RASTER_DISTANCE"
+/* 0x1BF080 */    BX              LR
+/* 0x1BF082 */    LDR.W           R0, =(aGlPointSmooth - 0x1BF08A); jumptable 001BD67E case 2832
+/* 0x1BF086 */    ADD             R0, PC; "GL_POINT_SMOOTH"
+/* 0x1BF088 */    BX              LR
+/* 0x1BF08A */    LDR.W           R0, =(aGlPointSize - 0x1BF092); jumptable 001BD67E case 2833
+/* 0x1BF08E */    ADD             R0, PC; "GL_POINT_SIZE"
+/* 0x1BF090 */    BX              LR
+/* 0x1BF092 */    LDR.W           R0, =(aGlPointSizeRan - 0x1BF09A); jumptable 001BD67E case 2834
+/* 0x1BF096 */    ADD             R0, PC; "GL_POINT_SIZE_RANGE"
+/* 0x1BF098 */    BX              LR
+/* 0x1BF09A */    LDR.W           R0, =(aGlPointSizeGra - 0x1BF0A2); jumptable 001BD67E case 2835
+/* 0x1BF09E */    ADD             R0, PC; "GL_POINT_SIZE_GRANULARITY"
+/* 0x1BF0A0 */    BX              LR
+/* 0x1BF0A2 */    LDR.W           R0, =(aGlLineSmooth - 0x1BF0AA); jumptable 001BD67E case 2848
+/* 0x1BF0A6 */    ADD             R0, PC; "GL_LINE_SMOOTH"
+/* 0x1BF0A8 */    BX              LR
+/* 0x1BF0AA */    LDR.W           R0, =(aGlLineWidth - 0x1BF0B2); jumptable 001BD67E case 2849
+/* 0x1BF0AE */    ADD             R0, PC; "GL_LINE_WIDTH"
+/* 0x1BF0B0 */    BX              LR
+/* 0x1BF0B2 */    LDR.W           R0, =(aGlLineWidthRan - 0x1BF0BA); jumptable 001BD67E case 2850
+/* 0x1BF0B6 */    ADD             R0, PC; "GL_LINE_WIDTH_RANGE"
+/* 0x1BF0B8 */    BX              LR
+/* 0x1BF0BA */    LDR.W           R0, =(aGlLineWidthGra - 0x1BF0C2); jumptable 001BD67E case 2851
+/* 0x1BF0BE */    ADD             R0, PC; "GL_LINE_WIDTH_GRANULARITY"
+/* 0x1BF0C0 */    BX              LR
+/* 0x1BF0C2 */    LDR.W           R0, =(aGlLineStipple - 0x1BF0CA); jumptable 001BD67E case 2852
+/* 0x1BF0C6 */    ADD             R0, PC; "GL_LINE_STIPPLE"
+/* 0x1BF0C8 */    BX              LR
+/* 0x1BF0CA */    LDR.W           R0, =(aGlLineStippleP - 0x1BF0D2); jumptable 001BD67E case 2853
+/* 0x1BF0CE */    ADD             R0, PC; "GL_LINE_STIPPLE_PATTERN"
+/* 0x1BF0D0 */    BX              LR
+/* 0x1BF0D2 */    LDR.W           R0, =(aGlLineStippleR - 0x1BF0DA); jumptable 001BD67E case 2854
+/* 0x1BF0D6 */    ADD             R0, PC; "GL_LINE_STIPPLE_REPEAT"
+/* 0x1BF0D8 */    BX              LR
+/* 0x1BF0DA */    LDR.W           R0, =(aGlListMode - 0x1BF0E2); jumptable 001BD67E case 2864
+/* 0x1BF0DE */    ADD             R0, PC; "GL_LIST_MODE"
+/* 0x1BF0E0 */    BX              LR
+/* 0x1BF0E2 */    LDR.W           R0, =(aGlMaxListNesti - 0x1BF0EA); jumptable 001BD67E case 2865
+/* 0x1BF0E6 */    ADD             R0, PC; "GL_MAX_LIST_NESTING"
+/* 0x1BF0E8 */    BX              LR
+/* 0x1BF0EA */    LDR.W           R0, =(aGlListBase - 0x1BF0F2); jumptable 001BD67E case 2866
+/* 0x1BF0EE */    ADD             R0, PC; "GL_LIST_BASE"
+/* 0x1BF0F0 */    BX              LR
+/* 0x1BF0F2 */    LDR.W           R0, =(aGlListIndex - 0x1BF0FA); jumptable 001BD67E case 2867
+/* 0x1BF0F6 */    ADD             R0, PC; "GL_LIST_INDEX"
+/* 0x1BF0F8 */    BX              LR
+/* 0x1BF0FA */    LDR.W           R0, =(aGlPolygonMode - 0x1BF102); jumptable 001BD67E case 2880
+/* 0x1BF0FE */    ADD             R0, PC; "GL_POLYGON_MODE"
+/* 0x1BF100 */    BX              LR
+/* 0x1BF102 */    LDR.W           R0, =(aGlPolygonSmoot - 0x1BF10A); jumptable 001BD67E case 2881
+/* 0x1BF106 */    ADD             R0, PC; "GL_POLYGON_SMOOTH"
+/* 0x1BF108 */    BX              LR
+/* 0x1BF10A */    LDR.W           R0, =(aGlPolygonStipp - 0x1BF112); jumptable 001BD67E case 2882
+/* 0x1BF10E */    ADD             R0, PC; "GL_POLYGON_STIPPLE"
+/* 0x1BF110 */    BX              LR
+/* 0x1BF112 */    LDR.W           R0, =(aGlEdgeFlag - 0x1BF11A); jumptable 001BD67E case 2883
+/* 0x1BF116 */    ADD             R0, PC; "GL_EDGE_FLAG"
+/* 0x1BF118 */    BX              LR
+/* 0x1BF11A */    LDR.W           R0, =(aGlFrontFace - 0x1BF122); jumptable 001BD67E case 2886
+/* 0x1BF11E */    ADD             R0, PC; "GL_FRONT_FACE"
+/* 0x1BF120 */    BX              LR
+/* 0x1BF122 */    LDR.W           R0, =(aGlLighting - 0x1BF12A); jumptable 001BD67E case 2896
+/* 0x1BF126 */    ADD             R0, PC; "GL_LIGHTING"
+/* 0x1BF128 */    BX              LR
+/* 0x1BF12A */    LDR.W           R0, =(aGlLightModelLo - 0x1BF132); jumptable 001BD67E case 2897
+/* 0x1BF12E */    ADD             R0, PC; "GL_LIGHT_MODEL_LOCAL_VIEWER"
+/* 0x1BF130 */    BX              LR
+/* 0x1BF132 */    LDR.W           R0, =(aGlLightModelTw - 0x1BF13A); jumptable 001BD67E case 2898
+/* 0x1BF136 */    ADD             R0, PC; "GL_LIGHT_MODEL_TWO_SIDE"
+/* 0x1BF138 */    BX              LR
+/* 0x1BF13A */    LDR.W           R0, =(aGlLightModelAm - 0x1BF142); jumptable 001BD67E case 2899
+/* 0x1BF13E */    ADD             R0, PC; "GL_LIGHT_MODEL_AMBIENT"
+/* 0x1BF140 */    BX              LR
+/* 0x1BF142 */    LDR.W           R0, =(aGlShadeModel - 0x1BF14A); jumptable 001BD67E case 2900
+/* 0x1BF146 */    ADD             R0, PC; "GL_SHADE_MODEL"
+/* 0x1BF148 */    BX              LR
+/* 0x1BF14A */    LDR.W           R0, =(aGlColorMateria - 0x1BF152); jumptable 001BD67E case 2901
+/* 0x1BF14E */    ADD             R0, PC; "GL_COLOR_MATERIAL_FACE"
+/* 0x1BF150 */    BX              LR
+/* 0x1BF152 */    LDR.W           R0, =(aGlColorMateria_0 - 0x1BF15A); jumptable 001BD67E case 2902
+/* 0x1BF156 */    ADD             R0, PC; "GL_COLOR_MATERIAL_PARAMETER"
+/* 0x1BF158 */    BX              LR
+/* 0x1BF15A */    LDR.W           R0, =(aGlColorMateria_1 - 0x1BF162); jumptable 001BD67E case 2903
+/* 0x1BF15E */    ADD             R0, PC; "GL_COLOR_MATERIAL"
+/* 0x1BF160 */    BX              LR
+/* 0x1BF162 */    LDR.W           R0, =(aGlFog - 0x1BF16A); jumptable 001BD67E case 2912
+/* 0x1BF166 */    ADD             R0, PC; "GL_FOG"
+/* 0x1BF168 */    BX              LR
+/* 0x1BF16A */    LDR.W           R0, =(aGlFogIndex - 0x1BF172); jumptable 001BD67E case 2913
+/* 0x1BF16E */    ADD             R0, PC; "GL_FOG_INDEX"
+/* 0x1BF170 */    BX              LR
+/* 0x1BF172 */    LDR.W           R0, =(aGlFogDensity - 0x1BF17A); jumptable 001BD67E case 2914
+/* 0x1BF176 */    ADD             R0, PC; "GL_FOG_DENSITY"
+/* 0x1BF178 */    BX              LR
+/* 0x1BF17A */    LDR.W           R0, =(aGlFogStart - 0x1BF182); jumptable 001BD67E case 2915
+/* 0x1BF17E */    ADD             R0, PC; "GL_FOG_START"
+/* 0x1BF180 */    BX              LR
+/* 0x1BF182 */    LDR.W           R0, =(aGlFogEnd - 0x1BF18A); jumptable 001BD67E case 2916
+/* 0x1BF186 */    ADD             R0, PC; "GL_FOG_END"
+/* 0x1BF188 */    BX              LR
+/* 0x1BF18A */    LDR.W           R0, =(aGlFogMode - 0x1BF192); jumptable 001BD67E case 2917
+/* 0x1BF18E */    ADD             R0, PC; "GL_FOG_MODE"
+/* 0x1BF190 */    BX              LR
+/* 0x1BF192 */    LDR.W           R0, =(aGlFogColor - 0x1BF19A); jumptable 001BD67E case 2918
+/* 0x1BF196 */    ADD             R0, PC; "GL_FOG_COLOR"
+/* 0x1BF198 */    BX              LR
+/* 0x1BF19A */    LDR.W           R0, =(aGlDepthRange - 0x1BF1A2); jumptable 001BD67E case 2928
+/* 0x1BF19E */    ADD             R0, PC; "GL_DEPTH_RANGE"
+/* 0x1BF1A0 */    BX              LR
+/* 0x1BF1A2 */    LDR.W           R0, =(aGlDepthTest - 0x1BF1AA); jumptable 001BD67E case 2929
+/* 0x1BF1A6 */    ADD             R0, PC; "GL_DEPTH_TEST"
+/* 0x1BF1A8 */    BX              LR
+/* 0x1BF1AA */    LDR.W           R0, =(aGlDepthWritema - 0x1BF1B2); jumptable 001BD67E case 2930
+/* 0x1BF1AE */    ADD             R0, PC; "GL_DEPTH_WRITEMASK"
+/* 0x1BF1B0 */    BX              LR
+/* 0x1BF1B2 */    LDR.W           R0, =(aGlDepthClearVa - 0x1BF1BA); jumptable 001BD67E case 2931
+/* 0x1BF1B6 */    ADD             R0, PC; "GL_DEPTH_CLEAR_VALUE"
+/* 0x1BF1B8 */    BX              LR
+/* 0x1BF1BA */    LDR.W           R0, =(aGlDepthFunc - 0x1BF1C2); jumptable 001BD67E case 2932
+/* 0x1BF1BE */    ADD             R0, PC; "GL_DEPTH_FUNC"
+/* 0x1BF1C0 */    BX              LR
+/* 0x1BF1C2 */    LDR.W           R0, =(aGlAccumClearVa - 0x1BF1CA); jumptable 001BD67E case 2944
+/* 0x1BF1C6 */    ADD             R0, PC; "GL_ACCUM_CLEAR_VALUE"
+/* 0x1BF1C8 */    BX              LR
+/* 0x1BF1CA */    LDR.W           R0, =(aGlStencilTest - 0x1BF1D2); jumptable 001BD67E case 2960
+/* 0x1BF1CE */    ADD             R0, PC; "GL_STENCIL_TEST"
+/* 0x1BF1D0 */    BX              LR
+/* 0x1BF1D2 */    LDR.W           R0, =(aGlStencilClear - 0x1BF1DA); jumptable 001BD67E case 2961
+/* 0x1BF1D6 */    ADD             R0, PC; "GL_STENCIL_CLEAR_VALUE"
+/* 0x1BF1D8 */    BX              LR
+/* 0x1BF1DA */    LDR.W           R0, =(aGlStencilFunc - 0x1BF1E2); jumptable 001BD67E case 2962
+/* 0x1BF1DE */    ADD             R0, PC; "GL_STENCIL_FUNC"
+/* 0x1BF1E0 */    BX              LR
+/* 0x1BF1E2 */    LDR.W           R0, =(aGlStencilValue - 0x1BF1EA); jumptable 001BD67E case 2963
+/* 0x1BF1E6 */    ADD             R0, PC; "GL_STENCIL_VALUE_MASK"
+/* 0x1BF1E8 */    BX              LR
+/* 0x1BF1EA */    LDR.W           R0, =(aGlStencilFail - 0x1BF1F2); jumptable 001BD67E case 2964
+/* 0x1BF1EE */    ADD             R0, PC; "GL_STENCIL_FAIL"
+/* 0x1BF1F0 */    BX              LR
+/* 0x1BF1F2 */    LDR.W           R0, =(aGlStencilPassD - 0x1BF1FA); jumptable 001BD67E case 2965
+/* 0x1BF1F6 */    ADD             R0, PC; "GL_STENCIL_PASS_DEPTH_FAIL"
+/* 0x1BF1F8 */    BX              LR
+/* 0x1BF1FA */    LDR.W           R0, =(aGlStencilPassD_0 - 0x1BF202); jumptable 001BD67E case 2966
+/* 0x1BF1FE */    ADD             R0, PC; "GL_STENCIL_PASS_DEPTH_PASS"
+/* 0x1BF200 */    BX              LR
+/* 0x1BF202 */    LDR.W           R0, =(aGlStencilRef - 0x1BF20A); jumptable 001BD67E case 2967
+/* 0x1BF206 */    ADD             R0, PC; "GL_STENCIL_REF"
+/* 0x1BF208 */    BX              LR
+/* 0x1BF20A */    LDR.W           R0, =(aGlStencilWrite - 0x1BF212); jumptable 001BD67E case 2968
+/* 0x1BF20E */    ADD             R0, PC; "GL_STENCIL_WRITEMASK"
+/* 0x1BF210 */    BX              LR
+/* 0x1BF212 */    LDR.W           R0, =(aGlMatrixMode - 0x1BF21A); jumptable 001BD67E case 2976
+/* 0x1BF216 */    ADD             R0, PC; "GL_MATRIX_MODE"
+/* 0x1BF218 */    BX              LR
+/* 0x1BF21A */    LDR.W           R0, =(aGlNormalize - 0x1BF222); jumptable 001BD67E case 2977
+/* 0x1BF21E */    ADD             R0, PC; "GL_NORMALIZE"
+/* 0x1BF220 */    BX              LR
+/* 0x1BF222 */    LDR.W           R0, =(aGlViewport - 0x1BF22A); jumptable 001BD67E case 2978
+/* 0x1BF226 */    ADD             R0, PC; "GL_VIEWPORT"
+/* 0x1BF228 */    BX              LR
+/* 0x1BF22A */    LDR.W           R0, =(aGlModelviewSta - 0x1BF232); jumptable 001BD67E case 2979
+/* 0x1BF22E */    ADD             R0, PC; "GL_MODELVIEW_STACK_DEPTH"
+/* 0x1BF230 */    BX              LR
+/* 0x1BF232 */    LDR.W           R0, =(aGlProjectionSt - 0x1BF23A); jumptable 001BD67E case 2980
+/* 0x1BF236 */    ADD             R0, PC; "GL_PROJECTION_STACK_DEPTH"
+/* 0x1BF238 */    BX              LR
+/* 0x1BF23A */    LDR.W           R0, =(aGlTextureStack - 0x1BF242); jumptable 001BD67E case 2981
+/* 0x1BF23E */    ADD             R0, PC; "GL_TEXTURE_STACK_DEPTH"
+/* 0x1BF240 */    BX              LR
+/* 0x1BF242 */    LDR.W           R0, =(aGlModelviewMat - 0x1BF24A); jumptable 001BD67E case 2982
+/* 0x1BF246 */    ADD             R0, PC; "GL_MODELVIEW_MATRIX"
+/* 0x1BF248 */    BX              LR
+/* 0x1BF24A */    LDR.W           R0, =(aGlProjectionMa - 0x1BF252); jumptable 001BD67E case 2983
+/* 0x1BF24E */    ADD             R0, PC; "GL_PROJECTION_MATRIX"
+/* 0x1BF250 */    BX              LR
+/* 0x1BF252 */    LDR.W           R0, =(aGlTextureMatri - 0x1BF25A); jumptable 001BD67E case 2984
+/* 0x1BF256 */    ADD             R0, PC; "GL_TEXTURE_MATRIX"
+/* 0x1BF258 */    BX              LR
+/* 0x1BF25A */    LDR.W           R0, =(aGlAttribStackD - 0x1BF262); jumptable 001BD67E case 2992
+/* 0x1BF25E */    ADD             R0, PC; "GL_ATTRIB_STACK_DEPTH"
+/* 0x1BF260 */    BX              LR
+/* 0x1BF262 */    LDR.W           R0, =(aGlClientAttrib - 0x1BF26A); jumptable 001BD67E case 2993
+/* 0x1BF266 */    ADD             R0, PC; "GL_CLIENT_ATTRIB_STACK_DEPTH"
+/* 0x1BF268 */    BX              LR
+/* 0x1BF26A */    LDR.W           R0, =(aGlAlphaTest - 0x1BF272); jumptable 001BD67E case 3008
+/* 0x1BF26E */    ADD             R0, PC; "GL_ALPHA_TEST"
+/* 0x1BF270 */    BX              LR
+/* 0x1BF272 */    LDR.W           R0, =(aGlAlphaTestFun - 0x1BF27A); jumptable 001BD67E case 3009
+/* 0x1BF276 */    ADD             R0, PC; "GL_ALPHA_TEST_FUNC"
+/* 0x1BF278 */    BX              LR
+/* 0x1BF27A */    LDR.W           R0, =(aGlAlphaTestRef - 0x1BF282); jumptable 001BD67E case 3010
+/* 0x1BF27E */    ADD             R0, PC; "GL_ALPHA_TEST_REF"
+/* 0x1BF280 */    BX              LR
+/* 0x1BF282 */    LDR.W           R0, =(aGlDither - 0x1BF28A); jumptable 001BD67E case 3024
+/* 0x1BF286 */    ADD             R0, PC; "GL_DITHER"
+/* 0x1BF288 */    BX              LR
+/* 0x1BF28A */    LDR.W           R0, =(aGlBlendDst - 0x1BF292); jumptable 001BD67E case 3040
+/* 0x1BF28E */    ADD             R0, PC; "GL_BLEND_DST"
+/* 0x1BF290 */    BX              LR
+/* 0x1BF292 */    LDR.W           R0, =(aGlBlendSrc - 0x1BF29A); jumptable 001BD67E case 3041
+/* 0x1BF296 */    ADD             R0, PC; "GL_BLEND_SRC"
+/* 0x1BF298 */    BX              LR
+/* 0x1BF29A */    LDR.W           R0, =(aGlBlend - 0x1BF2A2); jumptable 001BD67E case 3042
+/* 0x1BF29E */    ADD             R0, PC; "GL_BLEND"
+/* 0x1BF2A0 */    BX              LR
+/* 0x1BF2A2 */    LDR.W           R0, =(aGlLogicOpMode - 0x1BF2AA); jumptable 001BD67E case 3056
+/* 0x1BF2A6 */    ADD             R0, PC; "GL_LOGIC_OP_MODE"
+/* 0x1BF2A8 */    BX              LR
+/* 0x1BF2AA */    LDR.W           R0, =(aGlIndexLogicOp - 0x1BF2B2); jumptable 001BD67E case 3057
+/* 0x1BF2AE */    ADD             R0, PC; "GL_INDEX_LOGIC_OP"
+/* 0x1BF2B0 */    BX              LR
+/* 0x1BF2B2 */    LDR.W           R0, =(aGlColorLogicOp - 0x1BF2BA); jumptable 001BD67E case 3058
+/* 0x1BF2B6 */    ADD             R0, PC; "GL_COLOR_LOGIC_OP"
+/* 0x1BF2B8 */    BX              LR
+/* 0x1BF2BA */    LDR.W           R0, =(aGlAuxBuffers - 0x1BF2C2); jumptable 001BD67E case 3072
+/* 0x1BF2BE */    ADD             R0, PC; "GL_AUX_BUFFERS"
+/* 0x1BF2C0 */    BX              LR
+/* 0x1BF2C2 */    LDR.W           R0, =(aGlDrawBuffer - 0x1BF2CA); jumptable 001BD67E case 3073
+/* 0x1BF2C6 */    ADD             R0, PC; "GL_DRAW_BUFFER"
+/* 0x1BF2C8 */    BX              LR
+/* 0x1BF2CA */    LDR.W           R0, =(aGlReadBuffer - 0x1BF2D2); jumptable 001BD67E case 3074
+/* 0x1BF2CE */    ADD             R0, PC; "GL_READ_BUFFER"
+/* 0x1BF2D0 */    BX              LR
+/* 0x1BF2D2 */    LDR.W           R0, =(aGlScissorBox - 0x1BF2DA); jumptable 001BD67E case 3088
+/* 0x1BF2D6 */    ADD             R0, PC; "GL_SCISSOR_BOX"
+/* 0x1BF2D8 */    BX              LR
+/* 0x1BF2DA */    LDR.W           R0, =(aGlScissorTest - 0x1BF2E2); jumptable 001BD67E case 3089
+/* 0x1BF2DE */    ADD             R0, PC; "GL_SCISSOR_TEST"
+/* 0x1BF2E0 */    BX              LR
+/* 0x1BF2E2 */    LDR.W           R0, =(aGlIndexClearVa - 0x1BF2EA); jumptable 001BD67E case 3104
+/* 0x1BF2E6 */    ADD             R0, PC; "GL_INDEX_CLEAR_VALUE"
+/* 0x1BF2E8 */    BX              LR
+/* 0x1BF2EA */    LDR.W           R0, =(aGlIndexWritema - 0x1BF2F2); jumptable 001BD67E case 3105
+/* 0x1BF2EE */    ADD             R0, PC; "GL_INDEX_WRITEMASK"
+/* 0x1BF2F0 */    BX              LR
+/* 0x1BF2F2 */    LDR.W           R0, =(aGlColorClearVa - 0x1BF2FA); jumptable 001BD67E case 3106
+/* 0x1BF2F6 */    ADD             R0, PC; "GL_COLOR_CLEAR_VALUE"
+/* 0x1BF2F8 */    BX              LR
+/* 0x1BF2FA */    LDR.W           R0, =(aGlColorWritema - 0x1BF302); jumptable 001BD67E case 3107
+/* 0x1BF2FE */    ADD             R0, PC; "GL_COLOR_WRITEMASK"
+/* 0x1BF300 */    BX              LR
+/* 0x1BF302 */    LDR.W           R0, =(aGlIndexMode - 0x1BF30A); jumptable 001BD67E case 3120
+/* 0x1BF306 */    ADD             R0, PC; "GL_INDEX_MODE"
+/* 0x1BF308 */    BX              LR
+/* 0x1BF30A */    LDR.W           R0, =(aGlRgbaMode - 0x1BF312); jumptable 001BD67E case 3121
+/* 0x1BF30E */    ADD             R0, PC; "GL_RGBA_MODE"
+/* 0x1BF310 */    BX              LR
+/* 0x1BF312 */    LDR.W           R0, =(aGlDoublebuffer - 0x1BF31A); jumptable 001BD67E case 3122
+/* 0x1BF316 */    ADD             R0, PC; "GL_DOUBLEBUFFER"
+/* 0x1BF318 */    BX              LR
+/* 0x1BF31A */    LDR.W           R0, =(aGlStereo - 0x1BF322); jumptable 001BD67E case 3123
+/* 0x1BF31E */    ADD             R0, PC; "GL_STEREO"
+/* 0x1BF320 */    BX              LR
+/* 0x1BF322 */    LDR.W           R0, =(aGlRenderMode - 0x1BF32A); jumptable 001BD67E case 3136
+/* 0x1BF326 */    ADD             R0, PC; "GL_RENDER_MODE"
+/* 0x1BF328 */    BX              LR
+/* 0x1BF32A */    LDR.W           R0, =(aGlPerspectiveC - 0x1BF332); jumptable 001BD67E case 3152
+/* 0x1BF32E */    ADD             R0, PC; "GL_PERSPECTIVE_CORRECTION_HINT"
+/* 0x1BF330 */    BX              LR
+/* 0x1BF332 */    LDR.W           R0, =(aGlPointSmoothH - 0x1BF33A); jumptable 001BD67E case 3153
+/* 0x1BF336 */    ADD             R0, PC; "GL_POINT_SMOOTH_HINT"
+/* 0x1BF338 */    BX              LR
+/* 0x1BF33A */    LDR.W           R0, =(aGlLineSmoothHi - 0x1BF342); jumptable 001BD67E case 3154
+/* 0x1BF33E */    ADD             R0, PC; "GL_LINE_SMOOTH_HINT"
+/* 0x1BF340 */    BX              LR
+/* 0x1BF342 */    LDR.W           R0, =(aGlPolygonSmoot_0 - 0x1BF34A); jumptable 001BD67E case 3155
+/* 0x1BF346 */    ADD             R0, PC; "GL_POLYGON_SMOOTH_HINT"
+/* 0x1BF348 */    BX              LR
+/* 0x1BF34A */    LDR.W           R0, =(aGlFogHint - 0x1BF352); jumptable 001BD67E case 3156
+/* 0x1BF34E */    ADD             R0, PC; "GL_FOG_HINT"
+/* 0x1BF350 */    BX              LR
+/* 0x1BF352 */    LDR.W           R0, =(aGlTextureGenS - 0x1BF35A); jumptable 001BD67E case 3168
+/* 0x1BF356 */    ADD             R0, PC; "GL_TEXTURE_GEN_S"
+/* 0x1BF358 */    BX              LR
+/* 0x1BF35A */    LDR.W           R0, =(aGlTextureGenT - 0x1BF362); jumptable 001BD67E case 3169
+/* 0x1BF35E */    ADD             R0, PC; "GL_TEXTURE_GEN_T"
+/* 0x1BF360 */    BX              LR
+/* 0x1BF362 */    LDR.W           R0, =(aGlTextureGenR - 0x1BF36A); jumptable 001BD67E case 3170
+/* 0x1BF366 */    ADD             R0, PC; "GL_TEXTURE_GEN_R"
+/* 0x1BF368 */    BX              LR
+/* 0x1BF36A */    LDR.W           R0, =(aGlTextureGenQ - 0x1BF372); jumptable 001BD67E case 3171
+/* 0x1BF36E */    ADD             R0, PC; "GL_TEXTURE_GEN_Q"
+/* 0x1BF370 */    BX              LR
+/* 0x1BF372 */    LDR.W           R0, =(aGlPixelMapIToI - 0x1BF37A); jumptable 001BD67E case 3184
+/* 0x1BF376 */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_I"
+/* 0x1BF378 */    BX              LR
+/* 0x1BF37A */    LDR.W           R0, =(aGlPixelMapSToS - 0x1BF382); jumptable 001BD67E case 3185
+/* 0x1BF37E */    ADD             R0, PC; "GL_PIXEL_MAP_S_TO_S"
+/* 0x1BF380 */    BX              LR
+/* 0x1BF382 */    LDR.W           R0, =(aGlPixelMapIToR - 0x1BF38A); jumptable 001BD67E case 3186
+/* 0x1BF386 */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_R"
+/* 0x1BF388 */    BX              LR
+/* 0x1BF38A */    LDR.W           R0, =(aGlPixelMapIToG - 0x1BF392); jumptable 001BD67E case 3187
+/* 0x1BF38E */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_G"
+/* 0x1BF390 */    BX              LR
+/* 0x1BF392 */    LDR.W           R0, =(aGlPixelMapIToB - 0x1BF39A); jumptable 001BD67E case 3188
+/* 0x1BF396 */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_B"
+/* 0x1BF398 */    BX              LR
+/* 0x1BF39A */    LDR.W           R0, =(aGlPixelMapIToA - 0x1BF3A2); jumptable 001BD67E case 3189
+/* 0x1BF39E */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_A"
+/* 0x1BF3A0 */    BX              LR
+/* 0x1BF3A2 */    LDR.W           R0, =(aGlPixelMapRToR - 0x1BF3AA); jumptable 001BD67E case 3190
+/* 0x1BF3A6 */    ADD             R0, PC; "GL_PIXEL_MAP_R_TO_R"
+/* 0x1BF3A8 */    BX              LR
+/* 0x1BF3AA */    LDR.W           R0, =(aGlPixelMapGToG - 0x1BF3B2); jumptable 001BD67E case 3191
+/* 0x1BF3AE */    ADD             R0, PC; "GL_PIXEL_MAP_G_TO_G"
+/* 0x1BF3B0 */    BX              LR
+/* 0x1BF3B2 */    LDR.W           R0, =(aGlPixelMapBToB - 0x1BF3BA); jumptable 001BD67E case 3192
+/* 0x1BF3B6 */    ADD             R0, PC; "GL_PIXEL_MAP_B_TO_B"
+/* 0x1BF3B8 */    BX              LR
+/* 0x1BF3BA */    LDR.W           R0, =(aGlPixelMapAToA - 0x1BF3C2); jumptable 001BD67E case 3193
+/* 0x1BF3BE */    ADD             R0, PC; "GL_PIXEL_MAP_A_TO_A"
+/* 0x1BF3C0 */    BX              LR
+/* 0x1BF3C2 */    LDR.W           R0, =(aGlPixelMapIToI_0 - 0x1BF3CA); jumptable 001BD67E case 3248
+/* 0x1BF3C6 */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_I_SIZE"
+/* 0x1BF3C8 */    BX              LR
+/* 0x1BF3CA */    LDR.W           R0, =(aGlPixelMapSToS_0 - 0x1BF3D2); jumptable 001BD67E case 3249
+/* 0x1BF3CE */    ADD             R0, PC; "GL_PIXEL_MAP_S_TO_S_SIZE"
+/* 0x1BF3D0 */    BX              LR
+/* 0x1BF3D2 */    LDR.W           R0, =(aGlPixelMapIToR_0 - 0x1BF3DA); jumptable 001BD67E case 3250
+/* 0x1BF3D6 */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_R_SIZE"
+/* 0x1BF3D8 */    BX              LR
+/* 0x1BF3DA */    LDR.W           R0, =(aGlPixelMapIToG_0 - 0x1BF3E2); jumptable 001BD67E case 3251
+/* 0x1BF3DE */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_G_SIZE"
+/* 0x1BF3E0 */    BX              LR
+/* 0x1BF3E2 */    LDR.W           R0, =(aGlPixelMapIToB_0 - 0x1BF3EA); jumptable 001BD67E case 3252
+/* 0x1BF3E6 */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_B_SIZE"
+/* 0x1BF3E8 */    BX              LR
+/* 0x1BF3EA */    LDR.W           R0, =(aGlPixelMapIToA_0 - 0x1BF3F2); jumptable 001BD67E case 3253
+/* 0x1BF3EE */    ADD             R0, PC; "GL_PIXEL_MAP_I_TO_A_SIZE"
+/* 0x1BF3F0 */    BX              LR
+/* 0x1BF3F2 */    LDR.W           R0, =(aGlPixelMapRToR_0 - 0x1BF3FA); jumptable 001BD67E case 3254
+/* 0x1BF3F6 */    ADD             R0, PC; "GL_PIXEL_MAP_R_TO_R_SIZE"
+/* 0x1BF3F8 */    BX              LR
+/* 0x1BF3FA */    LDR.W           R0, =(aGlPixelMapGToG_0 - 0x1BF402); jumptable 001BD67E case 3255
+/* 0x1BF3FE */    ADD             R0, PC; "GL_PIXEL_MAP_G_TO_G_SIZE"
+/* 0x1BF400 */    BX              LR
+/* 0x1BF402 */    LDR.W           R0, =(aGlPixelMapBToB_0 - 0x1BF40A); jumptable 001BD67E case 3256
+/* 0x1BF406 */    ADD             R0, PC; "GL_PIXEL_MAP_B_TO_B_SIZE"
+/* 0x1BF408 */    BX              LR
+/* 0x1BF40A */    LDR.W           R0, =(aGlPixelMapAToA_0 - 0x1BF412); jumptable 001BD67E case 3257
+/* 0x1BF40E */    ADD             R0, PC; "GL_PIXEL_MAP_A_TO_A_SIZE"
+/* 0x1BF410 */    BX              LR
+/* 0x1BF412 */    LDR.W           R0, =(aGlUnpackSwapBy - 0x1BF41A); jumptable 001BD67E case 3312
+/* 0x1BF416 */    ADD             R0, PC; "GL_UNPACK_SWAP_BYTES"
+/* 0x1BF418 */    BX              LR
+/* 0x1BF41A */    LDR.W           R0, =(aGlUnpackLsbFir - 0x1BF422); jumptable 001BD67E case 3313
+/* 0x1BF41E */    ADD             R0, PC; "GL_UNPACK_LSB_FIRST"
+/* 0x1BF420 */    BX              LR
+/* 0x1BF422 */    LDR.W           R0, =(aGlUnpackRowLen - 0x1BF42A); jumptable 001BD67E case 3314
+/* 0x1BF426 */    ADD             R0, PC; "GL_UNPACK_ROW_LENGTH"
+/* 0x1BF428 */    BX              LR
+/* 0x1BF42A */    LDR.W           R0, =(aGlUnpackSkipRo - 0x1BF432); jumptable 001BD67E case 3315
+/* 0x1BF42E */    ADD             R0, PC; "GL_UNPACK_SKIP_ROWS"
+/* 0x1BF430 */    BX              LR
+/* 0x1BF432 */    LDR.W           R0, =(aGlUnpackSkipPi - 0x1BF43A); jumptable 001BD67E case 3316
+/* 0x1BF436 */    ADD             R0, PC; "GL_UNPACK_SKIP_PIXELS"
+/* 0x1BF438 */    BX              LR
+/* 0x1BF43A */    LDR.W           R0, =(aGlUnpackAlignm - 0x1BF442); jumptable 001BD67E case 3317
+/* 0x1BF43E */    ADD             R0, PC; "GL_UNPACK_ALIGNMENT"
+/* 0x1BF440 */    BX              LR
+/* 0x1BF442 */    LDR.W           R0, =(aGlPackSwapByte - 0x1BF44A); jumptable 001BD67E case 3328
+/* 0x1BF446 */    ADD             R0, PC; "GL_PACK_SWAP_BYTES"
+/* 0x1BF448 */    BX              LR
+/* 0x1BF44A */    LDR.W           R0, =(aGlPackLsbFirst - 0x1BF452); jumptable 001BD67E case 3329
+/* 0x1BF44E */    ADD             R0, PC; "GL_PACK_LSB_FIRST"
+/* 0x1BF450 */    BX              LR
+/* 0x1BF452 */    LDR.W           R0, =(aGlPackRowLengt - 0x1BF45A); jumptable 001BD67E case 3330
+/* 0x1BF456 */    ADD             R0, PC; "GL_PACK_ROW_LENGTH"
+/* 0x1BF458 */    BX              LR
+/* 0x1BF45A */    LDR.W           R0, =(aGlPackSkipRows - 0x1BF462); jumptable 001BD67E case 3331
+/* 0x1BF45E */    ADD             R0, PC; "GL_PACK_SKIP_ROWS"
+/* 0x1BF460 */    BX              LR
+/* 0x1BF462 */    LDR.W           R0, =(aGlPackSkipPixe - 0x1BF46A); jumptable 001BD67E case 3332
+/* 0x1BF466 */    ADD             R0, PC; "GL_PACK_SKIP_PIXELS"
+/* 0x1BF468 */    BX              LR
+/* 0x1BF46A */    LDR.W           R0, =(aGlPackAlignmen - 0x1BF472); jumptable 001BD67E case 3333
+/* 0x1BF46E */    ADD             R0, PC; "GL_PACK_ALIGNMENT"
+/* 0x1BF470 */    BX              LR
+/* 0x1BF472 */    LDR.W           R0, =(aGlMapColor - 0x1BF47A); jumptable 001BD67E case 3344
+/* 0x1BF476 */    ADD             R0, PC; "GL_MAP_COLOR"
+/* 0x1BF478 */    BX              LR
+/* 0x1BF47A */    LDR.W           R0, =(aGlMapStencil - 0x1BF482); jumptable 001BD67E case 3345
+/* 0x1BF47E */    ADD             R0, PC; "GL_MAP_STENCIL"
+/* 0x1BF480 */    BX              LR
+/* 0x1BF482 */    LDR.W           R0, =(aGlIndexShift - 0x1BF48A); jumptable 001BD67E case 3346
+/* 0x1BF486 */    ADD             R0, PC; "GL_INDEX_SHIFT"
+/* 0x1BF488 */    BX              LR
+/* 0x1BF48A */    LDR.W           R0, =(aGlIndexOffset - 0x1BF492); jumptable 001BD67E case 3347
+/* 0x1BF48E */    ADD             R0, PC; "GL_INDEX_OFFSET"
+/* 0x1BF490 */    BX              LR
+/* 0x1BF492 */    LDR.W           R0, =(aGlRedScale - 0x1BF49A); jumptable 001BD67E case 3348
+/* 0x1BF496 */    ADD             R0, PC; "GL_RED_SCALE"
+/* 0x1BF498 */    BX              LR
+/* 0x1BF49A */    LDR.W           R0, =(aGlRedBias - 0x1BF4A2); jumptable 001BD67E case 3349
+/* 0x1BF49E */    ADD             R0, PC; "GL_RED_BIAS"
+/* 0x1BF4A0 */    BX              LR
+/* 0x1BF4A2 */    LDR.W           R0, =(aGlZoomX - 0x1BF4AA); jumptable 001BD67E case 3350
+/* 0x1BF4A6 */    ADD             R0, PC; "GL_ZOOM_X"
+/* 0x1BF4A8 */    BX              LR
+/* 0x1BF4AA */    LDR.W           R0, =(aGlZoomY - 0x1BF4B2); jumptable 001BD67E case 3351
+/* 0x1BF4AE */    ADD             R0, PC; "GL_ZOOM_Y"
+/* 0x1BF4B0 */    BX              LR
+/* 0x1BF4B2 */    LDR.W           R0, =(aGlGreenScale - 0x1BF4BA); jumptable 001BD67E case 3352
+/* 0x1BF4B6 */    ADD             R0, PC; "GL_GREEN_SCALE"
+/* 0x1BF4B8 */    BX              LR
+/* 0x1BF4BA */    LDR.W           R0, =(aGlGreenBias - 0x1BF4C2); jumptable 001BD67E case 3353
+/* 0x1BF4BE */    ADD             R0, PC; "GL_GREEN_BIAS"
+/* 0x1BF4C0 */    BX              LR
+/* 0x1BF4C2 */    LDR.W           R0, =(aGlBlueScale - 0x1BF4CA); jumptable 001BD67E case 3354
+/* 0x1BF4C6 */    ADD             R0, PC; "GL_BLUE_SCALE"
+/* 0x1BF4C8 */    BX              LR
+/* 0x1BF4CA */    LDR.W           R0, =(aGlBlueBias - 0x1BF4D2); jumptable 001BD67E case 3355
+/* 0x1BF4CE */    ADD             R0, PC; "GL_BLUE_BIAS"
+/* 0x1BF4D0 */    BX              LR
+/* 0x1BF4D2 */    LDR.W           R0, =(aGlAlphaScale - 0x1BF4DA); jumptable 001BD67E case 3356
+/* 0x1BF4D6 */    ADD             R0, PC; "GL_ALPHA_SCALE"
+/* 0x1BF4D8 */    BX              LR
+/* 0x1BF4DA */    LDR.W           R0, =(aGlAlphaBias - 0x1BF4E2); jumptable 001BD67E case 3357
+/* 0x1BF4DE */    ADD             R0, PC; "GL_ALPHA_BIAS"
+/* 0x1BF4E0 */    BX              LR
+/* 0x1BF4E2 */    LDR.W           R0, =(aGlDepthScale - 0x1BF4EA); jumptable 001BD67E case 3358
+/* 0x1BF4E6 */    ADD             R0, PC; "GL_DEPTH_SCALE"
+/* 0x1BF4E8 */    BX              LR
+/* 0x1BF4EA */    LDR.W           R0, =(aGlDepthBias - 0x1BF4F2); jumptable 001BD67E case 3359
+/* 0x1BF4EE */    ADD             R0, PC; "GL_DEPTH_BIAS"
+/* 0x1BF4F0 */    BX              LR
+/* 0x1BF4F2 */    LDR.W           R0, =(aGlMaxEvalOrder - 0x1BF4FA); jumptable 001BD67E case 3376
+/* 0x1BF4F6 */    ADD             R0, PC; "GL_MAX_EVAL_ORDER"
+/* 0x1BF4F8 */    BX              LR
+/* 0x1BF4FA */    LDR.W           R0, =(aGlMaxLights - 0x1BF502); jumptable 001BD67E case 3377
+/* 0x1BF4FE */    ADD             R0, PC; "GL_MAX_LIGHTS"
+/* 0x1BF500 */    BX              LR
+/* 0x1BF502 */    LDR.W           R0, =(aGlMaxClipPlane - 0x1BF50A); jumptable 001BD67E case 3378
+/* 0x1BF506 */    ADD             R0, PC; "GL_MAX_CLIP_PLANES"
+/* 0x1BF508 */    BX              LR
+/* 0x1BF50A */    LDR.W           R0, =(aGlMaxTextureSi - 0x1BF512); jumptable 001BD67E case 3379
+/* 0x1BF50E */    ADD             R0, PC; "GL_MAX_TEXTURE_SIZE"
+/* 0x1BF510 */    BX              LR
+/* 0x1BF512 */    LDR.W           R0, =(aGlMaxPixelMapT - 0x1BF51A); jumptable 001BD67E case 3380
+/* 0x1BF516 */    ADD             R0, PC; "GL_MAX_PIXEL_MAP_TABLE"
+/* 0x1BF518 */    BX              LR
+/* 0x1BF51A */    LDR.W           R0, =(aGlMaxAttribSta - 0x1BF522); jumptable 001BD67E case 3381
+/* 0x1BF51E */    ADD             R0, PC; "GL_MAX_ATTRIB_STACK_DEPTH"
+/* 0x1BF520 */    BX              LR
+/* 0x1BF522 */    LDR.W           R0, =(aGlMaxModelview - 0x1BF52A); jumptable 001BD67E case 3382
+/* 0x1BF526 */    ADD             R0, PC; "GL_MAX_MODELVIEW_STACK_DEPTH"
+/* 0x1BF528 */    BX              LR
+/* 0x1BF52A */    LDR.W           R0, =(aGlMaxNameStack - 0x1BF532); jumptable 001BD67E case 3383
+/* 0x1BF52E */    ADD             R0, PC; "GL_MAX_NAME_STACK_DEPTH"
+/* 0x1BF530 */    BX              LR
+/* 0x1BF532 */    LDR.W           R0, =(aGlMaxProjectio - 0x1BF53A); jumptable 001BD67E case 3384
+/* 0x1BF536 */    ADD             R0, PC; "GL_MAX_PROJECTION_STACK_DEPTH"
+/* 0x1BF538 */    BX              LR
+/* 0x1BF53A */    LDR.W           R0, =(aGlMaxTextureSt - 0x1BF542); jumptable 001BD67E case 3385
+/* 0x1BF53E */    ADD             R0, PC; "GL_MAX_TEXTURE_STACK_DEPTH"
+/* 0x1BF540 */    BX              LR
+/* 0x1BF542 */    LDR.W           R0, =(aGlMaxViewportD - 0x1BF54A); jumptable 001BD67E case 3386
+/* 0x1BF546 */    ADD             R0, PC; "GL_MAX_VIEWPORT_DIMS"
+/* 0x1BF548 */    BX              LR
+/* 0x1BF54A */    LDR.W           R0, =(aGlMaxClientAtt - 0x1BF552); jumptable 001BD67E case 3387
+/* 0x1BF54E */    ADD             R0, PC; "GL_MAX_CLIENT_ATTRIB_STACK_DEPTH"
+/* 0x1BF550 */    BX              LR
+/* 0x1BF552 */    LDR.W           R0, =(aGlSubpixelBits - 0x1BF55A); jumptable 001BD67E case 3408
+/* 0x1BF556 */    ADD             R0, PC; "GL_SUBPIXEL_BITS"
+/* 0x1BF558 */    BX              LR
+/* 0x1BF55A */    LDR.W           R0, =(aGlIndexBits - 0x1BF562); jumptable 001BD67E case 3409
+/* 0x1BF55E */    ADD             R0, PC; "GL_INDEX_BITS"
+/* 0x1BF560 */    BX              LR
+/* 0x1BF562 */    LDR.W           R0, =(aGlRedBits - 0x1BF56A); jumptable 001BD67E case 3410
+/* 0x1BF566 */    ADD             R0, PC; "GL_RED_BITS"
+/* 0x1BF568 */    BX              LR
+/* 0x1BF56A */    LDR.W           R0, =(aGlGreenBits - 0x1BF572); jumptable 001BD67E case 3411
+/* 0x1BF56E */    ADD             R0, PC; "GL_GREEN_BITS"
+/* 0x1BF570 */    BX              LR
+/* 0x1BF572 */    LDR.W           R0, =(aGlBlueBits - 0x1BF57A); jumptable 001BD67E case 3412
+/* 0x1BF576 */    ADD             R0, PC; "GL_BLUE_BITS"
+/* 0x1BF578 */    BX              LR
+/* 0x1BF57A */    LDR.W           R0, =(aGlAlphaBits - 0x1BF582); jumptable 001BD67E case 3413
+/* 0x1BF57E */    ADD             R0, PC; "GL_ALPHA_BITS"
+/* 0x1BF580 */    BX              LR
+/* 0x1BF582 */    LDR.W           R0, =(aGlDepthBits - 0x1BF58A); jumptable 001BD67E case 3414
+/* 0x1BF586 */    ADD             R0, PC; "GL_DEPTH_BITS"
+/* 0x1BF588 */    BX              LR
+/* 0x1BF58A */    ALIGN 4
+/* 0x1BF58C */    DCD aGlInvalidEnum_0 - 0x1BE874
+/* 0x1BF590 */    DCD aGlPolygonOffse - 0x1BE956
+/* 0x1BF594 */    DCD aGlAmbient - 0x1BE9A0
+/* 0x1BF598 */    DCD aGlColorIndex - 0x1BE9E4
+/* 0x1BF59C */    DCD aGlNever - 0x1BEA18
+/* 0x1BF5A0 */    DCD aGlPolygonOffse_0 - 0x1BEA92
+/* 0x1BF5A4 */    DCD aGlS - 0x1BEACA
+/* 0x1BF5A8 */    DCD aGlClear - 0x1BEB00
+/* 0x1BF5AC */    DCD aGlFrontLeft - 0x1BEB30
+/* 0x1BF5B0 */    DCD aGlByte - 0x1BEB5C
+/* 0x1BF5B4 */    DCD aGlRender - 0x1BEB90
+/* 0x1BF5B8 */    DCD aGlSphereMap - 0x1BEBC4
+/* 0x1BF5BC */    DCD aGlPoints - 0x1BEBE4
+/* 0x1BF5C0 */    DCD aGlSrcColor - 0x1BEC0C
+/* 0x1BF5C4 */    DCD aGlModelview - 0x1BEC34
+/* 0x1BF5C8 */    DCD aGlTextureWidth - 0x1BEC56
+/* 0x1BF5CC */    DCD aGlTextureMagFi - 0x1BEC74
+/* 0x1BF5D0 */    DCD aGlClipPlane0 - 0x1BEC96
+/* 0x1BF5D4 */    DCD aGlLight0 - 0x1BECBC
+/* 0x1BF5D8 */    DCD aGlKeep - 0x1BECDA
+/* 0x1BF5DC */    DCD aGlNearestMipma - 0x1BECF8
+/* 0x1BF5E0 */    DCB "GL_ACCUM",0
+/* 0x1BF5E9 */    DCB 0, 0, 0
+/* 0x1BF5EC */    DCD aGlLoad - 0x1BED1C
+/* 0x1BF5F0 */    DCD aGlTextureEnv - 0x1BED42
+/* 0x1BF5F4 */    DCD aGlVendor - 0x1BED56
+/* 0x1BF5F8 */    DCD aGlV2f - 0x1BEEA8
+/* 0x1BF5FC */    DCB "GL_V3F",0
+/* 0x1BF603 */    DCB 0
+/* 0x1BF604 */    DCD aGlC4ubV2f - 0x1BEEB6
+/* 0x1BF608 */    DCD aGlC4ubV3f - 0x1BEEBE
+/* 0x1BF60C */    DCB "GL_C3F_V3F",0
+/* 0x1BF617 */    DCB 0
+/* 0x1BF618 */    DCB "GL_N3F_V3F",0
+/* 0x1BF623 */    DCB 0
+/* 0x1BF624 */    DCB "GL_C4F_N3F_V3F",0
+/* 0x1BF633 */    DCB 0
+/* 0x1BF634 */    DCB "GL_T2F_V3F",0
+/* 0x1BF63F */    DCB 0
+/* 0x1BF640 */    DCB "GL_T4F_V4F",0
+/* 0x1BF64B */    DCB 0
+/* 0x1BF64C */    DCB "GL_T2F_C4UB_V3F",0
+/* 0x1BF65C */    DCB "GL_T2F_C3F_V3F",0
+/* 0x1BF66B */    DCB 0
+/* 0x1BF66C */    DCB "GL_T2F_N3F_V3F",0
+/* 0x1BF67B */    DCB 0
+/* 0x1BF67C */    DCB "GL_T2F_C4F_N3F_V3F",0
+/* 0x1BF68F */    DCB 0
+/* 0x1BF690 */    DCB "GL_T4F_C4F_N3F_V4F",0
+/* 0x1BF6A3 */    DCB 0
+/* 0x1BF6A4 */    DCD aGlEmission - 0x1BED6A
+/* 0x1BF6A8 */    DCD aGlStencil - 0x1BED8E
+/* 0x1BF6AC */    DCD aGlLine - 0x1BEDB0
+/* 0x1BF6B0 */    DCD aGlEyePlane - 0x1BEDD0
+/* 0x1BF6B4 */    DCD aGlRepeat - 0x1BEDEA
+/* 0x1BF6B8 */    DCD aGlFastest - 0x1BEE04
+/* 0x1BF6BC */    LDR.W           R0, =(aGlStencilBits - 0x1BF6C4); jumptable 001BD67E case 3415
+/* 0x1BF6C0 */    ADD             R0, PC; "GL_STENCIL_BITS"
+/* 0x1BF6C2 */    BX              LR
+/* 0x1BF6C4 */    LDR.W           R0, =(aGlAccumRedBits - 0x1BF6CC); jumptable 001BD67E case 3416
+/* 0x1BF6C8 */    ADD             R0, PC; "GL_ACCUM_RED_BITS"
+/* 0x1BF6CA */    BX              LR
+/* 0x1BF6CC */    LDR.W           R0, =(aGlAccumGreenBi - 0x1BF6D4); jumptable 001BD67E case 3417
+/* 0x1BF6D0 */    ADD             R0, PC; "GL_ACCUM_GREEN_BITS"
+/* 0x1BF6D2 */    BX              LR
+/* 0x1BF6D4 */    LDR.W           R0, =(aGlAccumBlueBit - 0x1BF6DC); jumptable 001BD67E case 3418
+/* 0x1BF6D8 */    ADD             R0, PC; "GL_ACCUM_BLUE_BITS"
+/* 0x1BF6DA */    BX              LR
+/* 0x1BF6DC */    LDR.W           R0, =(aGlAccumAlphaBi - 0x1BF6E4); jumptable 001BD67E case 3419
+/* 0x1BF6E0 */    ADD             R0, PC; "GL_ACCUM_ALPHA_BITS"
+/* 0x1BF6E2 */    BX              LR
+/* 0x1BF6E4 */    LDR.W           R0, =(aGlNameStackDep - 0x1BF6EC); jumptable 001BD67E case 3440
+/* 0x1BF6E8 */    ADD             R0, PC; "GL_NAME_STACK_DEPTH"
+/* 0x1BF6EA */    BX              LR
+/* 0x1BF6EC */    LDR.W           R0, =(aGlAutoNormal - 0x1BF6F4); jumptable 001BD67E case 3456
+/* 0x1BF6F0 */    ADD             R0, PC; "GL_AUTO_NORMAL"
+/* 0x1BF6F2 */    BX              LR
+/* 0x1BF6F4 */    LDR.W           R0, =(aGlMap1Color4 - 0x1BF6FC); jumptable 001BD67E case 3472
+/* 0x1BF6F8 */    ADD             R0, PC; "GL_MAP1_COLOR_4"
+/* 0x1BF6FA */    BX              LR
+/* 0x1BF6FC */    LDR.W           R0, =(aGlMap1Index - 0x1BF704); jumptable 001BD67E case 3473
+/* 0x1BF700 */    ADD             R0, PC; "GL_MAP1_INDEX"
+/* 0x1BF702 */    BX              LR
+/* 0x1BF704 */    LDR.W           R0, =(aGlMap1Normal - 0x1BF70C); jumptable 001BD67E case 3474
+/* 0x1BF708 */    ADD             R0, PC; "GL_MAP1_NORMAL"
+/* 0x1BF70A */    BX              LR
+/* 0x1BF70C */    LDR.W           R0, =(aGlMap1TextureC - 0x1BF714); jumptable 001BD67E case 3475
+/* 0x1BF710 */    ADD             R0, PC; "GL_MAP1_TEXTURE_COORD_1"
+/* 0x1BF712 */    BX              LR
+/* 0x1BF714 */    LDR.W           R0, =(aGlMap1TextureC_0 - 0x1BF71C); jumptable 001BD67E case 3476
+/* 0x1BF718 */    ADD             R0, PC; "GL_MAP1_TEXTURE_COORD_2"
+/* 0x1BF71A */    BX              LR
+/* 0x1BF71C */    LDR.W           R0, =(aGlMap1TextureC_1 - 0x1BF724); jumptable 001BD67E case 3477
+/* 0x1BF720 */    ADD             R0, PC; "GL_MAP1_TEXTURE_COORD_3"
+/* 0x1BF722 */    BX              LR
+/* 0x1BF724 */    LDR.W           R0, =(aGlMap1TextureC_2 - 0x1BF72C); jumptable 001BD67E case 3478
+/* 0x1BF728 */    ADD             R0, PC; "GL_MAP1_TEXTURE_COORD_4"
+/* 0x1BF72A */    BX              LR
+/* 0x1BF72C */    LDR.W           R0, =(aGlMap1Vertex3 - 0x1BF734); jumptable 001BD67E case 3479
+/* 0x1BF730 */    ADD             R0, PC; "GL_MAP1_VERTEX_3"
+/* 0x1BF732 */    BX              LR
+/* 0x1BF734 */    LDR.W           R0, =(aGlMap1Vertex4 - 0x1BF73C); jumptable 001BD67E case 3480
+/* 0x1BF738 */    ADD             R0, PC; "GL_MAP1_VERTEX_4"
+/* 0x1BF73A */    BX              LR
+/* 0x1BF73C */    LDR.W           R0, =(aGlMap2Color4 - 0x1BF744); jumptable 001BD67E case 3504
+/* 0x1BF740 */    ADD             R0, PC; "GL_MAP2_COLOR_4"
+/* 0x1BF742 */    BX              LR
+/* 0x1BF744 */    LDR.W           R0, =(aGlMap2Index - 0x1BF74C); jumptable 001BD67E case 3505
+/* 0x1BF748 */    ADD             R0, PC; "GL_MAP2_INDEX"
+/* 0x1BF74A */    BX              LR
+/* 0x1BF74C */    LDR.W           R0, =(aGlMap2Normal - 0x1BF754); jumptable 001BD67E case 3506
+/* 0x1BF750 */    ADD             R0, PC; "GL_MAP2_NORMAL"
+/* 0x1BF752 */    BX              LR
+/* 0x1BF754 */    LDR.W           R0, =(aGlMap2TextureC - 0x1BF75C); jumptable 001BD67E case 3507
+/* 0x1BF758 */    ADD             R0, PC; "GL_MAP2_TEXTURE_COORD_1"
+/* 0x1BF75A */    BX              LR
+/* 0x1BF75C */    LDR.W           R0, =(aGlMap2TextureC_0 - 0x1BF764); jumptable 001BD67E case 3508
+/* 0x1BF760 */    ADD             R0, PC; "GL_MAP2_TEXTURE_COORD_2"
+/* 0x1BF762 */    BX              LR
+/* 0x1BF764 */    LDR.W           R0, =(aGlMap2TextureC_1 - 0x1BF76C); jumptable 001BD67E case 3509
+/* 0x1BF768 */    ADD             R0, PC; "GL_MAP2_TEXTURE_COORD_3"
+/* 0x1BF76A */    BX              LR
+/* 0x1BF76C */    LDR.W           R0, =(aGlMap2TextureC_2 - 0x1BF774); jumptable 001BD67E case 3510
+/* 0x1BF770 */    ADD             R0, PC; "GL_MAP2_TEXTURE_COORD_4"
+/* 0x1BF772 */    BX              LR
+/* 0x1BF774 */    LDR.W           R0, =(aGlMap2Vertex3 - 0x1BF77C); jumptable 001BD67E case 3511
+/* 0x1BF778 */    ADD             R0, PC; "GL_MAP2_VERTEX_3"
+/* 0x1BF77A */    BX              LR
+/* 0x1BF77C */    LDR.W           R0, =(aGlMap2Vertex4 - 0x1BF784); jumptable 001BD67E case 3512
+/* 0x1BF780 */    ADD             R0, PC; "GL_MAP2_VERTEX_4"
+/* 0x1BF782 */    BX              LR
+/* 0x1BF784 */    LDR.W           R0, =(aGlMap1GridDoma - 0x1BF78C); jumptable 001BD67E case 3536
+/* 0x1BF788 */    ADD             R0, PC; "GL_MAP1_GRID_DOMAIN"
+/* 0x1BF78A */    BX              LR
+/* 0x1BF78C */    LDR.W           R0, =(aGlMap1GridSegm - 0x1BF794); jumptable 001BD67E case 3537
+/* 0x1BF790 */    ADD             R0, PC; "GL_MAP1_GRID_SEGMENTS"
+/* 0x1BF792 */    BX              LR
+/* 0x1BF794 */    LDR.W           R0, =(aGlMap2GridDoma - 0x1BF79C); jumptable 001BD67E case 3538
+/* 0x1BF798 */    ADD             R0, PC; "GL_MAP2_GRID_DOMAIN"
+/* 0x1BF79A */    BX              LR
+/* 0x1BF79C */    LDR.W           R0, =(aGlMap2GridSegm - 0x1BF7A4); jumptable 001BD67E case 3539
+/* 0x1BF7A0 */    ADD             R0, PC; "GL_MAP2_GRID_SEGMENTS"
+/* 0x1BF7A2 */    BX              LR
+/* 0x1BF7A4 */    LDR.W           R0, =(aGlTexture1d - 0x1BF7AC); jumptable 001BD67E case 3552
+/* 0x1BF7A8 */    ADD             R0, PC; "GL_TEXTURE_1D"
+/* 0x1BF7AA */    BX              LR
+/* 0x1BF7AC */    LDR.W           R0, =(aGlTexture2d - 0x1BF7B4); jumptable 001BD67E case 3553
+/* 0x1BF7B0 */    ADD             R0, PC; "GL_TEXTURE_2D"
+/* 0x1BF7B2 */    BX              LR
+/* 0x1BF7B4 */    LDR.W           R0, =(aGlFeedbackBuff - 0x1BF7BC); jumptable 001BD67E case 3568
+/* 0x1BF7B8 */    ADD             R0, PC; "GL_FEEDBACK_BUFFER_POINTER"
+/* 0x1BF7BA */    BX              LR
+/* 0x1BF7BC */    LDR.W           R0, =(aGlFeedbackBuff_0 - 0x1BF7C4); jumptable 001BD67E case 3569
+/* 0x1BF7C0 */    ADD             R0, PC; "GL_FEEDBACK_BUFFER_SIZE"
+/* 0x1BF7C2 */    BX              LR
+/* 0x1BF7C4 */    LDR.W           R0, =(aGlFeedbackBuff_1 - 0x1BF7CC); jumptable 001BD67E case 3570
+/* 0x1BF7C8 */    ADD             R0, PC; "GL_FEEDBACK_BUFFER_TYPE"
+/* 0x1BF7CA */    BX              LR
+/* 0x1BF7CC */    LDR.W           R0, =(aGlSelectionBuf - 0x1BF7D4); jumptable 001BD67E case 3571
+/* 0x1BF7D0 */    ADD             R0, PC; "GL_SELECTION_BUFFER_POINTER"
+/* 0x1BF7D2 */    BX              LR
+/* 0x1BF7D4 */    LDR.W           R0, =(aGlSelectionBuf_0 - 0x1BF7DC); jumptable 001BD67E case 3572
+/* 0x1BF7D8 */    ADD             R0, PC; "GL_SELECTION_BUFFER_SIZE"
+/* 0x1BF7DA */    BX              LR
+/* 0x1BF7DC */    LDR.W           R0, =(aGlPolygonOffse_3 - 0x1BF7E4); jumptable 001BE890 case 1
+/* 0x1BF7E0 */    ADD             R0, PC; "GL_POLYGON_OFFSET_FACTOR"
+/* 0x1BF7E2 */    BX              LR
+/* 0x1BF7E4 */    LDR.W           R0, =(aGlAlpha4 - 0x1BF7EC); jumptable 001BE890 case 4
+/* 0x1BF7E8 */    ADD             R0, PC; "GL_ALPHA4"
+/* 0x1BF7EA */    BX              LR
+/* 0x1BF7EC */    LDR.W           R0, =(aGlAlpha8 - 0x1BF7F4); jumptable 001BE890 case 5
+/* 0x1BF7F0 */    ADD             R0, PC; "GL_ALPHA8"
+/* 0x1BF7F2 */    BX              LR
+/* 0x1BF7F4 */    LDR.W           R0, =(aGlAlpha12 - 0x1BF7FC); jumptable 001BE890 case 6
+/* 0x1BF7F8 */    ADD             R0, PC; "GL_ALPHA12"
+/* 0x1BF7FA */    BX              LR
+/* 0x1BF7FC */    LDR.W           R0, =(aGlAlpha16 - 0x1BF804); jumptable 001BE890 case 7
+/* 0x1BF800 */    ADD             R0, PC; "GL_ALPHA16"
+/* 0x1BF802 */    BX              LR
+/* 0x1BF804 */    LDR.W           R0, =(aGlLuminance4 - 0x1BF80C); jumptable 001BE890 case 8
+/* 0x1BF808 */    ADD             R0, PC; "GL_LUMINANCE4"
+/* 0x1BF80A */    BX              LR
+/* 0x1BF80C */    LDR.W           R0, =(aGlLuminance8 - 0x1BF814); jumptable 001BE890 case 9
+/* 0x1BF810 */    ADD             R0, PC; "GL_LUMINANCE8"
+/* 0x1BF812 */    BX              LR
+/* 0x1BF814 */    LDR.W           R0, =(aGlLuminance12 - 0x1BF81C); jumptable 001BE890 case 10
+/* 0x1BF818 */    ADD             R0, PC; "GL_LUMINANCE12"
+/* 0x1BF81A */    BX              LR
+/* 0x1BF81C */    LDR.W           R0, =(aGlLuminance16 - 0x1BF824); jumptable 001BE890 case 11
+/* 0x1BF820 */    ADD             R0, PC; "GL_LUMINANCE16"
+/* 0x1BF822 */    BX              LR
+/* 0x1BF824 */    LDR.W           R0, =(aGlLuminance4Al - 0x1BF82C); jumptable 001BE890 case 12
+/* 0x1BF828 */    ADD             R0, PC; "GL_LUMINANCE4_ALPHA4"
+/* 0x1BF82A */    BX              LR
+/* 0x1BF82C */    LDR.W           R0, =(aGlLuminance6Al - 0x1BF834); jumptable 001BE890 case 13
+/* 0x1BF830 */    ADD             R0, PC; "GL_LUMINANCE6_ALPHA2"
+/* 0x1BF832 */    BX              LR
+/* 0x1BF834 */    LDR.W           R0, =(aGlLuminance8Al - 0x1BF83C); jumptable 001BE890 case 14
+/* 0x1BF838 */    ADD             R0, PC; "GL_LUMINANCE8_ALPHA8"
+/* 0x1BF83A */    BX              LR
+/* 0x1BF83C */    LDR.W           R0, =(aGlLuminance12A - 0x1BF844); jumptable 001BE890 case 15
+/* 0x1BF840 */    ADD             R0, PC; "GL_LUMINANCE12_ALPHA4"
+/* 0x1BF842 */    BX              LR
+/* 0x1BF844 */    LDR.W           R0, =(aGlLuminance12A_0 - 0x1BF84C); jumptable 001BE890 case 16
+/* 0x1BF848 */    ADD             R0, PC; "GL_LUMINANCE12_ALPHA12"
+/* 0x1BF84A */    BX              LR
+/* 0x1BF84C */    LDR.W           R0, =(aGlLuminance16A - 0x1BF854); jumptable 001BE890 case 17
+/* 0x1BF850 */    ADD             R0, PC; "GL_LUMINANCE16_ALPHA16"
+/* 0x1BF852 */    BX              LR
+/* 0x1BF854 */    LDR.W           R0, =(aGlIntensity - 0x1BF85C); jumptable 001BE890 case 18
+/* 0x1BF858 */    ADD             R0, PC; "GL_INTENSITY"
+/* 0x1BF85A */    BX              LR
+/* 0x1BF85C */    LDR.W           R0, =(aGlIntensity4 - 0x1BF864); jumptable 001BE890 case 19
+/* 0x1BF860 */    ADD             R0, PC; "GL_INTENSITY4"
+/* 0x1BF862 */    BX              LR
+/* 0x1BF864 */    LDR.W           R0, =(aGlIntensity8 - 0x1BF86C); jumptable 001BE890 case 20
+/* 0x1BF868 */    ADD             R0, PC; "GL_INTENSITY8"
+/* 0x1BF86A */    BX              LR
+/* 0x1BF86C */    LDR.W           R0, =(aGlIntensity12 - 0x1BF874); jumptable 001BE890 case 21
+/* 0x1BF870 */    ADD             R0, PC; "GL_INTENSITY12"
+/* 0x1BF872 */    BX              LR
+/* 0x1BF874 */    LDR.W           R0, =(aGlIntensity16 - 0x1BF87C); jumptable 001BE890 case 22
+/* 0x1BF878 */    ADD             R0, PC; "GL_INTENSITY16"
+/* 0x1BF87A */    BX              LR
+/* 0x1BF87C */    LDR.W           R0, =(aGlRgb4 - 0x1BF884); jumptable 001BE890 case 24
+/* 0x1BF880 */    ADD             R0, PC; "GL_RGB4"
+/* 0x1BF882 */    BX              LR
+/* 0x1BF884 */    LDR.W           R0, =(aGlRgb5 - 0x1BF88C); jumptable 001BE890 case 25
+/* 0x1BF888 */    ADD             R0, PC; "GL_RGB5"
+/* 0x1BF88A */    BX              LR
+/* 0x1BF88C */    LDR.W           R0, =(aGlRgb8 - 0x1BF894); jumptable 001BE890 case 26
+/* 0x1BF890 */    ADD             R0, PC; "GL_RGB8"
+/* 0x1BF892 */    BX              LR
+/* 0x1BF894 */    LDR.W           R0, =(aGlRgb10 - 0x1BF89C); jumptable 001BE890 case 27
+/* 0x1BF898 */    ADD             R0, PC; "GL_RGB10"
+/* 0x1BF89A */    BX              LR
+/* 0x1BF89C */    LDR.W           R0, =(aGlRgb12 - 0x1BF8A4); jumptable 001BE890 case 28
+/* 0x1BF8A0 */    ADD             R0, PC; "GL_RGB12"
+/* 0x1BF8A2 */    BX              LR
+/* 0x1BF8A4 */    LDR.W           R0, =(aGlRgb16 - 0x1BF8AC); jumptable 001BE890 case 29
+/* 0x1BF8A8 */    ADD             R0, PC; "GL_RGB16"
+/* 0x1BF8AA */    BX              LR
+/* 0x1BF8AC */    LDR.W           R0, =(aGlRgba2 - 0x1BF8B4); jumptable 001BE890 case 30
+/* 0x1BF8B0 */    ADD             R0, PC; "GL_RGBA2"
+/* 0x1BF8B2 */    BX              LR
+/* 0x1BF8B4 */    LDR.W           R0, =(aGlRgba4 - 0x1BF8BC); jumptable 001BE890 case 31
+/* 0x1BF8B8 */    ADD             R0, PC; "GL_RGBA4"
+/* 0x1BF8BA */    BX              LR
+/* 0x1BF8BC */    LDR.W           R0, =(aGlRgb5A1 - 0x1BF8C4); jumptable 001BE890 case 32
+/* 0x1BF8C0 */    ADD             R0, PC; "GL_RGB5_A1"
+/* 0x1BF8C2 */    BX              LR
+/* 0x1BF8C4 */    LDR.W           R0, =(aGlRgba8 - 0x1BF8CC); jumptable 001BE890 case 33
+/* 0x1BF8C8 */    ADD             R0, PC; "GL_RGBA8"
+/* 0x1BF8CA */    BX              LR
+/* 0x1BF8CC */    LDR.W           R0, =(aGlRgb10A2 - 0x1BF8D4); jumptable 001BE890 case 34
+/* 0x1BF8D0 */    ADD             R0, PC; "GL_RGB10_A2"
+/* 0x1BF8D2 */    BX              LR
+/* 0x1BF8D4 */    LDR.W           R0, =(aGlRgba12 - 0x1BF8DC); jumptable 001BE890 case 35
+/* 0x1BF8D8 */    ADD             R0, PC; "GL_RGBA12"
+/* 0x1BF8DA */    BX              LR
+/* 0x1BF8DC */    LDR.W           R0, =(aGlRgba16 - 0x1BF8E4); jumptable 001BE890 case 36
+/* 0x1BF8E0 */    ADD             R0, PC; "GL_RGBA16"
+/* 0x1BF8E2 */    BX              LR
+/* 0x1BF8E4 */    LDR.W           R0, =(aGlTextureRedSi - 0x1BF8EC); jumptable 001BE890 case 37
+/* 0x1BF8E8 */    ADD             R0, PC; "GL_TEXTURE_RED_SIZE"
+/* 0x1BF8EA */    BX              LR
+/* 0x1BF8EC */    LDR.W           R0, =(aGlTextureGreen - 0x1BF8F4); jumptable 001BE890 case 38
+/* 0x1BF8F0 */    ADD             R0, PC; "GL_TEXTURE_GREEN_SIZE"
+/* 0x1BF8F2 */    BX              LR
+/* 0x1BF8F4 */    LDR.W           R0, =(aGlTextureBlueS - 0x1BF8FC); jumptable 001BE890 case 39
+/* 0x1BF8F8 */    ADD             R0, PC; "GL_TEXTURE_BLUE_SIZE"
+/* 0x1BF8FA */    BX              LR
+/* 0x1BF8FC */    LDR.W           R0, =(aGlTextureAlpha - 0x1BF904); jumptable 001BE890 case 40
+/* 0x1BF900 */    ADD             R0, PC; "GL_TEXTURE_ALPHA_SIZE"
+/* 0x1BF902 */    BX              LR
+/* 0x1BF904 */    LDR.W           R0, =(aGlTextureLumin - 0x1BF90C); jumptable 001BE890 case 41
+/* 0x1BF908 */    ADD             R0, PC; "GL_TEXTURE_LUMINANCE_SIZE"
+/* 0x1BF90A */    BX              LR
+/* 0x1BF90C */    LDR.W           R0, =(aGlTextureInten - 0x1BF914); jumptable 001BE890 case 42
+/* 0x1BF910 */    ADD             R0, PC; "GL_TEXTURE_INTENSITY_SIZE"
+/* 0x1BF912 */    BX              LR
+/* 0x1BF914 */    LDR.W           R0, =(aGlProxyTexture - 0x1BF91C); jumptable 001BE890 case 44
+/* 0x1BF918 */    ADD             R0, PC; "GL_PROXY_TEXTURE_1D"
+/* 0x1BF91A */    BX              LR
+/* 0x1BF91C */    LDR.W           R0, =(aGlProxyTexture_0 - 0x1BF924); jumptable 001BE890 case 45
+/* 0x1BF920 */    ADD             R0, PC; "GL_PROXY_TEXTURE_2D"
+/* 0x1BF922 */    BX              LR
+/* 0x1BF924 */    LDR.W           R0, =(aGlTexturePrior - 0x1BF92C); jumptable 001BE890 case 47
+/* 0x1BF928 */    ADD             R0, PC; "GL_TEXTURE_PRIORITY"
+/* 0x1BF92A */    BX              LR
+/* 0x1BF92C */    LDR.W           R0, =(aGlTextureResid - 0x1BF934); jumptable 001BE890 case 48
+/* 0x1BF930 */    ADD             R0, PC; "GL_TEXTURE_RESIDENT"
+/* 0x1BF932 */    BX              LR
+/* 0x1BF934 */    LDR.W           R0, =(aGlTextureBindi - 0x1BF93C); jumptable 001BE890 case 49
+/* 0x1BF938 */    ADD             R0, PC; "GL_TEXTURE_BINDING_1D"
+/* 0x1BF93A */    BX              LR
+/* 0x1BF93C */    LDR.W           R0, =(aGlTextureBindi_0 - 0x1BF944); jumptable 001BE890 case 50
+/* 0x1BF940 */    ADD             R0, PC; "GL_TEXTURE_BINDING_2D"
+/* 0x1BF942 */    BX              LR
+/* 0x1BF944 */    LDR.W           R0, =(aGlVertexArray - 0x1BF94C); jumptable 001BE890 case 61
+/* 0x1BF948 */    ADD             R0, PC; "GL_VERTEX_ARRAY"
+/* 0x1BF94A */    BX              LR
+/* 0x1BF94C */    LDR.W           R0, =(aGlNormalArray - 0x1BF954); jumptable 001BE890 case 62
+/* 0x1BF950 */    ADD             R0, PC; "GL_NORMAL_ARRAY"
+/* 0x1BF952 */    BX              LR
+/* 0x1BF954 */    LDR.W           R0, =(aGlColorArray - 0x1BF95C); jumptable 001BE890 case 63
+/* 0x1BF958 */    ADD             R0, PC; "GL_COLOR_ARRAY"
+/* 0x1BF95A */    BX              LR
+/* 0x1BF95C */    LDR.W           R0, =(aGlIndexArray - 0x1BF964); jumptable 001BE890 case 64
+/* 0x1BF960 */    ADD             R0, PC; "GL_INDEX_ARRAY"
+/* 0x1BF962 */    BX              LR
+/* 0x1BF964 */    LDR.W           R0, =(aGlTextureCoord - 0x1BF96C); jumptable 001BE890 case 65
+/* 0x1BF968 */    ADD             R0, PC; "GL_TEXTURE_COORD_ARRAY"
+/* 0x1BF96A */    BX              LR
+/* 0x1BF96C */    LDR.W           R0, =(aGlEdgeFlagArra - 0x1BF974); jumptable 001BE890 case 66
+/* 0x1BF970 */    ADD             R0, PC; "GL_EDGE_FLAG_ARRAY"
+/* 0x1BF972 */    BX              LR
+/* 0x1BF974 */    LDR.W           R0, =(aGlVertexArrayS - 0x1BF97C); jumptable 001BE890 case 67
+/* 0x1BF978 */    ADD             R0, PC; "GL_VERTEX_ARRAY_SIZE"
+/* 0x1BF97A */    BX              LR
+/* 0x1BF97C */    LDR.W           R0, =(aGlVertexArrayT - 0x1BF984); jumptable 001BE890 case 68
+/* 0x1BF980 */    ADD             R0, PC; "GL_VERTEX_ARRAY_TYPE"
+/* 0x1BF982 */    BX              LR
+/* 0x1BF984 */    LDR.W           R0, =(aGlVertexArrayS_0 - 0x1BF98C); jumptable 001BE890 case 69
+/* 0x1BF988 */    ADD             R0, PC; "GL_VERTEX_ARRAY_STRIDE"
+/* 0x1BF98A */    BX              LR
+/* 0x1BF98C */    LDR.W           R0, =(aGlNormalArrayT - 0x1BF994); jumptable 001BE890 case 71
+/* 0x1BF990 */    ADD             R0, PC; "GL_NORMAL_ARRAY_TYPE"
+/* 0x1BF992 */    BX              LR
+/* 0x1BF994 */    LDR.W           R0, =(aGlNormalArrayS - 0x1BF99C); jumptable 001BE890 case 72
+/* 0x1BF998 */    ADD             R0, PC; "GL_NORMAL_ARRAY_STRIDE"
+/* 0x1BF99A */    BX              LR
+/* 0x1BF99C */    LDR.W           R0, =(aGlColorArraySi - 0x1BF9A4); jumptable 001BE890 case 74
+/* 0x1BF9A0 */    ADD             R0, PC; "GL_COLOR_ARRAY_SIZE"
+/* 0x1BF9A2 */    BX              LR
+/* 0x1BF9A4 */    LDR.W           R0, =(aGlColorArrayTy - 0x1BF9AC); jumptable 001BE890 case 75
+/* 0x1BF9A8 */    ADD             R0, PC; "GL_COLOR_ARRAY_TYPE"
+/* 0x1BF9AA */    BX              LR
+/* 0x1BF9AC */    LDR.W           R0, =(aGlColorArraySt - 0x1BF9B4); jumptable 001BE890 case 76
+/* 0x1BF9B0 */    ADD             R0, PC; "GL_COLOR_ARRAY_STRIDE"
+/* 0x1BF9B2 */    BX              LR
+/* 0x1BF9B4 */    LDR.W           R0, =(aGlIndexArrayTy - 0x1BF9BC); jumptable 001BE890 case 78
+/* 0x1BF9B8 */    ADD             R0, PC; "GL_INDEX_ARRAY_TYPE"
+/* 0x1BF9BA */    BX              LR
+/* 0x1BF9BC */    LDR.W           R0, =(aGlIndexArraySt - 0x1BF9C4); jumptable 001BE890 case 79
+/* 0x1BF9C0 */    ADD             R0, PC; "GL_INDEX_ARRAY_STRIDE"
+/* 0x1BF9C2 */    BX              LR
+/* 0x1BF9C4 */    LDR.W           R0, =(aGlTextureCoord_0 - 0x1BF9CC); jumptable 001BE890 case 81
+/* 0x1BF9C8 */    ADD             R0, PC; "GL_TEXTURE_COORD_ARRAY_SIZE"
+/* 0x1BF9CA */    BX              LR
+/* 0x1BF9CC */    LDR.W           R0, =(aGlTextureCoord_1 - 0x1BF9D4); jumptable 001BE890 case 82
+/* 0x1BF9D0 */    ADD             R0, PC; "GL_TEXTURE_COORD_ARRAY_TYPE"
+/* 0x1BF9D2 */    BX              LR
+/* 0x1BF9D4 */    LDR.W           R0, =(aGlTextureCoord_2 - 0x1BF9DC); jumptable 001BE890 case 83
+/* 0x1BF9D8 */    ADD             R0, PC; "GL_TEXTURE_COORD_ARRAY_STRIDE"
+/* 0x1BF9DA */    BX              LR
+/* 0x1BF9DC */    LDR.W           R0, =(aGlEdgeFlagArra_0 - 0x1BF9E4); jumptable 001BE890 case 85
+/* 0x1BF9E0 */    ADD             R0, PC; "GL_EDGE_FLAG_ARRAY_STRIDE"
+/* 0x1BF9E2 */    BX              LR
+/* 0x1BF9E4 */    LDR.W           R0, =(aGlVertexArrayP - 0x1BF9EC); jumptable 001BE890 case 87
+/* 0x1BF9E8 */    ADD             R0, PC; "GL_VERTEX_ARRAY_POINTER"
+/* 0x1BF9EA */    BX              LR
+/* 0x1BF9EC */    LDR.W           R0, =(aGlNormalArrayP - 0x1BF9F4); jumptable 001BE890 case 88
+/* 0x1BF9F0 */    ADD             R0, PC; "GL_NORMAL_ARRAY_POINTER"
+/* 0x1BF9F2 */    BX              LR
+/* 0x1BF9F4 */    LDR.W           R0, =(aGlColorArrayPo - 0x1BF9FC); jumptable 001BE890 case 89
+/* 0x1BF9F8 */    ADD             R0, PC; "GL_COLOR_ARRAY_POINTER"
+/* 0x1BF9FA */    BX              LR
+/* 0x1BF9FC */    LDR.W           R0, =(aGlIndexArrayPo - 0x1BFA04); jumptable 001BE890 case 90
+/* 0x1BFA00 */    ADD             R0, PC; "GL_INDEX_ARRAY_POINTER"
+/* 0x1BFA02 */    BX              LR
+/* 0x1BFA04 */    LDR.W           R0, =(aGlTextureCoord_3 - 0x1BFA0C); jumptable 001BE890 case 91
+/* 0x1BFA08 */    ADD             R0, PC; "GL_TEXTURE_COORD_ARRAY_POINTER"
+/* 0x1BFA0A */    BX              LR
+/* 0x1BFA0C */    LDR.W           R0, =(aGlEdgeFlagArra_1 - 0x1BFA14); jumptable 001BE890 case 92
+/* 0x1BFA10 */    ADD             R0, PC; "GL_EDGE_FLAG_ARRAY_POINTER"
+/* 0x1BFA12 */    BX              LR
+/* 0x1BFA14 */    MOVW            R1, #0x1102; jumptable 001BE980 default case
+/* 0x1BFA18 */    CMP             R0, R1
+/* 0x1BFA1A */    BNE.W           def_1BD67E; jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BFA1E */    LDR.W           R0, =(aGlNicest - 0x1BFA26); "GL_NICEST"
+/* 0x1BFA22 */    ADD             R0, PC; "GL_NICEST"
+/* 0x1BFA24 */    BX              LR
+/* 0x1BFA26 */    LDR.W           R0, =(aGlDiffuse - 0x1BFA2E); jumptable 001BE980 case 4609
+/* 0x1BFA2A */    ADD             R0, PC; "GL_DIFFUSE"
+/* 0x1BFA2C */    BX              LR
+/* 0x1BFA2E */    LDR.W           R0, =(aGlSpecular - 0x1BFA36); jumptable 001BE980 case 4610
+/* 0x1BFA32 */    ADD             R0, PC; "GL_SPECULAR"
+/* 0x1BFA34 */    BX              LR
+/* 0x1BFA36 */    LDR.W           R0, =(aGlPosition - 0x1BFA3E); jumptable 001BE980 case 4611
+/* 0x1BFA3A */    ADD             R0, PC; "GL_POSITION"
+/* 0x1BFA3C */    BX              LR
+/* 0x1BFA3E */    LDR.W           R0, =(aGlSpotDirectio - 0x1BFA46); jumptable 001BE980 case 4612
+/* 0x1BFA42 */    ADD             R0, PC; "GL_SPOT_DIRECTION"
+/* 0x1BFA44 */    BX              LR
+/* 0x1BFA46 */    LDR.W           R0, =(aGlSpotExponent - 0x1BFA4E); jumptable 001BE980 case 4613
+/* 0x1BFA4A */    ADD             R0, PC; "GL_SPOT_EXPONENT"
+/* 0x1BFA4C */    BX              LR
+/* 0x1BFA4E */    LDR.W           R0, =(aGlSpotCutoff - 0x1BFA56); jumptable 001BE980 case 4614
+/* 0x1BFA52 */    ADD             R0, PC; "GL_SPOT_CUTOFF"
+/* 0x1BFA54 */    BX              LR
+/* 0x1BFA56 */    LDR.W           R0, =(aGlConstantAtte - 0x1BFA5E); jumptable 001BE980 case 4615
+/* 0x1BFA5A */    ADD             R0, PC; "GL_CONSTANT_ATTENUATION"
+/* 0x1BFA5C */    BX              LR
+/* 0x1BFA5E */    LDR.W           R0, =(aGlLinearAttenu - 0x1BFA66); jumptable 001BE980 case 4616
+/* 0x1BFA62 */    ADD             R0, PC; "GL_LINEAR_ATTENUATION"
+/* 0x1BFA64 */    BX              LR
+/* 0x1BFA66 */    LDR.W           R0, =(aGlQuadraticAtt - 0x1BFA6E); jumptable 001BE980 case 4617
+/* 0x1BFA6A */    ADD             R0, PC; "GL_QUADRATIC_ATTENUATION"
+/* 0x1BFA6C */    BX              LR
+/* 0x1BFA6E */    LDR.W           R0, =(aGlStencilIndex - 0x1BFA76); jumptable 001BE9C2 case 6401
+/* 0x1BFA72 */    ADD             R0, PC; "GL_STENCIL_INDEX"
+/* 0x1BFA74 */    BX              LR
+/* 0x1BFA76 */    LDR.W           R0, =(aGlDepthCompone - 0x1BFA7E); jumptable 001BE9C2 case 6402
+/* 0x1BFA7A */    ADD             R0, PC; "GL_DEPTH_COMPONENT"
+/* 0x1BFA7C */    BX              LR
+/* 0x1BFA7E */    LDR.W           R0, =(aGlRed - 0x1BFA86); jumptable 001BE9C2 case 6403
+/* 0x1BFA82 */    ADD             R0, PC; "GL_RED"
+/* 0x1BFA84 */    BX              LR
+/* 0x1BFA86 */    LDR.W           R0, =(aGlGreen - 0x1BFA8E); jumptable 001BE9C2 case 6404
+/* 0x1BFA8A */    ADD             R0, PC; "GL_GREEN"
+/* 0x1BFA8C */    BX              LR
+/* 0x1BFA8E */    LDR.W           R0, =(aGlBlue - 0x1BFA96); jumptable 001BE9C2 case 6405
+/* 0x1BFA92 */    ADD             R0, PC; "GL_BLUE"
+/* 0x1BFA94 */    BX              LR
+/* 0x1BFA96 */    LDR.W           R0, =(aGlAlpha - 0x1BFA9E); jumptable 001BE9C2 case 6406
+/* 0x1BFA9A */    ADD             R0, PC; "GL_ALPHA"
+/* 0x1BFA9C */    BX              LR
+/* 0x1BFA9E */    LDR.W           R0, =(aGlRgb - 0x1BFAA6); jumptable 001BE9C2 case 6407
+/* 0x1BFAA2 */    ADD             R0, PC; "GL_RGB"
+/* 0x1BFAA4 */    BX              LR
+/* 0x1BFAA6 */    LDR.W           R0, =(aGlRgba - 0x1BFAAE); jumptable 001BE9C2 case 6408
+/* 0x1BFAAA */    ADD             R0, PC; "GL_RGBA"
+/* 0x1BFAAC */    BX              LR
+/* 0x1BFAAE */    LDR.W           R0, =(aGlLuminance - 0x1BFAB6); jumptable 001BE9C2 case 6409
+/* 0x1BFAB2 */    ADD             R0, PC; "GL_LUMINANCE"
+/* 0x1BFAB4 */    BX              LR
+/* 0x1BFAB6 */    LDR.W           R0, =(aGlLuminanceAlp - 0x1BFABE); jumptable 001BE9C2 case 6410
+/* 0x1BFABA */    ADD             R0, PC; "GL_LUMINANCE_ALPHA"
+/* 0x1BFABC */    BX              LR
+/* 0x1BFABE */    LDR.W           R0, =(aGlLess - 0x1BFAC6); jumptable 001BE9FC case 513
+/* 0x1BFAC2 */    ADD             R0, PC; "GL_LESS"
+/* 0x1BFAC4 */    BX              LR
+/* 0x1BFAC6 */    LDR.W           R0, =(aGlEqual - 0x1BFACE); jumptable 001BE9FC case 514
+/* 0x1BFACA */    ADD             R0, PC; "GL_EQUAL"
+/* 0x1BFACC */    BX              LR
+/* 0x1BFACE */    LDR.W           R0, =(aGlLequal - 0x1BFAD6); jumptable 001BE9FC case 515
+/* 0x1BFAD2 */    ADD             R0, PC; "GL_LEQUAL"
+/* 0x1BFAD4 */    BX              LR
+/* 0x1BFAD6 */    LDR.W           R0, =(aGlGreater - 0x1BFADE); jumptable 001BE9FC case 516
+/* 0x1BFADA */    ADD             R0, PC; "GL_GREATER"
+/* 0x1BFADC */    BX              LR
+/* 0x1BFADE */    LDR.W           R0, =(aGlNotequal - 0x1BFAE6); jumptable 001BE9FC case 517
+/* 0x1BFAE2 */    ADD             R0, PC; "GL_NOTEQUAL"
+/* 0x1BFAE4 */    BX              LR
+/* 0x1BFAE6 */    LDR.W           R0, =(aGlGequal - 0x1BFAEE); jumptable 001BE9FC case 518
+/* 0x1BFAEA */    ADD             R0, PC; "GL_GEQUAL"
+/* 0x1BFAEC */    BX              LR
+/* 0x1BFAEE */    LDR.W           R0, =(aGlAlways - 0x1BFAF6); jumptable 001BE9FC case 519
+/* 0x1BFAF2 */    ADD             R0, PC; "GL_ALWAYS"
+/* 0x1BFAF4 */    BX              LR
+/* 0x1BFAF6 */    LDR.W           R0, =(aGlT - 0x1BFAFE); jumptable 001BEAB6 case 8193
+/* 0x1BFAFA */    ADD             R0, PC; "GL_T"
+/* 0x1BFAFC */    BX              LR
+/* 0x1BFAFE */    LDR.W           R0, =(aGlR - 0x1BFB06); jumptable 001BEAB6 case 8194
+/* 0x1BFB02 */    ADD             R0, PC; "GL_R"
+/* 0x1BFB04 */    BX              LR
+/* 0x1BFB06 */    LDR.W           R0, =(aGlQ - 0x1BFB0E); jumptable 001BEAB6 case 8195
+/* 0x1BFB0A */    ADD             R0, PC; "GL_Q"
+/* 0x1BFB0C */    BX              LR
+/* 0x1BFB0E */    LDR.W           R0, =(aGlAnd - 0x1BFB16); jumptable 001BEAD4 case 5377
+/* 0x1BFB12 */    ADD             R0, PC; "GL_AND"
+/* 0x1BFB14 */    BX              LR
+/* 0x1BFB16 */    LDR.W           R0, =(aGlAndReverse - 0x1BFB1E); jumptable 001BEAD4 case 5378
+/* 0x1BFB1A */    ADD             R0, PC; "GL_AND_REVERSE"
+/* 0x1BFB1C */    BX              LR
+/* 0x1BFB1E */    LDR.W           R0, =(aGlCopy - 0x1BFB26); jumptable 001BEAD4 case 5379
+/* 0x1BFB22 */    ADD             R0, PC; "GL_COPY"
+/* 0x1BFB24 */    BX              LR
+/* 0x1BFB26 */    LDR.W           R0, =(aGlAndInverted - 0x1BFB2E); jumptable 001BEAD4 case 5380
+/* 0x1BFB2A */    ADD             R0, PC; "GL_AND_INVERTED"
+/* 0x1BFB2C */    BX              LR
+/* 0x1BFB2E */    LDR.W           R0, =(aGlNoop - 0x1BFB36); jumptable 001BEAD4 case 5381
+/* 0x1BFB32 */    ADD             R0, PC; "GL_NOOP"
+/* 0x1BFB34 */    BX              LR
+/* 0x1BFB36 */    LDR.W           R0, =(aGlXor - 0x1BFB3E); jumptable 001BEAD4 case 5382
+/* 0x1BFB3A */    ADD             R0, PC; "GL_XOR"
+/* 0x1BFB3C */    BX              LR
+/* 0x1BFB3E */    LDR.W           R0, =(aGlOr - 0x1BFB46); jumptable 001BEAD4 case 5383
+/* 0x1BFB42 */    ADD             R0, PC; "GL_OR"
+/* 0x1BFB44 */    BX              LR
+/* 0x1BFB46 */    LDR.W           R0, =(aGlNor - 0x1BFB4E); jumptable 001BEAD4 case 5384
+/* 0x1BFB4A */    ADD             R0, PC; "GL_NOR"
+/* 0x1BFB4C */    BX              LR
+/* 0x1BFB4E */    LDR.W           R0, =(aGlEquiv - 0x1BFB56); jumptable 001BEAD4 case 5385
+/* 0x1BFB52 */    ADD             R0, PC; "GL_EQUIV"
+/* 0x1BFB54 */    BX              LR
+/* 0x1BFB56 */    LDR.W           R0, =(aGlInvert - 0x1BFB5E); jumptable 001BEAD4 case 5386
+/* 0x1BFB5A */    ADD             R0, PC; "GL_INVERT"
+/* 0x1BFB5C */    BX              LR
+/* 0x1BFB5E */    LDR.W           R0, =(aGlOrReverse - 0x1BFB66); jumptable 001BEAD4 case 5387
+/* 0x1BFB62 */    ADD             R0, PC; "GL_OR_REVERSE"
+/* 0x1BFB64 */    BX              LR
+/* 0x1BFB66 */    LDR.W           R0, =(aGlCopyInverted - 0x1BFB6E); jumptable 001BEAD4 case 5388
+/* 0x1BFB6A */    ADD             R0, PC; "GL_COPY_INVERTED"
+/* 0x1BFB6C */    BX              LR
+/* 0x1BFB6E */    LDR.W           R0, =(aGlOrInverted - 0x1BFB76); jumptable 001BEAD4 case 5389
+/* 0x1BFB72 */    ADD             R0, PC; "GL_OR_INVERTED"
+/* 0x1BFB74 */    BX              LR
+/* 0x1BFB76 */    LDR.W           R0, =(aGlNand - 0x1BFB7E); jumptable 001BEAD4 case 5390
+/* 0x1BFB7A */    ADD             R0, PC; "GL_NAND"
+/* 0x1BFB7C */    BX              LR
+/* 0x1BFB7E */    LDR.W           R0, =(aGlSet - 0x1BFB86); jumptable 001BEAD4 case 5391
+/* 0x1BFB82 */    ADD             R0, PC; "GL_SET"
+/* 0x1BFB84 */    BX              LR
+/* 0x1BFB86 */    LDR.W           R0, =(aGlFrontRight - 0x1BFB8E); jumptable 001BEB0A case 1025
+/* 0x1BFB8A */    ADD             R0, PC; "GL_FRONT_RIGHT"
+/* 0x1BFB8C */    BX              LR
+/* 0x1BFB8E */    LDR.W           R0, =(aGlBackLeft - 0x1BFB96); jumptable 001BEB0A case 1026
+/* 0x1BFB92 */    ADD             R0, PC; "GL_BACK_LEFT"
+/* 0x1BFB94 */    BX              LR
+/* 0x1BFB96 */    LDR.W           R0, =(aGlBackRight - 0x1BFB9E); jumptable 001BEB0A case 1027
+/* 0x1BFB9A */    ADD             R0, PC; "GL_BACK_RIGHT"
+/* 0x1BFB9C */    BX              LR
+/* 0x1BFB9E */    LDR.W           R0, =(aGlFront - 0x1BFBA6); jumptable 001BEB0A case 1028
+/* 0x1BFBA2 */    ADD             R0, PC; "GL_FRONT"
+/* 0x1BFBA4 */    BX              LR
+/* 0x1BFBA6 */    LDR.W           R0, =(aGlBack - 0x1BFBAE); jumptable 001BEB0A case 1029
+/* 0x1BFBAA */    ADD             R0, PC; "GL_BACK"
+/* 0x1BFBAC */    BX              LR
+/* 0x1BFBAE */    LDR.W           R0, =(aGlLeft - 0x1BFBB6); jumptable 001BEB0A case 1030
+/* 0x1BFBB2 */    ADD             R0, PC; "GL_LEFT"
+/* 0x1BFBB4 */    BX              LR
+/* 0x1BFBB6 */    LDR.W           R0, =(aGlRight - 0x1BFBBE); jumptable 001BEB0A case 1031
+/* 0x1BFBBA */    ADD             R0, PC; "GL_RIGHT"
+/* 0x1BFBBC */    BX              LR
+/* 0x1BFBBE */    LDR.W           R0, =(aGlFrontAndBack - 0x1BFBC6); jumptable 001BEB0A case 1032
+/* 0x1BFBC2 */    ADD             R0, PC; "GL_FRONT_AND_BACK"
+/* 0x1BFBC4 */    BX              LR
+/* 0x1BFBC6 */    LDR.W           R0, =(aGlAux0 - 0x1BFBCE); jumptable 001BEB0A case 1033
+/* 0x1BFBCA */    ADD             R0, PC; "GL_AUX0"
+/* 0x1BFBCC */    BX              LR
+/* 0x1BFBCE */    LDR.W           R0, =(aGlAux1 - 0x1BFBD6); jumptable 001BEB0A case 1034
+/* 0x1BFBD2 */    ADD             R0, PC; "GL_AUX1"
+/* 0x1BFBD4 */    BX              LR
+/* 0x1BFBD6 */    LDR.W           R0, =(aGlAux2 - 0x1BFBDE); jumptable 001BEB0A case 1035
+/* 0x1BFBDA */    ADD             R0, PC; "GL_AUX2"
+/* 0x1BFBDC */    BX              LR
+/* 0x1BFBDE */    LDR.W           R0, =(aGlAux3 - 0x1BFBE6); jumptable 001BEB0A case 1036
+/* 0x1BFBE2 */    ADD             R0, PC; "GL_AUX3"
+/* 0x1BFBE4 */    BX              LR
+/* 0x1BFBE6 */    LDR.W           R0, =(aGlUnsignedByte - 0x1BFBEE); jumptable 001BEB3A case 5121
+/* 0x1BFBEA */    ADD             R0, PC; "GL_UNSIGNED_BYTE"
+/* 0x1BFBEC */    BX              LR
+/* 0x1BFBEE */    LDR.W           R0, =(aGlShort - 0x1BFBF6); jumptable 001BEB3A case 5122
+/* 0x1BFBF2 */    ADD             R0, PC; "GL_SHORT"
+/* 0x1BFBF4 */    BX              LR
+/* 0x1BFBF6 */    LDR.W           R0, =(aGlUnsignedShor - 0x1BFBFE); jumptable 001BEB3A case 5123
+/* 0x1BFBFA */    ADD             R0, PC; "GL_UNSIGNED_SHORT"
+/* 0x1BFBFC */    BX              LR
+/* 0x1BFBFE */    LDR.W           R0, =(aGlInt - 0x1BFC06); jumptable 001BEB3A case 5124
+/* 0x1BFC02 */    ADD             R0, PC; "GL_INT"
+/* 0x1BFC04 */    BX              LR
+/* 0x1BFC06 */    LDR.W           R0, =(aGlUnsignedInt - 0x1BFC0E); jumptable 001BEB3A case 5125
+/* 0x1BFC0A */    ADD             R0, PC; "GL_UNSIGNED_INT"
+/* 0x1BFC0C */    BX              LR
+/* 0x1BFC0E */    LDR.W           R0, =(aGlFloat - 0x1BFC16); jumptable 001BEB3A case 5126
+/* 0x1BFC12 */    ADD             R0, PC; "GL_FLOAT"
+/* 0x1BFC14 */    BX              LR
+/* 0x1BFC16 */    LDR.W           R0, =(aGl2Bytes - 0x1BFC1E); jumptable 001BEB3A case 5127
+/* 0x1BFC1A */    ADD             R0, PC; "GL_2_BYTES"
+/* 0x1BFC1C */    BX              LR
+/* 0x1BFC1E */    LDR.W           R0, =(aGl3Bytes - 0x1BFC26); jumptable 001BEB3A case 5128
+/* 0x1BFC22 */    ADD             R0, PC; "GL_3_BYTES"
+/* 0x1BFC24 */    BX              LR
+/* 0x1BFC26 */    LDR.W           R0, =(aGl4Bytes - 0x1BFC2E); jumptable 001BEB3A case 5129
+/* 0x1BFC2A */    ADD             R0, PC; "GL_4_BYTES"
+/* 0x1BFC2C */    BX              LR
+/* 0x1BFC2E */    LDR.W           R0, =(aGlDouble - 0x1BFC36); jumptable 001BEB3A case 5130
+/* 0x1BFC32 */    ADD             R0, PC; "GL_DOUBLE"
+/* 0x1BFC34 */    BX              LR
+/* 0x1BFC36 */    LDR.W           R0, =(aGlFill - 0x1BFC3E); "GL_FILL"
+/* 0x1BFC3A */    ADD             R0, PC; "GL_FILL"
+/* 0x1BFC3C */    BX              LR
+/* 0x1BFC3E */    LDR.W           R0, =(aGlEyeLinear - 0x1BFC46); "GL_EYE_LINEAR"
+/* 0x1BFC42 */    ADD             R0, PC; "GL_EYE_LINEAR"
+/* 0x1BFC44 */    BX              LR
+/* 0x1BFC46 */    LDR.W           R0, =(aGlObjectLinear - 0x1BFC4E); "GL_OBJECT_LINEAR"
+/* 0x1BFC4A */    ADD             R0, PC; "GL_OBJECT_LINEAR"
+/* 0x1BFC4C */    BX              LR
+/* 0x1BFC4E */    LDR.W           R0, =(aGlLines - 0x1BFC56); jumptable 001BEBC4 case 1
+/* 0x1BFC52 */    ADD             R0, PC; "GL_LINES"
+/* 0x1BFC54 */    BX              LR
+/* 0x1BFC56 */    LDR.W           R0, =(aGlLineLoop - 0x1BFC5E); jumptable 001BEBC4 case 2
+/* 0x1BFC5A */    ADD             R0, PC; "GL_LINE_LOOP"
+/* 0x1BFC5C */    BX              LR
+/* 0x1BFC5E */    LDR.W           R0, =(aGlLineStrip - 0x1BFC66); jumptable 001BEBC4 case 3
+/* 0x1BFC62 */    ADD             R0, PC; "GL_LINE_STRIP"
+/* 0x1BFC64 */    BX              LR
+/* 0x1BFC66 */    LDR.W           R0, =(aGlTriangles - 0x1BFC6E); jumptable 001BEBC4 case 4
+/* 0x1BFC6A */    ADD             R0, PC; "GL_TRIANGLES"
+/* 0x1BFC6C */    BX              LR
+/* 0x1BFC6E */    LDR.W           R0, =(aGlTriangleStri - 0x1BFC76); jumptable 001BEBC4 case 5
+/* 0x1BFC72 */    ADD             R0, PC; "GL_TRIANGLE_STRIP"
+/* 0x1BFC74 */    BX              LR
+/* 0x1BFC76 */    LDR.W           R0, =(aGlTriangleFan - 0x1BFC7E); jumptable 001BEBC4 case 6
+/* 0x1BFC7A */    ADD             R0, PC; "GL_TRIANGLE_FAN"
+/* 0x1BFC7C */    BX              LR
+/* 0x1BFC7E */    LDR.W           R0, =(aGlQuads - 0x1BFC86); jumptable 001BEBC4 case 7
+/* 0x1BFC82 */    ADD             R0, PC; "GL_QUADS"
+/* 0x1BFC84 */    BX              LR
+/* 0x1BFC86 */    LDR.W           R0, =(aGlQuadStrip - 0x1BFC8E); jumptable 001BEBC4 case 8
+/* 0x1BFC8A */    ADD             R0, PC; "GL_QUAD_STRIP"
+/* 0x1BFC8C */    BX              LR
+/* 0x1BFC8E */    LDR.W           R0, =(aGlPolygon - 0x1BFC96); jumptable 001BEBC4 case 9
+/* 0x1BFC92 */    ADD             R0, PC; "GL_POLYGON"
+/* 0x1BFC94 */    BX              LR
+/* 0x1BFC96 */    LDR.W           R0, =(aGlOneMinusSrcC - 0x1BFC9E); jumptable 001BEBEE case 769
+/* 0x1BFC9A */    ADD             R0, PC; "GL_ONE_MINUS_SRC_COLOR"
+/* 0x1BFC9C */    BX              LR
+/* 0x1BFC9E */    LDR.W           R0, =(aGlSrcAlpha - 0x1BFCA6); jumptable 001BEBEE case 770
+/* 0x1BFCA2 */    ADD             R0, PC; "GL_SRC_ALPHA"
+/* 0x1BFCA4 */    BX              LR
+/* 0x1BFCA6 */    LDR.W           R0, =(aGlOneMinusSrcA - 0x1BFCAE); jumptable 001BEBEE case 771
+/* 0x1BFCAA */    ADD             R0, PC; "GL_ONE_MINUS_SRC_ALPHA"
+/* 0x1BFCAC */    BX              LR
+/* 0x1BFCAE */    LDR.W           R0, =(aGlDstAlpha - 0x1BFCB6); jumptable 001BEBEE case 772
+/* 0x1BFCB2 */    ADD             R0, PC; "GL_DST_ALPHA"
+/* 0x1BFCB4 */    BX              LR
+/* 0x1BFCB6 */    LDR.W           R0, =(aGlOneMinusDstA - 0x1BFCBE); jumptable 001BEBEE case 773
+/* 0x1BFCBA */    ADD             R0, PC; "GL_ONE_MINUS_DST_ALPHA"
+/* 0x1BFCBC */    BX              LR
+/* 0x1BFCBE */    LDR.W           R0, =(aGlDstColor - 0x1BFCC6); jumptable 001BEBEE case 774
+/* 0x1BFCC2 */    ADD             R0, PC; "GL_DST_COLOR"
+/* 0x1BFCC4 */    BX              LR
+/* 0x1BFCC6 */    LDR.W           R0, =(aGlOneMinusDstC - 0x1BFCCE); jumptable 001BEBEE case 775
+/* 0x1BFCCA */    ADD             R0, PC; "GL_ONE_MINUS_DST_COLOR"
+/* 0x1BFCCC */    BX              LR
+/* 0x1BFCCE */    LDR.W           R0, =(aGlSrcAlphaSatu - 0x1BFCD6); jumptable 001BEBEE case 776
+/* 0x1BFCD2 */    ADD             R0, PC; "GL_SRC_ALPHA_SATURATE"
+/* 0x1BFCD4 */    BX              LR
+/* 0x1BFCD6 */    LDR.W           R0, =(aGlProjection - 0x1BFCDE); jumptable 001BEC20 case 5889
+/* 0x1BFCDA */    ADD             R0, PC; "GL_PROJECTION"
+/* 0x1BFCDC */    BX              LR
+/* 0x1BFCDE */    LDR.W           R0, =(aGlTexture - 0x1BFCE6); jumptable 001BEC20 case 5890
+/* 0x1BFCE2 */    ADD             R0, PC; "GL_TEXTURE"
+/* 0x1BFCE4 */    BX              LR
+/* 0x1BFCE6 */    LDR.W           R0, =(aGlView - 0x1BFCEE); jumptable 001BEC20 case 5891
+/* 0x1BFCEA */    ADD             R0, PC; "GL_VIEW"
+/* 0x1BFCEC */    BX              LR
+/* 0x1BFCEE */    LDR.W           R0, =(aGlLight1 - 0x1BFCF6); jumptable 001BECA0 case 16385
+/* 0x1BFCF2 */    ADD             R0, PC; "GL_LIGHT1"
+/* 0x1BFCF4 */    BX              LR
+/* 0x1BFCF6 */    LDR.W           R0, =(aGlLight2 - 0x1BFCFE); jumptable 001BECA0 case 16386
+/* 0x1BFCFA */    ADD             R0, PC; "GL_LIGHT2"
+/* 0x1BFCFC */    BX              LR
+/* 0x1BFCFE */    LDR.W           R0, =(aGlLight3 - 0x1BFD06); jumptable 001BECA0 case 16387
+/* 0x1BFD02 */    ADD             R0, PC; "GL_LIGHT3"
+/* 0x1BFD04 */    BX              LR
+/* 0x1BFD06 */    LDR.W           R0, =(aGlLight4 - 0x1BFD0E); jumptable 001BECA0 case 16388
+/* 0x1BFD0A */    ADD             R0, PC; "GL_LIGHT4"
+/* 0x1BFD0C */    BX              LR
+/* 0x1BFD0E */    LDR.W           R0, =(aGlLight5 - 0x1BFD16); jumptable 001BECA0 case 16389
+/* 0x1BFD12 */    ADD             R0, PC; "GL_LIGHT5"
+/* 0x1BFD14 */    BX              LR
+/* 0x1BFD16 */    LDR.W           R0, =(aGlLight6 - 0x1BFD1E); jumptable 001BECA0 case 16390
+/* 0x1BFD1A */    ADD             R0, PC; "GL_LIGHT6"
+/* 0x1BFD1C */    BX              LR
+/* 0x1BFD1E */    LDR.W           R0, =(aGlLight7 - 0x1BFD26); jumptable 001BECA0 case 16391
+/* 0x1BFD22 */    ADD             R0, PC; "GL_LIGHT7"
+/* 0x1BFD24 */    BX              LR
+/* 0x1BFD26 */    LDR.W           R0, =(aGlReplace - 0x1BFD2E); jumptable 001BECC6 case 7681
+/* 0x1BFD2A */    ADD             R0, PC; "GL_REPLACE"
+/* 0x1BFD2C */    BX              LR
+/* 0x1BFD2E */    LDR.W           R0, =(aGlIncr - 0x1BFD36); jumptable 001BECC6 case 7682
+/* 0x1BFD32 */    ADD             R0, PC; "GL_INCR"
+/* 0x1BFD34 */    BX              LR
+/* 0x1BFD36 */    LDR.W           R0, =(aGlDecr - 0x1BFD3E); jumptable 001BECC6 case 7683
+/* 0x1BFD3A */    ADD             R0, PC; "GL_DECR"
+/* 0x1BFD3C */    BX              LR
+/* 0x1BFD3E */    LDR.W           R0, =(aGlLinearMipmap - 0x1BFD46); jumptable 001BECE4 case 9985
+/* 0x1BFD42 */    ADD             R0, PC; "GL_LINEAR_MIPMAP_NEAREST"
+/* 0x1BFD44 */    BX              LR
+/* 0x1BFD46 */    LDR.W           R0, =(aGlNearestMipma_0 - 0x1BFD4E); jumptable 001BECE4 case 9986
+/* 0x1BFD4A */    ADD             R0, PC; "GL_NEAREST_MIPMAP_LINEAR"
+/* 0x1BFD4C */    BX              LR
+/* 0x1BFD4E */    LDR.W           R0, =(aGlLinearMipmap_0 - 0x1BFD56); jumptable 001BECE4 case 9987
+/* 0x1BFD52 */    ADD             R0, PC; "GL_LINEAR_MIPMAP_LINEAR"
+/* 0x1BFD54 */    BX              LR
+/* 0x1BFD56 */    LDR.W           R0, =(aGlReturn - 0x1BFD5E); jumptable 001BED06 case 258
+/* 0x1BFD5A */    ADD             R0, PC; "GL_RETURN"
+/* 0x1BFD5C */    BX              LR
+/* 0x1BFD5E */    LDR.W           R0, =(aGlMult - 0x1BFD66); jumptable 001BED06 case 259
+/* 0x1BFD62 */    ADD             R0, PC; "GL_MULT"
+/* 0x1BFD64 */    BX              LR
+/* 0x1BFD66 */    LDR.W           R0, =(aGlAdd - 0x1BFD6E); jumptable 001BED06 case 260
+/* 0x1BFD6A */    ADD             R0, PC; "GL_ADD"
+/* 0x1BFD6C */    BX              LR
+/* 0x1BFD6E */    LDR.W           R0, =(aGlTextureEnvMo - 0x1BFD76); "GL_TEXTURE_ENV_MODE"
+/* 0x1BFD72 */    ADD             R0, PC; "GL_TEXTURE_ENV_MODE"
+/* 0x1BFD74 */    BX              LR
+/* 0x1BFD76 */    LDR.W           R0, =(aGlTextureEnvCo - 0x1BFD7E); "GL_TEXTURE_ENV_COLOR"
+/* 0x1BFD7A */    ADD             R0, PC; "GL_TEXTURE_ENV_COLOR"
+/* 0x1BFD7C */    BX              LR
+/* 0x1BFD7E */    LDR.W           R0, =(aGlRenderer - 0x1BFD86); jumptable 001BED42 case 7937
+/* 0x1BFD82 */    ADD             R0, PC; "GL_RENDERER"
+/* 0x1BFD84 */    BX              LR
+/* 0x1BFD86 */    LDR.W           R0, =(aGlVersion - 0x1BFD8E); jumptable 001BED42 case 7938
+/* 0x1BFD8A */    ADD             R0, PC; "GL_VERSION"
+/* 0x1BFD8C */    BX              LR
+/* 0x1BFD8E */    LDR.W           R0, =(aGlExtensions_0 - 0x1BFD96); jumptable 001BED42 case 7939
+/* 0x1BFD92 */    ADD             R0, PC; "GL_EXTENSIONS"
+/* 0x1BFD94 */    BX              LR
+/* 0x1BFD96 */    LDR.W           R0, =(aGlShininess - 0x1BFD9E); jumptable 001BED56 case 5633
+/* 0x1BFD9A */    ADD             R0, PC; "GL_SHININESS"
+/* 0x1BFD9C */    BX              LR
+/* 0x1BFD9E */    LDR.W           R0, =(aGlAmbientAndDi - 0x1BFDA6); jumptable 001BED56 case 5634
+/* 0x1BFDA2 */    ADD             R0, PC; "GL_AMBIENT_AND_DIFFUSE"
+/* 0x1BFDA4 */    BX              LR
+/* 0x1BFDA6 */    LDR.W           R0, =(aGlColorIndexes - 0x1BFDAE); jumptable 001BED56 case 5635
+/* 0x1BFDAA */    ADD             R0, PC; "GL_COLOR_INDEXES"
+/* 0x1BFDAC */    BX              LR
+/* 0x1BFDAE */    LDR.W           R0, =(aGlColor - 0x1BFDB6); "GL_COLOR"
+/* 0x1BFDB2 */    ADD             R0, PC; "GL_COLOR"
+/* 0x1BFDB4 */    BX              LR
+/* 0x1BFDB6 */    LDR.W           R0, =(aGlDepth - 0x1BFDBE); "GL_DEPTH"
+/* 0x1BFDBA */    ADD             R0, PC; "GL_DEPTH"
+/* 0x1BFDBC */    BX              LR
+/* 0x1BFDBE */    LDR.W           R0, =(aGlBitmap - 0x1BFDC6); "GL_BITMAP"
+/* 0x1BFDC2 */    ADD             R0, PC; "GL_BITMAP"
+/* 0x1BFDC4 */    BX              LR
+/* 0x1BFDC6 */    LDR.W           R0, =(aGlPoint - 0x1BFDCE); "GL_POINT"
+/* 0x1BFDCA */    ADD             R0, PC; "GL_POINT"
+/* 0x1BFDCC */    BX              LR
+/* 0x1BFDCE */    LDR.W           R0, =(aGlTextureGenMo - 0x1BFDD6); "GL_TEXTURE_GEN_MODE"
+/* 0x1BFDD2 */    ADD             R0, PC; "GL_TEXTURE_GEN_MODE"
+/* 0x1BFDD4 */    BX              LR
+/* 0x1BFDD6 */    LDR.W           R0, =(aGlObjectPlane - 0x1BFDDE); "GL_OBJECT_PLANE"
+/* 0x1BFDDA */    ADD             R0, PC; "GL_OBJECT_PLANE"
+/* 0x1BFDDC */    BX              LR
+/* 0x1BFDDE */    LDR.W           R0, =(aGlCompile - 0x1BFDE6); "GL_COMPILE"
+/* 0x1BFDE2 */    ADD             R0, PC; "GL_COMPILE"
+/* 0x1BFDE4 */    BX              LR
+/* 0x1BFDE6 */    LDR.W           R0, =(aGlFlat - 0x1BFDEE); "GL_FLAT"
+/* 0x1BFDEA */    ADD             R0, PC; "GL_FLAT"
+/* 0x1BFDEC */    BX              LR
+/* 0x1BFDEE */    LDR.W           R0, =(aGlNearest - 0x1BFDF6); "GL_NEAREST"
+/* 0x1BFDF2 */    ADD             R0, PC; "GL_NEAREST"
+/* 0x1BFDF4 */    BX              LR
+/* 0x1BFDF6 */    LDR.W           R0, =(aGlFeedback - 0x1BFDFE); "GL_FEEDBACK"
+/* 0x1BFDFA */    ADD             R0, PC; "GL_FEEDBACK"
+/* 0x1BFDFC */    BX              LR
+/* 0x1BFDFE */    LDR.W           R0, =(aGlModulate - 0x1BFE06); "GL_MODULATE"
+/* 0x1BFE02 */    ADD             R0, PC; "GL_MODULATE"
+/* 0x1BFE04 */    BX              LR
+/* 0x1BFE06 */    LDR.W           R0, =(aUnknown_1 - 0x1BFE0E); jumptable 001BD67E default case, cases 1286-1535,1541-1791,1800-2047,2050-2303,2306-2559,2563-2815,2826-2831,2836-2847,2855-2863,2868-2879,2884,2885,2887-2895,2904-2911,2919-2927,2933-2943,2945-2959,2969-2975,2985-2991,2994-3007,3011-3023,3025-3039,3043-3055,3059-3071,3075-3087,3090-3103,3108-3119,3124-3135,3137-3151,3157-3167,3172-3183,3194-3247,3258-3311,3318-3327,3334-3343,3360-3375,3388-3407,3420-3439,3441-3455,3457-3471,3481-3503,3513-3535,3540-3551,3554-3567
+/* 0x1BFE0A */    ADD             R0, PC; "UNKNOWN"
+/* 0x1BFE0C */    BX              LR; jumptable 001BED06 case 256
