@@ -29,7 +29,7 @@ extern "C" void OnModLoad()
         // Memperbaiki bug peluru yang turun akibat visual yang dipaksa gepeng/stretch.
         // Kita paksa kalkulasi aim menggunakan konstanta 0.75 (hasil dari 1 / 1.3333).
         // Instruksi: VMOV.F32 S0, #0.75
-        unsigned char aim_fix_patch[] = { 0x08, 0x0A, 0xF2, 0xEE };
+        unsigned char aim_fix_patch[] = { 0xB2, 0xEE, 0x08, 0x0A };
 
         // Patch di Process_AimWeapon (Tembakan Orang Ketiga)
         aml->Write(pGameLibrary + 0x3C6D18, (uintptr_t)aim_fix_patch, sizeof(aim_fix_patch));
