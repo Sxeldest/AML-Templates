@@ -27,13 +27,13 @@ extern "C" void OnModLoad()
         aml->Write(pGameLibrary + 0x40B7E8, (uintptr_t)bullet_fix_1, sizeof(bullet_fix_1));
 
         // 2. Fix untuk CCam::Process_AimWeapon (Aiming Standar / 3rd Person)
-        // Mengganti: vdiv.f32 s0, s2, s4 -> vmov.f32 s0, s2
-        unsigned char bullet_fix_2[] = { 0xB0, 0xEE, 0x42, 0x0A };
-        aml->Write(pGameLibrary + 0x3C6D14, (uintptr_t)bullet_fix_2, sizeof(bullet_fix_2));
+        // Mengganti: vdiv.f32 s0, s0, s2 -> vmov.f32 s0, s0
+        unsigned char bullet_fix_2[] = { 0xB0, 0xEE, 0x40, 0x0A };
+        aml->Write(pGameLibrary + 0x3C6D18, (uintptr_t)bullet_fix_2, sizeof(bullet_fix_2));
 
         // 3. Fix untuk CCam::Process_FollowPedWithMouse (Touch/Mouse Look Aim)
-        // Mengganti: vdiv.f32 s0, s4, s0 -> vmov.f32 s0, s4
-        unsigned char bullet_fix_3[] = { 0xB0, 0xEE, 0x44, 0x0A };
-        aml->Write(pGameLibrary + 0x3C2834, (uintptr_t)bullet_fix_3, sizeof(bullet_fix_3));
+        // Mengganti: vmul.f32 s0, s8, s0 -> vmov.f32 s0, s0
+        unsigned char bullet_fix_3[] = { 0xB0, 0xEE, 0x40, 0x0A };
+        aml->Write(pGameLibrary + 0x3C2A2E, (uintptr_t)bullet_fix_3, sizeof(bullet_fix_3));
     }
 }
