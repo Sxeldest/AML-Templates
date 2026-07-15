@@ -6,34 +6,32 @@ MYMODCFG(net.dexsocy.aspectfix, Aspect Ratio Fix, 1.0, Dexsociety)
 
 uintptr_t pGameLibrary = 0;
 
+// Definisikan nilai aspek rasio standar 4:3
+static float fFixedAspect = 1.333333f;
+
 extern "C" void OnModLoad()
 {
     pGameLibrary = aml->GetLib("libGTASA.so");
-
     if (pGameLibrary)
     {
-        // --- FOV FIX ---
-        // Menjaga agar FOV tetap seperti PC (tidak bertambah lebar pandangannya)
+        // 1. Patch FOV (yang sudah Anda lakukan)
         unsigned char fov_patch[] = { 0xB0, 0xEE, 0x41, 0x0A };
         aml->Write(pGameLibrary + 0x5A61AC, (uintptr_t)fov_patch, sizeof(fov_patch));
 
-        // --- BULLET OFFSET FIX (WIDESCREEN) ---
-        // Masalah: Peluru melenceng ke bawah pada layar lebar (16:9, 20:9, dst).
-        // Solusi: Menghilangkan pembagian Aspect Ratio pada perhitungan vektor vertikal.
+        // 2. Patch peluru agar selalu pakai pembagi 4:3
+        // Kita cari literal pool yang menyimpan alamat ms_fAspectRatio di fungsi bidikan
 
-        // 1. Fix untuk CPlayerCrossHair::Update (Crosshair Mobile & Drive-by)
-        // Mengganti: vdiv.f32 s0, s0, s2 -> vmov.f32 s0, s0 (NOP-kan pembagian AR)
-        unsigned char bullet_fix_1[] = { 0xB0, 0xEE, 0x40, 0x0A };
-        aml->Write(pGameLibrary + 0x40B7E8, (uintptr_t)bullet_fix_1, sizeof(bullet_fix_1));
+        // Alamat ms_fAspectRatio asli di memori adalah pGameLibrary + 0xC3EFA4
+        // Kita akan mengganti referensi ke alamat tersebut di fungsi bidikan
 
-        // 2. Fix untuk CCam::Process_AimWeapon (Aiming Standar / 3rd Person)
-        // Mengganti: vdiv.f32 s0, s0, s2 -> vmov.f32 s0, s0
-        unsigned char bullet_fix_2[] = { 0xB0, 0xEE, 0x40, 0x0A };
-        aml->Write(pGameLibrary + 0x3C6D18, (uintptr_t)bullet_fix_2, sizeof(bullet_fix_2));
+        uintptr_t pFixedAspect = (uintptr_t)&fFixedAspect;
 
-        // 3. Fix untuk CCam::Process_FollowPedWithMouse (Touch/Mouse Look Aim)
-        // Mengganti: vmul.f32 s0, s8, s0 -> vmov.f32 s0, s0
-        unsigned char bullet_fix_3[] = { 0xB0, 0xEE, 0x40, 0x0A };
-        aml->Write(pGameLibrary + 0x3C2A2E, (uintptr_t)bullet_fix_3, sizeof(bullet_fix_3));
+        // Patch untuk CCamera::Find3rdPersonCamTargetVector (Logika arah peluru)
+        // Alamat literal pool ms_fAspectRatio untuk fungsi ini
+        aml->Write(pGameLibrary + 0x3DB970, (uintptr_t)&pFixedAspect, sizeof(void*));
+
+        // Patch untuk CCam::Process_AimWeapon (Logika bidikan senjata)
+        // Alamat literal pool ms_fAspectRatio untuk fungsi ini
+        aml->Write(pGameLibrary + 0x3C7AE0, (uintptr_t)&pFixedAspect, sizeof(void*));
     }
 }
