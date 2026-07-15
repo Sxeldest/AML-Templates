@@ -12,32 +12,28 @@ extern "C" void OnModLoad()
 
     if (pGameLibrary)
     {
-        // --- 1. FOV STRETCH FIX ---
+        // --- FOV FIX ---
         // Menjaga agar FOV tetap seperti PC (tidak bertambah lebar pandangannya)
         unsigned char fov_patch[] = { 0xB0, 0xEE, 0x41, 0x0A };
         aml->Write(pGameLibrary + 0x5A61AC, (uintptr_t)fov_patch, sizeof(fov_patch));
 
+        // --- BULLET OFFSET FIX (WIDESCREEN) ---
+        // Masalah: Peluru melenceng ke bawah pada layar lebar (16:9, 20:9, dst).
+        // Solusi: Menghilangkan pembagian Aspect Ratio pada perhitungan vektor vertikal.
 
-        // --- 2. POSISI CROSSHAIR (PC Look: Agak ke Kanan & Atas) ---
-        // Memaksa HUD menggunakan variabel multiplier (PC: X=0.53, Y=0.40) alih-alih nilai tengah 0.5.
-        // Lokasi: CHud::DrawCrossHairs (v2.00)
-        unsigned char crosshair_pos_patch[] = { 0x0D, 0xE0, 0x00, 0xBF }; // B 0x437384, NOP
-        aml->Write(pGameLibrary + 0x437366, (uintptr_t)crosshair_pos_patch, sizeof(crosshair_pos_patch));
+        // 1. Fix untuk CPlayerCrossHair::Update (Crosshair Mobile & Drive-by)
+        // Mengganti: vdiv.f32 s0, s0, s2 -> vmov.f32 s0, s0 (NOP-kan pembagian AR)
+        unsigned char bullet_fix_1[] = { 0xB0, 0xEE, 0x40, 0x0A };
+        aml->Write(pGameLibrary + 0x40B7E8, (uintptr_t)bullet_fix_1, sizeof(bullet_fix_1));
 
+        // 2. Fix untuk CCam::Process_AimWeapon (Aiming Standar / 3rd Person)
+        // Mengganti: vdiv.f32 s0, s2, s4 -> vmov.f32 s0, s2
+        unsigned char bullet_fix_2[] = { 0xB0, 0xEE, 0x42, 0x0A };
+        aml->Write(pGameLibrary + 0x3C6D14, (uintptr_t)bullet_fix_2, sizeof(bullet_fix_2));
 
-        // --- 3. FIX ARAH PELURU (Aim Fix) ---
-        // Memperbaiki bug peluru yang turun akibat visual yang dipaksa gepeng/stretch.
-        // Kita paksa kalkulasi aim menggunakan konstanta 0.75 (hasil dari 1 / 1.3333).
-        // Instruksi: VMOV.F32 S0, #0.75
-        unsigned char aim_fix_patch[] = { 0xB2, 0xEE, 0x08, 0x0A };
-
-        // Patch di Process_AimWeapon (Tembakan Orang Ketiga)
-        aml->Write(pGameLibrary + 0x3C6D18, (uintptr_t)aim_fix_patch, sizeof(aim_fix_patch));
-
-        // Patch di CPlayerCrossHair::Update (Tembakan dari Kendaraan/Drive-by)
-        aml->Write(pGameLibrary + 0x40B7E8, (uintptr_t)aim_fix_patch, sizeof(aim_fix_patch));
-
-
-        logger->Info("Aspect Ratio Fix: FOV, PC Crosshair, and Aim Fix applied!");
+        // 3. Fix untuk CCam::Process_FollowPedWithMouse (Touch/Mouse Look Aim)
+        // Mengganti: vdiv.f32 s0, s4, s0 -> vmov.f32 s0, s4
+        unsigned char bullet_fix_3[] = { 0xB0, 0xEE, 0x44, 0x0A };
+        aml->Write(pGameLibrary + 0x3C2834, (uintptr_t)bullet_fix_3, sizeof(bullet_fix_3));
     }
 }
