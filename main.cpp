@@ -40,9 +40,9 @@ extern "C" void OnModLoad()
     pAspectRatio = (float*)aml->GetSym(pGameLib, "_ZN5CDraw15ms_fAspectRatioE");
 
     // Melakukan Hook pada fungsi CameraSize
-    // Menggunakan aml->HookPLT sebagai pengganti macro HOOK_PLT yang error
+    // Menggunakan aml->HookPLT dengan casting (void*) agar tidak error
     // Alamat Offset di libGTASA 2.00: 0x5D325C
-    aml->HookPLT(pGameLib + 0x5D325C, (void*)CameraSize_Hook, (void**)&CameraSize_Original);
+    aml->HookPLT((void*)(pGameLib + 0x5D325C), (void*)CameraSize_Hook, (void**)&CameraSize_Original);
 
     logger->Info("Mod Stretched 4:3 Loaded. Force43: %s", bForce43 ? "ON" : "OFF");
 }
