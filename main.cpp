@@ -45,7 +45,7 @@ extern "C" void OnModLoad()
 
     // 2. Cari Simbol Fungsi CameraSize (Untuk VISUAL GEPENG)
     // Mencari simbol jauh lebih aman daripada menggunakan offset 0x5D325C
-    void* fnCameraSize = aml->GetSym(pGameLib, "_Z10CameraSizeP8RwCameraP6RwRectff");
+    void* fnCameraSize = (void*)aml->GetSym(pGameLib, "_Z10CameraSizeP8RwCameraP6RwRectff");
 
     if (fnCameraSize)
     {
