@@ -3,7 +3,7 @@
 #include <mod/config.h>
 
 // Nama Package Mod
-MYMOD(net.rusher.stretched43, Stretched43Fix, 1.0, Rusher)
+MYMOD(net.rusher.stretched43, Stretched43Fix, 1.1, Rusher)
 
 // Alamat dan Variabel Global
 uintptr_t pGameLib = 0;
@@ -17,7 +17,8 @@ void CameraSize_Hook(void* camera, void* rect, float viewWindow, float aspect)
 {
     if (bForce43)
     {
-        aspect = 4.0f / 3.0f; // Paksa Aspect Ratio ke 4:3
+        // Paksa Aspect Ratio ke 4:3
+        aspect = 4.0f / 3.0f;
 
         // SINKRONISASI PELURU:
         // Update variabel global AspectRatio agar peluru sejajar dengan crosshair
@@ -36,13 +37,12 @@ extern "C" void OnModLoad()
     bForce43 = cfg.GetBool("Force43", true, "Settings");
 
     // Mencari Simbol variabel Aspect Ratio Global
-    // Variabel ini yang menentukan arah tembakan/peluru
     pAspectRatio = (float*)aml->GetSym(pGameLib, "_ZN5CDraw15ms_fAspectRatioE");
 
     // Melakukan Hook pada fungsi CameraSize
-    // Simbol: _Z10CameraSizeP8RwCameraP6RwRectff
-    // Alamat Offset di libGTASA 2.00 biasanya 0x5D325C
-    HOOK_PLT(CameraSize_Hook, pGameLib + 0x5D325C, CameraSize_Original);
+    // Menggunakan aml->HookPLT sebagai pengganti macro HOOK_PLT yang error
+    // Alamat Offset di libGTASA 2.00: 0x5D325C
+    aml->HookPLT(pGameLib + 0x5D325C, (void*)CameraSize_Hook, (void**)&CameraSize_Original);
 
     logger->Info("Mod Stretched 4:3 Loaded. Force43: %s", bForce43 ? "ON" : "OFF");
 }
