@@ -12,7 +12,7 @@ float rgb2luma(vec3 c) {
 }
 
 float rgb2rand(vec2 uv) {
-    return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
 }
 
 #ifdef DOF_ENABLED
@@ -90,16 +90,16 @@ vec3 doFXAA(vec2 uv, vec2 texel) {
 const float aoNearZ = 1.0;
 const float aoFarZ = 300.0;
 #ifndef AO_SAMPLES
-#define AO_SAMPLES 8
+#define AO_SAMPLES 4
 #endif
 #ifndef AO_RADIUS
 #define AO_RADIUS 12.0
 #endif
 #ifndef AO_INTENSITY
-#define AO_INTENSITY 1.5
+#define AO_INTENSITY 1.2
 #endif
 #ifndef AO_BIAS
-#define AO_BIAS 0.05
+#define AO_BIAS 0.025
 #endif
 
 float aoLinearDepth(float d) {
@@ -113,38 +113,43 @@ float getLinearDepth(vec2 uv) {
 
 float computeAO(vec2 uv, vec2 texelSize) {
     float centerDepth = getLinearDepth(uv);
-    if(centerDepth > 150.0) return 0.0; // Jangan hitung AO untuk objek yang terlalu jauh
-
+    float randomAngle = rgb2rand(uv) * 6.2831853;
     float occlusion = 0.0;
-    float noise = rgb2rand(uv);
+    float goldenAngle = 2.39996323;
 
-    // Gunakan Spiral Sampling agar lebih halus tanpa blur berat
-    for (int i = 0; i < AO_SAMPLES; i++) {
-        float step = (float(i) + noise) / float(AO_SAMPLES);
-        float angle = step * 12.566; // 2 * PI * 2 putaran spiral
-        float radius = step * AO_RADIUS;
-
-        vec2 offset = vec2(cos(angle), sin(angle)) * radius * texelSize;
-        float sampleDepth = getLinearDepth(uv + offset);
-
-        float diff = centerDepth - sampleDepth;
-
-        // Cek apakah sampel benar-benar berada di depan objek (oklusi)
-        // dan pastikan perbedaan kedalaman tidak terlalu ekstrem (menghilangkan halo putih)
-        if (diff > AO_BIAS && diff < centerDepth * 0.2) {
-            // Atenuasi berdasarkan jarak: semakin jauh sampel dari objek, kontribusinya mengecil
-            float distWeight = 1.0 - smoothstep(AO_BIAS, centerDepth * 0.2, diff);
-            occlusion += distWeight;
+    for (int i = 1; i <= AO_SAMPLES; i++) {
+        float angle = randomAngle + float(i) * goldenAngle;
+        vec2 dir = vec2(cos(angle), sin(angle));
+        float dist = (float(i) / float(AO_SAMPLES)) * AO_RADIUS;
+        vec2 sampleUV = uv + dir * dist * texelSize;
+        if (sampleUV.x >= 0.0 && sampleUV.x <= 1.0 && sampleUV.y >= 0.0 && sampleUV.y <= 1.0) {
+            float sampleDepth = getLinearDepth(sampleUV);
+            float depthDiff = sampleDepth - centerDepth;
+            float occ = clamp((centerDepth - sampleDepth) / (centerDepth * AO_BIAS + 0.001), 0.0, 1.0);
+            float range = clamp(1.0 - abs(depthDiff) / (centerDepth * 0.1 + 1.0), 0.0, 1.0);
+            occlusion += occ * range;
         }
     }
-
     return clamp((occlusion / float(AO_SAMPLES)) * AO_INTENSITY, 0.0, 1.0);
 }
 
 vec3 doSSAO(vec3 co, vec2 uv, vec2 texel) {
-    // Panggil computeAO SEKALI saja untuk performa maksimal
-    // Noise random akan memberikan efek bintik halus yang lebih natural daripada kotak blur
-    float ao = computeAO(uv, texel);
+    float ao;
+#ifdef SSAO_BLUR_ENABLED
+    float sum = 0.0;
+    float wsum = 0.0;
+    for (int x = -1; x <= 1; x++) {
+        for (int y = -1; y <= 1; y++) {
+            vec2 off = vec2(float(x), float(y)) * texel;
+            float w = (x == 0 && y == 0) ? 4.0 : ((x == 0 || y == 0) ? 2.0 : 1.0);
+            sum += computeAO(uv + off, texel) * w;
+            wsum += w;
+        }
+    }
+    ao = sum / wsum;
+#else
+    ao = computeAO(uv, texel);
+#endif
     return co * (1.0 - ao);
 }
 #endif
@@ -397,9 +402,9 @@ void main() {
     }
     #endif
 #else
-    #ifdef FXAA_ENABLED
+#ifdef FXAA_ENABLED
     col = doFXAA(uv, texel);
-    #endif
+#endif
 #endif
 
 #ifdef SSAO_ENABLED
