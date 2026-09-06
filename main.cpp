@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <unordered_map>
 #include <map>
 #include <sys/stat.h>
 #include <cstdlib>
@@ -43,7 +44,8 @@ namespace SSAOLoader
     void (*p_glGetIntegerv)(GLenum, GLint*);
 
     std::string g_customShaderSrc;
-    std::map<std::string, float> g_configValues;
+    std::unordered_map<std::string, float> g_configValues;
+    std::unordered_map<GLuint, std::unordered_map<std::string, GLint>> g_uniformCache;
     bool g_needsReallocation = false;
     GLuint g_mainDepthTex = 0;
     int g_screenWidth = 0;
@@ -126,15 +128,25 @@ namespace SSAOLoader
 
         if (program != 0)
         {
+            auto& cache = g_uniformCache[program];
+
+            auto getCachedLoc = [&](const char* name) -> GLint {
+                auto it = cache.find(name);
+                if (it != cache.end()) return it->second;
+                GLint loc = p_glGetUniformLocation(program, name);
+                cache[name] = loc;
+                return loc;
+            };
+
             for (auto const& [key, val] : g_configValues)
             {
-                GLint loc = p_glGetUniformLocation(program, key.c_str());
+                GLint loc = getCachedLoc(key.c_str());
                 if (loc >= 0) p_glUniform1f(loc, val);
             }
 
             if (g_mainDepthTex != 0)
             {
-                GLint loc = p_glGetUniformLocation(program, "uDepthTex");
+                GLint loc = getCachedLoc("uDepthTex");
                 if (loc >= 0)
                 {
                     GLint activeTex = 0;
@@ -146,7 +158,7 @@ namespace SSAOLoader
                 }
             }
 
-            GLint loc = p_glGetUniformLocation(program, "uScreenSize");
+            GLint loc = getCachedLoc("uScreenSize");
             if (loc >= 0)
             {
                 p_glUniform2f(loc, (float)g_screenWidth, (float)g_screenHeight);
