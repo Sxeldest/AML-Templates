@@ -5,16 +5,15 @@ uniform sampler2D Diffuse;
 uniform highp sampler2D uDepthTex;
 uniform vec2 uScreenSize;
 
-// SSAO Toggles
 uniform float uEnableAONear;
 uniform float uEnableAOFar;
 
-// SSAO Near Parameters
 uniform float uAONearRadius;
 uniform float uAONearBias;
 uniform float uAONearIntensity;
+uniform float uAONearMaxDistance;
+uniform float uAONearFadeRange;
 
-// SSAO Far Parameters
 uniform float uAOFarMinDistance;
 uniform float uAOFarFadeRange;
 uniform float uAOFarRadius;
@@ -28,22 +27,12 @@ varying highp vec2 Out_Tex0;
 const float NEAR_Z = 1.0;
 const float FAR_Z = 300.0;
 
-// Internal Constants
 const float NEAR_AO_nearZ = 0.35;
 const float NEAR_AO_farZ = 400.0;
 const float NEAR_AO_tanHalfFov = 0.700208;
 const int NEAR_AO_SAMPLES = 8;
 const int FAR_AO_SAMPLES = 8;
 const int FAR_BLUR_KERNEL = 2;
-
-float LinearizeDepth(float d) {
-    float z_ndc = d * 2.0 - 1.0;
-    return (2.0 * NEAR_Z * FAR_Z) / (FAR_Z + NEAR_Z - z_ndc * (FAR_Z - NEAR_Z));
-}
-
-float SceneDepth(vec2 uv) {
-    return LinearizeDepth(texture2D(uDepthTex, uv).r);
-}
 
 float nearGetLinearDepth(vec2 uv) {
     float d = texture2D(uDepthTex, uv).r;
@@ -71,7 +60,7 @@ vec3 doNearSSAO(vec3 baseColor) {
     vec2 uv = gl_FragCoord.xy / uScreenSize;
     float centerDepth = nearGetLinearDepth(uv);
 
-    if (centerDepth >= 300.0) return baseColor;
+    if (centerDepth >= uAONearMaxDistance) return baseColor;
 
     float projScaleX = (uScreenSize.x / uScreenSize.y) * NEAR_AO_tanHalfFov;
     vec3 originPos = nearGetViewPos(uv, projScaleX);
@@ -98,7 +87,9 @@ vec3 doNearSSAO(vec3 baseColor) {
     }
 
     float ao = clamp(occlusion * (uAONearIntensity / float(NEAR_AO_SAMPLES)), 0.0, 0.85);
-    return baseColor * (1.0 - ao);
+    float fadeFactor = clamp((uAONearMaxDistance - centerDepth) / max(uAONearFadeRange, 0.001), 0.0, 1.0);
+
+    return baseColor * (1.0 - (ao * fadeFactor));
 }
 
 float farInterleavedGradientNoise(vec2 fragCoord) {

@@ -7,6 +7,8 @@ uEnableAOFar = 0
 uAONearRadius = 0.36
 uAONearBias = 0.16
 uAONearIntensity = 3.4
+uAONearMaxDistance = 40.0
+uAONearFadeRange = 10.0
 
 ; SSAO Far Settings
 uAOFarMinDistance = 150.0
