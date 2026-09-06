@@ -1,16 +1,18 @@
-DOF=0
-FXAA=0
-CHROMATIC_ABERRATION=0
-SHARPEN=0
-CLARITY=0
-BLOOM=0
-TONEMAP=0
-VIGNETTE=0
-GRAIN=0
-SSAO=1
-SSAO_BLUR=0
-AO_SAMPLES=4
-AO_RADIUS=15.0
-AO_INTENSITY=1.2
-AO_BIAS=0.035
-SSR=0
+; ===== SSAO ONLY CONFIG =====
+; Toggles (1 = ON, 0 = OFF)
+uEnableAONear = 1
+uEnableAOFar = 0
+
+; SSAO Near Settings
+uAONearRadius = 0.36
+uAONearBias = 0.16
+uAONearIntensity = 3.4
+
+; SSAO Far Settings
+uAOFarMinDistance = 150.0
+uAOFarFadeRange = 50.0
+uAOFarRadius = 12.0
+uAOFarIntensity = 1.2
+uAOFarBias = 0.025
+uAOFarBlurEnabled = 1
+uAOFarBlurRadius = 1.5

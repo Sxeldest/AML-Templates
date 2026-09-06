@@ -7,17 +7,19 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <map>
 #include <sys/stat.h>
+#include <cstdlib>
 
 /**
- * Shader Loader AML
+ * SSAO Only Mod for AML
  * Original mod by AquaNyot
- * This mod has been reversed by Dexsocy.
+ * Refactored to SSAO only by Dexsocy.
 **/
 
-MYMODCFG(net.aqua.shaderloader, Shader Loader, 1.0, AquaNyot)
+MYMODCFG(net.aqua.ssaoloader, SSAO Loader, 1.0, AquaNyot)
 
-namespace ShaderLoader
+namespace SSAOLoader
 {
     void (*p_glBindFramebuffer)(GLenum, GLuint);
     void (*p_glFramebufferTexture2D)(GLenum, GLenum, GLenum, GLuint, GLint);
@@ -35,13 +37,13 @@ namespace ShaderLoader
     void (*p_glUseProgram)(GLuint);
     GLint (*p_glGetUniformLocation)(GLuint, const char*);
     void (*p_glUniform1i)(GLint, GLint);
+    void (*p_glUniform1f)(GLint, GLfloat);
     void (*p_glUniform2f)(GLint, GLfloat, GLfloat);
     void (*p_glShaderSource)(GLuint, GLsizei, const GLchar* const*, const GLint*);
     void (*p_glGetIntegerv)(GLenum, GLint*);
 
     std::string g_customShaderSrc;
-    std::string g_shaderDefines;
-    bool g_licenseOk = false;
+    std::map<std::string, float> g_configValues;
     bool g_needsReallocation = false;
     GLuint g_mainDepthTex = 0;
     int g_screenWidth = 0;
@@ -51,17 +53,16 @@ namespace ShaderLoader
     {
         glRenderbufferStorage(target, internalformat, width, height);
 
-        if ((internalformat >= 0x84F9 && internalformat <= 0x84F9 + 2) || (internalformat >= 0x81A5 && internalformat <= 0x81A5 + 1))
+        if ((internalformat >= 0x84F9 && internalformat <= 0x84FB) ||
+            (internalformat >= 0x81A5 && internalformat <= 0x81A6) ||
+            internalformat == 0x8D62)
         {
-            if (width > 500 && width * height >= g_screenWidth * g_screenHeight)
+            if (width > 500 && (width != g_screenWidth || height != g_screenHeight))
             {
-                if (width != g_screenWidth || height != g_screenHeight)
-                {
-                    g_screenWidth = width;
-                    g_screenHeight = height;
-                    g_needsReallocation = true;
-                    logger->Info("Detected new resolution: %dx%d", width, height);
-                }
+                g_screenWidth = width;
+                g_screenHeight = height;
+                g_needsReallocation = true;
+                logger->Info("Detected resolution: %dx%d", width, height);
             }
         }
     }
@@ -86,7 +87,7 @@ namespace ShaderLoader
                         p_glGenTextures(1, &g_mainDepthTex);
 
                         GLint prevTex = 0;
-                        if(p_glGetIntegerv) p_glGetIntegerv(GL_TEXTURE_BINDING_2D, &prevTex);
+                        p_glGetIntegerv(GL_TEXTURE_BINDING_2D, &prevTex);
 
                         p_glBindTexture(GL_TEXTURE_2D, g_mainDepthTex);
                         p_glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -97,13 +98,9 @@ namespace ShaderLoader
 
                         p_glBindTexture(GL_TEXTURE_2D, prevTex);
                         g_needsReallocation = false;
-                        logger->Info("Reallocated depth texture for %dx%d", g_screenWidth, g_screenHeight);
+                        logger->Info("Depth texture created for SSAO");
                     }
-
                     p_glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, g_mainDepthTex, 0);
-
-                    GLenum err = p_glGetError();
-                    if (err != GL_NO_ERROR) logger->Error("GL error after attach: 0x%X", err);
                 }
             }
         }
@@ -111,22 +108,13 @@ namespace ShaderLoader
 
     DECL_HOOK(void, glShaderSource, GLuint shader, GLsizei count, const GLchar* const* string, const GLint* length)
     {
-        if (count == 1 && string[0] != nullptr)
+        if (count == 1 && string[0] != nullptr && !g_customShaderSrc.empty())
         {
-            if (strstr(string[0], "gl_FragColor") != nullptr)
+            if (strstr(string[0], "gl_FragColor") != nullptr && strstr(string[0], "RedGrade") != nullptr)
             {
-                std::string source(string[0]);
-                if (source.find("RedGrade") != std::string::npos &&
-                    source.find("GreenGrade") != std::string::npos &&
-                    source.find("BlueGrade") != std::string::npos)
-                {
-                    if (g_licenseOk && !g_customShaderSrc.empty())
-                    {
-                        const char* strings[2] = { g_shaderDefines.c_str(), g_customShaderSrc.c_str() };
-                        glShaderSource(shader, 2, strings, nullptr);
-                        return;
-                    }
-                }
+                const char* strings[1] = { g_customShaderSrc.c_str() };
+                glShaderSource(shader, 1, strings, nullptr);
+                return;
             }
         }
         glShaderSource(shader, count, string, length);
@@ -136,22 +124,29 @@ namespace ShaderLoader
     {
         glUseProgram(program);
 
-        if (program != 0 && g_mainDepthTex != 0 && g_licenseOk)
+        if (program != 0)
         {
-            GLint loc = p_glGetUniformLocation(program, "uDepthTex");
-            if (loc >= 0)
+            for (auto const& [key, val] : g_configValues)
             {
-                GLint activeTex = 0;
-                if(p_glGetIntegerv) p_glGetIntegerv(GL_ACTIVE_TEXTURE, &activeTex);
-
-                p_glActiveTexture(GL_TEXTURE1);
-                p_glBindTexture(GL_TEXTURE_2D, g_mainDepthTex);
-                p_glUniform1i(loc, 1);
-
-                p_glActiveTexture(activeTex);
+                GLint loc = p_glGetUniformLocation(program, key.c_str());
+                if (loc >= 0) p_glUniform1f(loc, val);
             }
 
-            loc = p_glGetUniformLocation(program, "uScreenSize");
+            if (g_mainDepthTex != 0)
+            {
+                GLint loc = p_glGetUniformLocation(program, "uDepthTex");
+                if (loc >= 0)
+                {
+                    GLint activeTex = 0;
+                    p_glGetIntegerv(GL_ACTIVE_TEXTURE, &activeTex);
+                    p_glActiveTexture(GL_TEXTURE1);
+                    p_glBindTexture(GL_TEXTURE_2D, g_mainDepthTex);
+                    p_glUniform1i(loc, 1);
+                    p_glActiveTexture(activeTex);
+                }
+            }
+
+            GLint loc = p_glGetUniformLocation(program, "uScreenSize");
             if (loc >= 0)
             {
                 p_glUniform2f(loc, (float)g_screenWidth, (float)g_screenHeight);
@@ -164,44 +159,37 @@ namespace ShaderLoader
         const char* dataPath = aml->GetAndroidDataPath();
         char path[512];
 
-        snprintf(path, sizeof(path), "%s/shaders", dataPath);
-        mkdir(path, 0777);
-        std::string shadersPath = path;
-
-        snprintf(path, sizeof(path), "%s/shaders.glsl", shadersPath.c_str());
+        snprintf(path, sizeof(path), "%s/shaders/ssao.glsl", dataPath);
         std::ifstream shaderFile(path);
         if (shaderFile.is_open())
         {
             std::stringstream ss;
             ss << shaderFile.rdbuf();
             g_customShaderSrc = ss.str();
+            logger->Info("Loaded SSAO shader source");
         }
 
-        snprintf(path, sizeof(path), "%s/By AquaNyot", shadersPath.c_str());
-        FILE* fLicense = fopen(path, "rb");
-        if (fLicense)
-        {
-            g_licenseOk = true;
-            fclose(fLicense);
-        }
-
-        snprintf(path, sizeof(path), "%s/config.txt", shadersPath.c_str());
+        snprintf(path, sizeof(path), "%s/shaders/config.txt", dataPath);
         std::ifstream configFile(path);
         if (configFile.is_open())
         {
             std::string line;
             while (std::getline(configFile, line))
             {
-                if (line.empty()) continue;
+                if (line.empty() || line[0] == ';') continue;
                 size_t eq = line.find('=');
                 if (eq != std::string::npos)
                 {
                     std::string key = line.substr(0, eq);
                     std::string val = line.substr(eq + 1);
-                    if (val == "1") g_shaderDefines += "#define " + key + "_ENABLED\n";
-                    else if (val != "0") g_shaderDefines += "#define " + key + " " + val + "\n";
+                    key.erase(0, key.find_first_not_of(" \t"));
+                    key.erase(key.find_last_not_of(" \t") + 1);
+                    val.erase(0, val.find_first_not_of(" \t"));
+                    val.erase(val.find_last_not_of(" \t") + 1);
+                    if (!key.empty()) g_configValues[key] = strtof(val.c_str(), nullptr);
                 }
             }
+            logger->Info("Parsed %zu SSAO parameters", g_configValues.size());
         }
 
         uintptr_t libGLES = aml->GetLib("libGLESv2.so");
@@ -235,6 +223,7 @@ namespace ShaderLoader
                 RESOLVE_GL(glUseProgram);
                 RESOLVE_GL(glGetUniformLocation);
                 RESOLVE_GL(glUniform1i);
+                RESOLVE_GL(glUniform1f);
                 RESOLVE_GL(glUniform2f);
                 RESOLVE_GL(glShaderSource);
                 RESOLVE_GL(glGetIntegerv);
@@ -243,6 +232,8 @@ namespace ShaderLoader
                 if (p_glFramebufferRenderbuffer) HOOK(glFramebufferRenderbuffer, p_glFramebufferRenderbuffer);
                 if (p_glShaderSource) HOOK(glShaderSource, p_glShaderSource);
                 if (p_glUseProgram) HOOK(glUseProgram, p_glUseProgram);
+
+                logger->Info("SSAO hooks applied");
             }
         }
     }
@@ -250,6 +241,6 @@ namespace ShaderLoader
 
 extern "C" void OnModLoad()
 {
-    logger->SetTag("ShaderLoader");
-    ShaderLoader::Initialize();
+    logger->SetTag("SSAOLoader");
+    SSAOLoader::Initialize();
 }
