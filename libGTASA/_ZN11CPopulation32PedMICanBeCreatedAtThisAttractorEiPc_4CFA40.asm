@@ -1,0 +1,406 @@
+; =========================================================================
+; Full Function Name : _ZN11CPopulation32PedMICanBeCreatedAtThisAttractorEiPc
+; Start Address       : 0x4CFA40
+; End Address         : 0x4CFD5A
+; =========================================================================
+
+/* 0x4CFA40 */    PUSH            {R4-R7,LR}
+/* 0x4CFA42 */    ADD             R7, SP, #0xC
+/* 0x4CFA44 */    PUSH.W          {R11}
+/* 0x4CFA48 */    MOV             R5, R1
+/* 0x4CFA4A */    MOV             R4, R0
+/* 0x4CFA4C */    CMP             R5, #0
+/* 0x4CFA4E */    BEQ.W           def_4CFB14; jumptable 004CFB14 default case, cases 28-34,36-49,51-68,70,74-76,78-133,138-141,143-152,154-169,171-217,219-224,227,228,231,234,235,237,238
+/* 0x4CFA52 */    LDR.W           R0, =(_ZN10CModelInfo16ms_modelInfoPtrsE_ptr - 0x4CFA5E)
+/* 0x4CFA56 */    ADR.W           R1, aCopsit; "COPSIT"
+/* 0x4CFA5A */    ADD             R0, PC; _ZN10CModelInfo16ms_modelInfoPtrsE_ptr
+/* 0x4CFA5C */    LDR             R0, [R0]; CModelInfo::ms_modelInfoPtrs ...
+/* 0x4CFA5E */    LDR.W           R0, [R0,R4,LSL#2]
+/* 0x4CFA62 */    LDR             R6, [R0,#0x40]
+/* 0x4CFA64 */    MOV             R0, R5; char *
+/* 0x4CFA66 */    BLX             strcasecmp
+/* 0x4CFA6A */    CBZ             R0, loc_4CFA90
+/* 0x4CFA6C */    ADR.W           R1, aCoplook; "COPLOOK"
+/* 0x4CFA70 */    MOV             R0, R5; char *
+/* 0x4CFA72 */    BLX             strcasecmp
+/* 0x4CFA76 */    CBZ             R0, loc_4CFA90
+/* 0x4CFA78 */    ADR.W           R1, aBrowse; "BROWSE"
+/* 0x4CFA7C */    MOV             R0, R5; char *
+/* 0x4CFA7E */    BLX             strcasecmp
+/* 0x4CFA82 */    CBZ             R0, loc_4CFA90
+/* 0x4CFA84 */    CMP             R6, #6
+/* 0x4CFA86 */    BNE             loc_4CFA9E
+/* 0x4CFA88 */    MOVS            R0, #0; jumptable 004CFCD6 default case
+/* 0x4CFA8A */    POP.W           {R11}
+/* 0x4CFA8E */    POP             {R4-R7,PC}
+/* 0x4CFA90 */    MOVS            R0, #0
+/* 0x4CFA92 */    CMP             R6, #6
+/* 0x4CFA94 */    IT EQ
+/* 0x4CFA96 */    MOVEQ           R0, #1
+/* 0x4CFA98 */    POP.W           {R11}
+/* 0x4CFA9C */    POP             {R4-R7,PC}
+/* 0x4CFA9E */    ADR.W           R1, aDancer; "DANCER"
+/* 0x4CFAA2 */    MOV             R0, R5; char *
+/* 0x4CFAA4 */    BLX             strcasecmp
+/* 0x4CFAA8 */    CMP             R0, #0
+/* 0x4CFAAA */    BEQ.W           loc_4CFCCA
+/* 0x4CFAAE */    ADR.W           R1, aBarguy; "BARGUY"
+/* 0x4CFAB2 */    MOV             R0, R5; char *
+/* 0x4CFAB4 */    BLX             strcasecmp
+/* 0x4CFAB8 */    CBZ             R0, loc_4CFB08
+/* 0x4CFABA */    ADR.W           R1, aPedroul; "PEDROUL"
+/* 0x4CFABE */    MOV             R0, R5; char *
+/* 0x4CFAC0 */    BLX             strcasecmp
+/* 0x4CFAC4 */    CBZ             R0, loc_4CFB08
+/* 0x4CFAC6 */    ADR.W           R1, aPedcard; "PEDCARD"
+/* 0x4CFACA */    MOV             R0, R5; char *
+/* 0x4CFACC */    BLX             strcasecmp
+/* 0x4CFAD0 */    CBZ             R0, loc_4CFB08
+/* 0x4CFAD2 */    ADR.W           R1, aPedslot; "PEDSLOT"
+/* 0x4CFAD6 */    MOV             R0, R5; char *
+/* 0x4CFAD8 */    BLX             strcasecmp
+/* 0x4CFADC */    CBZ             R0, loc_4CFB08
+/* 0x4CFADE */    ADR.W           R1, aStripw; "STRIPW"
+/* 0x4CFAE2 */    MOV             R0, R5; char *
+/* 0x4CFAE4 */    BLX             strcasecmp
+/* 0x4CFAE8 */    CMP             R0, #0
+/* 0x4CFAEA */    BEQ.W           loc_4CFD3C
+/* 0x4CFAEE */    ADR.W           R1, aStripm; "STRIPM"
+/* 0x4CFAF2 */    MOV             R0, R5; char *
+/* 0x4CFAF4 */    BLX             strcasecmp
+/* 0x4CFAF8 */    EOR.W           R1, R6, #5
+/* 0x4CFAFC */    ORRS            R0, R1
+/* 0x4CFAFE */    IT NE
+/* 0x4CFB00 */    MOVNE           R0, #1
+/* 0x4CFB02 */    POP.W           {R11}
+/* 0x4CFB06 */    POP             {R4-R7,PC}
+/* 0x4CFB08 */    SUB.W           R1, R4, #0x1B; switch 213 cases
+/* 0x4CFB0C */    CMP             R1, #0xD4
+/* 0x4CFB0E */    BHI.W           def_4CFB14; jumptable 004CFB14 default case, cases 28-34,36-49,51-68,70,74-76,78-133,138-141,143-152,154-169,171-217,219-224,227,228,231,234,235,237,238
+/* 0x4CFB12 */    MOVS            R0, #0
+/* 0x4CFB14 */    TBH.W           [PC,R1,LSL#1]; switch jump
+/* 0x4CFB18 */    DCW 0x10F; jump table for switch statement
+/* 0x4CFB1A */    DCW 0xD5
+/* 0x4CFB1C */    DCW 0xD5
+/* 0x4CFB1E */    DCW 0xD5
+/* 0x4CFB20 */    DCW 0xD5
+/* 0x4CFB22 */    DCW 0xD5
+/* 0x4CFB24 */    DCW 0xD5
+/* 0x4CFB26 */    DCW 0xD5
+/* 0x4CFB28 */    DCW 0x10F
+/* 0x4CFB2A */    DCW 0xD5
+/* 0x4CFB2C */    DCW 0xD5
+/* 0x4CFB2E */    DCW 0xD5
+/* 0x4CFB30 */    DCW 0xD5
+/* 0x4CFB32 */    DCW 0xD5
+/* 0x4CFB34 */    DCW 0xD5
+/* 0x4CFB36 */    DCW 0xD5
+/* 0x4CFB38 */    DCW 0xD5
+/* 0x4CFB3A */    DCW 0xD5
+/* 0x4CFB3C */    DCW 0xD5
+/* 0x4CFB3E */    DCW 0xD5
+/* 0x4CFB40 */    DCW 0xD5
+/* 0x4CFB42 */    DCW 0xD5
+/* 0x4CFB44 */    DCW 0xD5
+/* 0x4CFB46 */    DCW 0x10F
+/* 0x4CFB48 */    DCW 0xD5
+/* 0x4CFB4A */    DCW 0xD5
+/* 0x4CFB4C */    DCW 0xD5
+/* 0x4CFB4E */    DCW 0xD5
+/* 0x4CFB50 */    DCW 0xD5
+/* 0x4CFB52 */    DCW 0xD5
+/* 0x4CFB54 */    DCW 0xD5
+/* 0x4CFB56 */    DCW 0xD5
+/* 0x4CFB58 */    DCW 0xD5
+/* 0x4CFB5A */    DCW 0xD5
+/* 0x4CFB5C */    DCW 0xD5
+/* 0x4CFB5E */    DCW 0xD5
+/* 0x4CFB60 */    DCW 0xD5
+/* 0x4CFB62 */    DCW 0xD5
+/* 0x4CFB64 */    DCW 0xD5
+/* 0x4CFB66 */    DCW 0xD5
+/* 0x4CFB68 */    DCW 0xD5
+/* 0x4CFB6A */    DCW 0xD5
+/* 0x4CFB6C */    DCW 0x10F
+/* 0x4CFB6E */    DCW 0xD5
+/* 0x4CFB70 */    DCW 0x10F
+/* 0x4CFB72 */    DCW 0x10F
+/* 0x4CFB74 */    DCW 0x10F
+/* 0x4CFB76 */    DCW 0xD5
+/* 0x4CFB78 */    DCW 0xD5
+/* 0x4CFB7A */    DCW 0xD5
+/* 0x4CFB7C */    DCW 0x10F
+/* 0x4CFB7E */    DCW 0xD5
+/* 0x4CFB80 */    DCW 0xD5
+/* 0x4CFB82 */    DCW 0xD5
+/* 0x4CFB84 */    DCW 0xD5
+/* 0x4CFB86 */    DCW 0xD5
+/* 0x4CFB88 */    DCW 0xD5
+/* 0x4CFB8A */    DCW 0xD5
+/* 0x4CFB8C */    DCW 0xD5
+/* 0x4CFB8E */    DCW 0xD5
+/* 0x4CFB90 */    DCW 0xD5
+/* 0x4CFB92 */    DCW 0xD5
+/* 0x4CFB94 */    DCW 0xD5
+/* 0x4CFB96 */    DCW 0xD5
+/* 0x4CFB98 */    DCW 0xD5
+/* 0x4CFB9A */    DCW 0xD5
+/* 0x4CFB9C */    DCW 0xD5
+/* 0x4CFB9E */    DCW 0xD5
+/* 0x4CFBA0 */    DCW 0xD5
+/* 0x4CFBA2 */    DCW 0xD5
+/* 0x4CFBA4 */    DCW 0xD5
+/* 0x4CFBA6 */    DCW 0xD5
+/* 0x4CFBA8 */    DCW 0xD5
+/* 0x4CFBAA */    DCW 0xD5
+/* 0x4CFBAC */    DCW 0xD5
+/* 0x4CFBAE */    DCW 0xD5
+/* 0x4CFBB0 */    DCW 0xD5
+/* 0x4CFBB2 */    DCW 0xD5
+/* 0x4CFBB4 */    DCW 0xD5
+/* 0x4CFBB6 */    DCW 0xD5
+/* 0x4CFBB8 */    DCW 0xD5
+/* 0x4CFBBA */    DCW 0xD5
+/* 0x4CFBBC */    DCW 0xD5
+/* 0x4CFBBE */    DCW 0xD5
+/* 0x4CFBC0 */    DCW 0xD5
+/* 0x4CFBC2 */    DCW 0xD5
+/* 0x4CFBC4 */    DCW 0xD5
+/* 0x4CFBC6 */    DCW 0xD5
+/* 0x4CFBC8 */    DCW 0xD5
+/* 0x4CFBCA */    DCW 0xD5
+/* 0x4CFBCC */    DCW 0xD5
+/* 0x4CFBCE */    DCW 0xD5
+/* 0x4CFBD0 */    DCW 0xD5
+/* 0x4CFBD2 */    DCW 0xD5
+/* 0x4CFBD4 */    DCW 0xD5
+/* 0x4CFBD6 */    DCW 0xD5
+/* 0x4CFBD8 */    DCW 0xD5
+/* 0x4CFBDA */    DCW 0xD5
+/* 0x4CFBDC */    DCW 0xD5
+/* 0x4CFBDE */    DCW 0xD5
+/* 0x4CFBE0 */    DCW 0xD5
+/* 0x4CFBE2 */    DCW 0xD5
+/* 0x4CFBE4 */    DCW 0xD5
+/* 0x4CFBE6 */    DCW 0xD5
+/* 0x4CFBE8 */    DCW 0xD5
+/* 0x4CFBEA */    DCW 0xD5
+/* 0x4CFBEC */    DCW 0xD5
+/* 0x4CFBEE */    DCW 0x10F
+/* 0x4CFBF0 */    DCW 0x10F
+/* 0x4CFBF2 */    DCW 0x10F
+/* 0x4CFBF4 */    DCW 0x10F
+/* 0x4CFBF6 */    DCW 0xD5
+/* 0x4CFBF8 */    DCW 0xD5
+/* 0x4CFBFA */    DCW 0xD5
+/* 0x4CFBFC */    DCW 0xD5
+/* 0x4CFBFE */    DCW 0x10F
+/* 0x4CFC00 */    DCW 0xD5
+/* 0x4CFC02 */    DCW 0xD5
+/* 0x4CFC04 */    DCW 0xD5
+/* 0x4CFC06 */    DCW 0xD5
+/* 0x4CFC08 */    DCW 0xD5
+/* 0x4CFC0A */    DCW 0xD5
+/* 0x4CFC0C */    DCW 0xD5
+/* 0x4CFC0E */    DCW 0xD5
+/* 0x4CFC10 */    DCW 0xD5
+/* 0x4CFC12 */    DCW 0xD5
+/* 0x4CFC14 */    DCW 0x10F
+/* 0x4CFC16 */    DCW 0xD5
+/* 0x4CFC18 */    DCW 0xD5
+/* 0x4CFC1A */    DCW 0xD5
+/* 0x4CFC1C */    DCW 0xD5
+/* 0x4CFC1E */    DCW 0xD5
+/* 0x4CFC20 */    DCW 0xD5
+/* 0x4CFC22 */    DCW 0xD5
+/* 0x4CFC24 */    DCW 0xD5
+/* 0x4CFC26 */    DCW 0xD5
+/* 0x4CFC28 */    DCW 0xD5
+/* 0x4CFC2A */    DCW 0xD5
+/* 0x4CFC2C */    DCW 0xD5
+/* 0x4CFC2E */    DCW 0xD5
+/* 0x4CFC30 */    DCW 0xD5
+/* 0x4CFC32 */    DCW 0xD5
+/* 0x4CFC34 */    DCW 0xD5
+/* 0x4CFC36 */    DCW 0x10F
+/* 0x4CFC38 */    DCW 0xD5
+/* 0x4CFC3A */    DCW 0xD5
+/* 0x4CFC3C */    DCW 0xD5
+/* 0x4CFC3E */    DCW 0xD5
+/* 0x4CFC40 */    DCW 0xD5
+/* 0x4CFC42 */    DCW 0xD5
+/* 0x4CFC44 */    DCW 0xD5
+/* 0x4CFC46 */    DCW 0xD5
+/* 0x4CFC48 */    DCW 0xD5
+/* 0x4CFC4A */    DCW 0xD5
+/* 0x4CFC4C */    DCW 0xD5
+/* 0x4CFC4E */    DCW 0xD5
+/* 0x4CFC50 */    DCW 0xD5
+/* 0x4CFC52 */    DCW 0xD5
+/* 0x4CFC54 */    DCW 0xD5
+/* 0x4CFC56 */    DCW 0xD5
+/* 0x4CFC58 */    DCW 0xD5
+/* 0x4CFC5A */    DCW 0xD5
+/* 0x4CFC5C */    DCW 0xD5
+/* 0x4CFC5E */    DCW 0xD5
+/* 0x4CFC60 */    DCW 0xD5
+/* 0x4CFC62 */    DCW 0xD5
+/* 0x4CFC64 */    DCW 0xD5
+/* 0x4CFC66 */    DCW 0xD5
+/* 0x4CFC68 */    DCW 0xD5
+/* 0x4CFC6A */    DCW 0xD5
+/* 0x4CFC6C */    DCW 0xD5
+/* 0x4CFC6E */    DCW 0xD5
+/* 0x4CFC70 */    DCW 0xD5
+/* 0x4CFC72 */    DCW 0xD5
+/* 0x4CFC74 */    DCW 0xD5
+/* 0x4CFC76 */    DCW 0xD5
+/* 0x4CFC78 */    DCW 0xD5
+/* 0x4CFC7A */    DCW 0xD5
+/* 0x4CFC7C */    DCW 0xD5
+/* 0x4CFC7E */    DCW 0xD5
+/* 0x4CFC80 */    DCW 0xD5
+/* 0x4CFC82 */    DCW 0xD5
+/* 0x4CFC84 */    DCW 0xD5
+/* 0x4CFC86 */    DCW 0xD5
+/* 0x4CFC88 */    DCW 0xD5
+/* 0x4CFC8A */    DCW 0xD5
+/* 0x4CFC8C */    DCW 0xD5
+/* 0x4CFC8E */    DCW 0xD5
+/* 0x4CFC90 */    DCW 0xD5
+/* 0x4CFC92 */    DCW 0xD5
+/* 0x4CFC94 */    DCW 0xD5
+/* 0x4CFC96 */    DCW 0x10F
+/* 0x4CFC98 */    DCW 0xD5
+/* 0x4CFC9A */    DCW 0xD5
+/* 0x4CFC9C */    DCW 0xD5
+/* 0x4CFC9E */    DCW 0xD5
+/* 0x4CFCA0 */    DCW 0xD5
+/* 0x4CFCA2 */    DCW 0xD5
+/* 0x4CFCA4 */    DCW 0x10F
+/* 0x4CFCA6 */    DCW 0x10F
+/* 0x4CFCA8 */    DCW 0xD5
+/* 0x4CFCAA */    DCW 0xD5
+/* 0x4CFCAC */    DCW 0x10F
+/* 0x4CFCAE */    DCW 0x10F
+/* 0x4CFCB0 */    DCW 0xD5
+/* 0x4CFCB2 */    DCW 0x10F
+/* 0x4CFCB4 */    DCW 0x10F
+/* 0x4CFCB6 */    DCW 0xD5
+/* 0x4CFCB8 */    DCW 0xD5
+/* 0x4CFCBA */    DCW 0x10F
+/* 0x4CFCBC */    DCW 0xD5
+/* 0x4CFCBE */    DCW 0xD5
+/* 0x4CFCC0 */    DCW 0x10F
+/* 0x4CFCC2 */    MOVS            R0, #1; jumptable 004CFB14 default case, cases 28-34,36-49,51-68,70,74-76,78-133,138-141,143-152,154-169,171-217,219-224,227,228,231,234,235,237,238
+/* 0x4CFCC4 */    POP.W           {R11}
+/* 0x4CFCC8 */    POP             {R4-R7,PC}
+/* 0x4CFCCA */    SUB.W           R1, R4, #0xC; switch 90 cases
+/* 0x4CFCCE */    CMP             R1, #0x59 ; 'Y'
+/* 0x4CFCD0 */    BHI.W           def_4CFCD6; jumptable 004CFCD6 default case
+/* 0x4CFCD4 */    MOVS            R0, #1
+/* 0x4CFCD6 */    TBB.W           [PC,R1]; switch jump
+/* 0x4CFCDA */    DCB 0x2E; jump table for switch statement
+/* 0x4CFCDB */    DCB 0x2D
+/* 0x4CFCDC */    DCB 0x2D
+/* 0x4CFCDD */    DCB 0x2D
+/* 0x4CFCDE */    DCB 0x2D
+/* 0x4CFCDF */    DCB 0x2D
+/* 0x4CFCE0 */    DCB 0x2D
+/* 0x4CFCE1 */    DCB 0x2D
+/* 0x4CFCE2 */    DCB 0x2E
+/* 0x4CFCE3 */    DCB 0x2D
+/* 0x4CFCE4 */    DCB 0x2E
+/* 0x4CFCE5 */    DCB 0x2D
+/* 0x4CFCE6 */    DCB 0x2D
+/* 0x4CFCE7 */    DCB 0x2D
+/* 0x4CFCE8 */    DCB 0x2D
+/* 0x4CFCE9 */    DCB 0x2D
+/* 0x4CFCEA */    DCB 0x2D
+/* 0x4CFCEB */    DCB 0x2D
+/* 0x4CFCEC */    DCB 0x2D
+/* 0x4CFCED */    DCB 0x2D
+/* 0x4CFCEE */    DCB 0x2D
+/* 0x4CFCEF */    DCB 0x2D
+/* 0x4CFCF0 */    DCB 0x2D
+/* 0x4CFCF1 */    DCB 0x2D
+/* 0x4CFCF2 */    DCB 0x2D
+/* 0x4CFCF3 */    DCB 0x2D
+/* 0x4CFCF4 */    DCB 0x2D
+/* 0x4CFCF5 */    DCB 0x2D
+/* 0x4CFCF6 */    DCB 0x2E
+/* 0x4CFCF7 */    DCB 0x2D
+/* 0x4CFCF8 */    DCB 0x2D
+/* 0x4CFCF9 */    DCB 0x2D
+/* 0x4CFCFA */    DCB 0x2D
+/* 0x4CFCFB */    DCB 0x2D
+/* 0x4CFCFC */    DCB 0x2E
+/* 0x4CFCFD */    DCB 0x2D
+/* 0x4CFCFE */    DCB 0x2D
+/* 0x4CFCFF */    DCB 0x2D
+/* 0x4CFD00 */    DCB 0x2D
+/* 0x4CFD01 */    DCB 0x2D
+/* 0x4CFD02 */    DCB 0x2D
+/* 0x4CFD03 */    DCB 0x2D
+/* 0x4CFD04 */    DCB 0x2D
+/* 0x4CFD05 */    DCB 0x2D
+/* 0x4CFD06 */    DCB 0x2E
+/* 0x4CFD07 */    DCB 0x2D
+/* 0x4CFD08 */    DCB 0x2E
+/* 0x4CFD09 */    DCB 0x2E
+/* 0x4CFD0A */    DCB 0x2E
+/* 0x4CFD0B */    DCB 0x2D
+/* 0x4CFD0C */    DCB 0x2D
+/* 0x4CFD0D */    DCB 0x2D
+/* 0x4CFD0E */    DCB 0x2D
+/* 0x4CFD0F */    DCB 0x2D
+/* 0x4CFD10 */    DCB 0x2D
+/* 0x4CFD11 */    DCB 0x2D
+/* 0x4CFD12 */    DCB 0x2D
+/* 0x4CFD13 */    DCB 0x2D
+/* 0x4CFD14 */    DCB 0x2D
+/* 0x4CFD15 */    DCB 0x2D
+/* 0x4CFD16 */    DCB 0x2D
+/* 0x4CFD17 */    DCB 0x2D
+/* 0x4CFD18 */    DCB 0x2D
+/* 0x4CFD19 */    DCB 0x2D
+/* 0x4CFD1A */    DCB 0x2D
+/* 0x4CFD1B */    DCB 0x2D
+/* 0x4CFD1C */    DCB 0x2D
+/* 0x4CFD1D */    DCB 0x2D
+/* 0x4CFD1E */    DCB 0x2D
+/* 0x4CFD1F */    DCB 0x2D
+/* 0x4CFD20 */    DCB 0x2D
+/* 0x4CFD21 */    DCB 0x2D
+/* 0x4CFD22 */    DCB 0x2D
+/* 0x4CFD23 */    DCB 0x2D
+/* 0x4CFD24 */    DCB 0x2D
+/* 0x4CFD25 */    DCB 0x2D
+/* 0x4CFD26 */    DCB 0x2D
+/* 0x4CFD27 */    DCB 0x2D
+/* 0x4CFD28 */    DCB 0x2D
+/* 0x4CFD29 */    DCB 0x2E
+/* 0x4CFD2A */    DCB 0x2D
+/* 0x4CFD2B */    DCB 0x2E
+/* 0x4CFD2C */    DCB 0x2D
+/* 0x4CFD2D */    DCB 0x2D
+/* 0x4CFD2E */    DCB 0x2D
+/* 0x4CFD2F */    DCB 0x2D
+/* 0x4CFD30 */    DCB 0x2E
+/* 0x4CFD31 */    DCB 0x2D
+/* 0x4CFD32 */    DCB 0x2D
+/* 0x4CFD33 */    DCB 0x2E
+/* 0x4CFD34 */    B               def_4CFCD6; jumptable 004CFCD6 cases 13-19,21,23-39,41-45,47-55,57,61-90,92,94-97,99,100
+/* 0x4CFD36 */    POP.W           {R11}; jumptable 004CFB14 cases 27,35,50,69,71-73,77,134-137,142,153,170,218,225,226,229,230,232,233,236,239
+/* 0x4CFD3A */    POP             {R4-R7,PC}
+/* 0x4CFD3C */    SUB.W           R1, R4, #0xF4
+/* 0x4CFD40 */    MOVS            R0, #1
+/* 0x4CFD42 */    CMP             R1, #0xD
+/* 0x4CFD44 */    BHI             loc_4CFD52
+/* 0x4CFD46 */    LSL.W           R1, R0, R1
+/* 0x4CFD4A */    MOVW            R2, #0x3005
+/* 0x4CFD4E */    TST             R1, R2
+/* 0x4CFD50 */    BNE             loc_4CFD36; jumptable 004CFB14 cases 27,35,50,69,71-73,77,134-137,142,153,170,218,225,226,229,230,232,233,236,239
+/* 0x4CFD52 */    CMP             R4, #0x57 ; 'W'
+/* 0x4CFD54 */    BNE.W           def_4CFCD6; jumptable 004CFCD6 default case
+/* 0x4CFD58 */    B               loc_4CFD36; jumptable 004CFB14 cases 27,35,50,69,71-73,77,134-137,142,153,170,218,225,226,229,230,232,233,236,239

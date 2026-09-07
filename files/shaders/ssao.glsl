@@ -14,7 +14,6 @@ uniform float uAONearIntensity;
 uniform float uAONearMaxDistance;
 uniform float uAONearFadeRange;
 uniform float uAONearSamples;
-
 uniform float uAOFarMinDistance;
 uniform float uAOFarFadeRange;
 uniform float uAOFarRadius;
@@ -23,6 +22,10 @@ uniform float uAOFarBias;
 uniform float uAOFarBlurEnabled;
 uniform float uAOFarBlurRadius;
 uniform float uAOFarSamples;
+
+uniform float uNear;
+uniform float uFar;
+uniform float uTanHalfFov;
 
 varying highp vec2 Out_Tex0;
 
@@ -39,9 +42,9 @@ float getLinearDepth(vec2 uv, float near, float far) {
     return (2.0 * near * far) / (far + near - z_ndc * (far - near));
 }
 
-vec3 nearGetViewPos(vec2 uv, float projScaleX, float depth) {
+vec3 nearGetViewPos(vec2 uv, float projScaleX, float depth, float tanFov) {
     vec2 ndc = uv * 2.0 - 1.0;
-    return vec3(ndc.x * projScaleX, ndc.y * NEAR_AO_tanHalfFov, 1.0) * depth;
+    return vec3(ndc.x * projScaleX, ndc.y * tanFov, 1.0) * depth;
 }
 
 vec3 nearGetViewNormalFast(vec3 pC) {
@@ -56,12 +59,17 @@ float nearIgn(vec2 p) {
 
 vec3 doNearSSAO(vec3 baseColor) {
     vec2 uv = gl_FragCoord.xy / uScreenSize;
-    float centerDepth = getLinearDepth(uv, NEAR_AO_nearZ, NEAR_AO_farZ);
+
+    float n = (uNear > 0.0) ? uNear : NEAR_AO_nearZ;
+    float f = (uFar > 0.0) ? uFar : NEAR_AO_farZ;
+    float t = (uTanHalfFov > 0.0) ? uTanHalfFov : NEAR_AO_tanHalfFov;
+
+    float centerDepth = getLinearDepth(uv, n, f);
 
     if (centerDepth >= uAONearMaxDistance) return baseColor;
 
-    float projScaleX = (uScreenSize.x / uScreenSize.y) * NEAR_AO_tanHalfFov;
-    vec3 originPos = nearGetViewPos(uv, projScaleX, centerDepth);
+    float projScaleX = (uScreenSize.x / uScreenSize.y) * t;
+    vec3 originPos = nearGetViewPos(uv, projScaleX, centerDepth, t);
     vec3 normal = nearGetViewNormalFast(originPos);
 
     float randomAngle = nearIgn(gl_FragCoord.xy) * 6.2831853;
@@ -77,8 +85,8 @@ vec3 doNearSSAO(vec3 baseColor) {
         vec2 sampleDir2D = vec2(cos(angle), sin(angle)) * scale;
         vec2 sampleUV = clamp(uv + sampleDir2D * screenRadius, 0.0, 1.0);
 
-        float sampleDepth = getLinearDepth(sampleUV, NEAR_AO_nearZ, NEAR_AO_farZ);
-        vec3 samplePos = nearGetViewPos(sampleUV, projScaleX, sampleDepth);
+        float sampleDepth = getLinearDepth(sampleUV, n, f);
+        vec3 samplePos = nearGetViewPos(sampleUV, projScaleX, sampleDepth, t);
         vec3 v = samplePos - originPos;
         float dLen = length(v);
         float dotN = max(0.0, dot(normal, v / dLen));
@@ -99,7 +107,9 @@ float farInterleavedGradientNoise(vec2 fragCoord) {
 }
 
 float farComputeRawAO(vec2 uv, vec2 texelSize) {
-    float centerDepth = getLinearDepth(uv, NEAR_Z, FAR_Z);
+    float n = (uNear > 0.0) ? uNear : NEAR_Z;
+    float f = (uFar > 0.0) ? uFar : FAR_Z;
+    float centerDepth = getLinearDepth(uv, n, f);
     float randomAngle = farInterleavedGradientNoise(uv * uScreenSize) * 6.2831853;
     float occlusion = 0.0;
 
@@ -113,7 +123,7 @@ float farComputeRawAO(vec2 uv, vec2 texelSize) {
         vec2 sampleUV = uv + dir * dist * texelSize;
 
         if (sampleUV.x >= 0.0 && sampleUV.x <= 1.0 && sampleUV.y >= 0.0 && sampleUV.y <= 1.0) {
-            float sampleDepth = getLinearDepth(sampleUV, NEAR_Z, FAR_Z);
+            float sampleDepth = getLinearDepth(sampleUV, n, f);
             float depthDiff = sampleDepth - centerDepth;
             float occ = clamp((centerDepth - sampleDepth) / (centerDepth * uAOFarBias + 0.001), 0.0, 1.0);
             float range = clamp(1.0 - abs(depthDiff) / (centerDepth * 0.1 + 1.0), 0.0, 1.0);
@@ -124,7 +134,9 @@ float farComputeRawAO(vec2 uv, vec2 texelSize) {
 }
 
 vec3 doFarSSAO(vec3 co, vec2 uv, vec2 texel) {
-    float centerDepth = getLinearDepth(uv, NEAR_Z, FAR_Z);
+    float n = (uNear > 0.0) ? uNear : NEAR_Z;
+    float f = (uFar > 0.0) ? uFar : FAR_Z;
+    float centerDepth = getLinearDepth(uv, n, f);
     if (centerDepth < uAOFarMinDistance) return co;
 
     float ao;

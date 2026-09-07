@@ -1,0 +1,43 @@
+; =========================================================================
+; Full Function Name : _ZN24CPlayerInfoSaveStructure9ConstructEP11CPlayerInfo
+; Start Address       : 0x484A72
+; End Address         : 0x484AEA
+; =========================================================================
+
+/* 0x484A72 */    LDR.W           R2, [R1,#0xB8]
+/* 0x484A76 */    STR             R2, [R0]
+/* 0x484A78 */    LDRH.W          R2, [R1,#0x130]
+/* 0x484A7C */    STRH            R2, [R0,#4]
+/* 0x484A7E */    LDRB.W          R2, [R1,#0xDC]
+/* 0x484A82 */    STRB            R2, [R0,#6]
+/* 0x484A84 */    LDR.W           R2, [R1,#0x134]
+/* 0x484A88 */    STR             R2, [R0,#8]
+/* 0x484A8A */    LDR.W           R2, [R1,#0xBC]
+/* 0x484A8E */    STR             R2, [R0,#0xC]
+/* 0x484A90 */    LDRB.W          R2, [R1,#0x144]
+/* 0x484A94 */    STRB            R2, [R0,#0x10]
+/* 0x484A96 */    LDR.W           R2, [R1,#0xC0]
+/* 0x484A9A */    STR             R2, [R0,#0x14]
+/* 0x484A9C */    LDR.W           R2, [R1,#0xC4]
+/* 0x484AA0 */    STR             R2, [R0,#0x18]
+/* 0x484AA2 */    LDRB.W          R2, [R1,#0x14C]
+/* 0x484AA6 */    STRB            R2, [R0,#0x1C]
+/* 0x484AA8 */    LDRB.W          R2, [R1,#0x14D]
+/* 0x484AAC */    STRB            R2, [R0,#0x1D]
+/* 0x484AAE */    LDRB.W          R2, [R1,#0x14E]
+/* 0x484AB2 */    STRB            R2, [R0,#0x1E]
+/* 0x484AB4 */    LDRB.W          R2, [R1,#0x14F]
+/* 0x484AB8 */    STRB            R2, [R0,#0x1F]
+/* 0x484ABA */    LDRB.W          R2, [R1,#0x150]
+/* 0x484ABE */    STRB.W          R2, [R0,#0x20]
+/* 0x484AC2 */    LDRB.W          R2, [R1,#0x151]
+/* 0x484AC6 */    STRB.W          R2, [R0,#0x21]
+/* 0x484ACA */    LDRB.W          R2, [R1,#0x152]
+/* 0x484ACE */    STRB.W          R2, [R0,#0x22]
+/* 0x484AD2 */    LDRB.W          R2, [R1,#0x153]
+/* 0x484AD6 */    STRB.W          R2, [R0,#0x23]
+/* 0x484ADA */    LDRB.W          R2, [R1,#0x154]
+/* 0x484ADE */    STRB.W          R2, [R0,#0x24]
+/* 0x484AE2 */    LDRH.W          R1, [R1,#0x156]
+/* 0x484AE6 */    STRH            R1, [R0,#0x26]
+/* 0x484AE8 */    BX              LR

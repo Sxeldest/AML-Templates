@@ -11,6 +11,8 @@
 #include <map>
 #include <sys/stat.h>
 #include <cstdlib>
+#include "game/Scene.h"
+#include "game/RW/rwcore.h"
 
 /**
  * SSAO Only Mod for AML
@@ -50,6 +52,23 @@ namespace SSAOLoader
     GLuint g_mainDepthTex = 0;
     int g_screenWidth = 0;
     int g_screenHeight = 0;
+    CScene* pScene = nullptr;
+    FILE* g_logFile = nullptr;
+
+    void LoggerCB(eLogPrio prio, const char* msg)
+    {
+        if (g_logFile)
+        {
+            const char* prioStr = "INFO";
+            if (prio == LogP_Warn) prioStr = "WARN";
+            else if (prio == LogP_Error) prioStr = "ERROR";
+            else if (prio == LogP_Fatal) prioStr = "FATAL";
+            else if (prio == LogP_Debug) prioStr = "DEBUG";
+
+            fprintf(g_logFile, "[%s] %s\n", prioStr, msg);
+            fflush(g_logFile);
+        }
+    }
 
     DECL_HOOK(void, glRenderbufferStorage, GLenum target, GLenum internalformat, GLsizei width, GLsizei height)
     {
@@ -163,6 +182,16 @@ namespace SSAOLoader
             {
                 p_glUniform2f(loc, (float)g_screenWidth, (float)g_screenHeight);
             }
+
+            if (pScene && pScene->m_pRwCamera)
+            {
+                GLint nearLoc = getCachedLoc("uNear");
+                GLint farLoc = getCachedLoc("uFar");
+                GLint fovLoc = getCachedLoc("uTanHalfFov");
+                if (nearLoc >= 0) p_glUniform1f(nearLoc, pScene->m_pRwCamera->nearPlane);
+                if (farLoc >= 0) p_glUniform1f(farLoc, pScene->m_pRwCamera->farPlane);
+                if (fovLoc >= 0) p_glUniform1f(fovLoc, pScene->m_pRwCamera->viewWindow.y);
+            }
         }
     }
 
@@ -170,6 +199,14 @@ namespace SSAOLoader
     {
         const char* dataPath = aml->GetAndroidDataPath();
         char path[512];
+
+        snprintf(path, sizeof(path), "%s/ssao_log.txt", dataPath);
+        g_logFile = fopen(path, "w");
+        if (g_logFile)
+        {
+            logger->SetMessageCB(LoggerCB);
+            logger->Info("SSAO Logger initialized. Path: %s", path);
+        }
 
         snprintf(path, sizeof(path), "%s/shaders/ssao.glsl", dataPath);
         std::ifstream shaderFile(path);
@@ -206,6 +243,14 @@ namespace SSAOLoader
 
         uintptr_t libGLES = aml->GetLib("libGLESv2.so");
         uintptr_t libEGL = aml->GetLib("libEGL.so");
+        uintptr_t libGTASA = aml->GetLib("libGTASA.so");
+
+        if (libGTASA)
+        {
+            pScene = (CScene*)aml->GetSym(libGTASA, "Scene");
+            if (pScene) logger->Info("Found Scene in libGTASA");
+            else logger->Error("Failed to find Scene in libGTASA!");
+        }
 
         if (libGLES && libEGL)
         {
