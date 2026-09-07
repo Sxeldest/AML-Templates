@@ -42,6 +42,8 @@ namespace SSAOLoader
     void (*p_glUniform1i)(GLint, GLint);
     void (*p_glUniform1f)(GLint, GLfloat);
     void (*p_glUniform2f)(GLint, GLfloat, GLfloat);
+    void (*p_glUniform4f)(GLint, GLfloat, GLfloat, GLfloat, GLfloat);
+    void (*p_glUniformMatrix4fv)(GLint, GLsizei, GLboolean, const GLfloat*);
     void (*p_glShaderSource)(GLuint, GLsizei, const GLchar* const*, const GLint*);
     void (*p_glGetIntegerv)(GLenum, GLint*);
 
@@ -185,12 +187,20 @@ namespace SSAOLoader
 
             if (pScene && pScene->m_pRwCamera)
             {
-                GLint nearLoc = getCachedLoc("uNear");
-                GLint farLoc = getCachedLoc("uFar");
-                GLint fovLoc = getCachedLoc("uTanHalfFov");
-                if (nearLoc >= 0) p_glUniform1f(nearLoc, pScene->m_pRwCamera->nearPlane);
-                if (farLoc >= 0) p_glUniform1f(farLoc, pScene->m_pRwCamera->farPlane);
-                if (fovLoc >= 0) p_glUniform1f(fovLoc, pScene->m_pRwCamera->viewWindow.y);
+                RwCamera* cam = pScene->m_pRwCamera;
+                GLint projLoc = getCachedLoc("uProjParams");
+                if (projLoc >= 0) p_glUniform4f(projLoc, cam->viewWindow.x, cam->viewWindow.y, cam->nearPlane, cam->farPlane);
+
+                GLint viewMatLoc = getCachedLoc("uViewMatrix");
+                if (viewMatLoc >= 0)
+                {
+                    float mat[16];
+                    mat[0] = cam->viewMatrix.right.x; mat[1] = cam->viewMatrix.right.y; mat[2] = cam->viewMatrix.right.z; mat[3] = 0.0f;
+                    mat[4] = cam->viewMatrix.up.x;    mat[5] = cam->viewMatrix.up.y;    mat[6] = cam->viewMatrix.up.z;    mat[7] = 0.0f;
+                    mat[8] = cam->viewMatrix.at.x;    mat[9] = cam->viewMatrix.at.y;    mat[10] = cam->viewMatrix.at.z;   mat[11] = 0.0f;
+                    mat[12] = cam->viewMatrix.pos.x;  mat[13] = cam->viewMatrix.pos.y;  mat[14] = cam->viewMatrix.pos.z;  mat[15] = 1.0f;
+                    p_glUniformMatrix4fv(viewMatLoc, 1, GL_FALSE, mat);
+                }
             }
         }
     }
@@ -282,6 +292,8 @@ namespace SSAOLoader
                 RESOLVE_GL(glUniform1i);
                 RESOLVE_GL(glUniform1f);
                 RESOLVE_GL(glUniform2f);
+                RESOLVE_GL(glUniform4f);
+                RESOLVE_GL(glUniformMatrix4fv);
                 RESOLVE_GL(glShaderSource);
                 RESOLVE_GL(glGetIntegerv);
 
