@@ -32,6 +32,7 @@ namespace SSAOLoader
     void (*p_glTexParameteri)(GLenum, GLenum, GLint);
     void (*p_glTexImage2D)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const void*);
     void (*p_glBindTexture)(GLenum, GLuint);
+    void (*p_glBindRenderbuffer)(GLenum, GLuint);
     void (*p_glRenderbufferStorage)(GLenum, GLenum, GLsizei, GLsizei);
     void (*p_glGetRenderbufferParameteriv)(GLenum, GLenum, GLint*);
     GLenum (*p_glCheckFramebufferStatus)(GLenum);
@@ -52,6 +53,14 @@ namespace SSAOLoader
     std::unordered_map<GLuint, std::unordered_map<std::string, GLint>> g_uniformCache;
     bool g_needsReallocation = false;
     GLuint g_mainDepthTex = 0;
+    GLuint g_mainFbo = 0;
+    GLuint g_boundFramebuffer = 0;
+    
+    int g_surfaceWidth = 0;
+    int g_surfaceHeight = 0;
+    
+    int g_depthWidth = 0;
+    int g_depthHeight = 0;
     int g_screenWidth = 0;
     int g_screenHeight = 0;
     CScene* pScene = nullptr;
@@ -72,22 +81,18 @@ namespace SSAOLoader
         }
     }
 
-    DECL_HOOK(void, glRenderbufferStorage, GLenum target, GLenum internalformat, GLsizei width, GLsizei height)
+    DECL_HOOK(void, glRenderbufferStorage,
+              GLenum target,
+              GLenum internalformat,
+              GLsizei width,
+              GLsizei height)
     {
-        glRenderbufferStorage(target, internalformat, width, height);
-
-        if ((internalformat >= 0x84F9 && internalformat <= 0x84FB) ||
-            (internalformat >= 0x81A5 && internalformat <= 0x81A6) ||
-            internalformat == 0x8D62)
-        {
-            if (width > 500 && (width != g_screenWidth || height != g_screenHeight))
-            {
-                g_screenWidth = width;
-                g_screenHeight = height;
-                g_needsReallocation = true;
-                logger->Info("Detected resolution: %dx%d", width, height);
-            }
-        }
+        p_glRenderbufferStorage(
+            target,
+            internalformat,
+            width,
+            height
+        );
     }
 
     DECL_HOOK(void, glFramebufferRenderbuffer, GLenum target, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer)
